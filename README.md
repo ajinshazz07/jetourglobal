@@ -1,36 +1,45 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# JETOUR Global Landing Page
 
-## Getting Started
+Modern, minimal landing page for **JETOUR Global** built with **Next.js 16**, **TypeScript**, and **Tailwind CSS**.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 📍 Local Project Path
+
+```text
+/Users/ajinsha/.gemini/antigravity/scratch/jetour-landing
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Quick Commands
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Open in VS Code:**
+  ```bash
+  code /Users/ajinsha/.gemini/antigravity/scratch/jetour-landing
+  ```
+- **Navigate to folder:**
+  ```bash
+  cd /Users/ajinsha/.gemini/antigravity/scratch/jetour-landing
+  ```
+- **Start Dev Server:**
+  ```bash
+  npm run dev
+  ```
+  Then visit [http://localhost:3000](http://localhost:3000).
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🔗 Repository
 
-To learn more about Next.js, take a look at the following resources:
+- **GitHub:** [https://github.com/ajinshazz07/jetourglobal](https://github.com/ajinshazz07/jetourglobal)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📁 Project Structure
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `src/components/Navbar.tsx` - Glassmorphic fixed navigation bar with mobile support
+- `src/components/Hero.tsx` - Hero section with dynamic animations & stats counter
+- `src/components/Models.tsx` - Model lineup (T2, Dashing, X70 Plus, G700)
+- `src/components/Features.tsx` - Key features & specifications
+- `src/components/Pricing.tsx` - Pricing tiers & package comparisons
+- `src/components/Testimonials.tsx` - Global customer reviews
+- `src/components/Footer.tsx` - Links, CTA banner, and social media channels
