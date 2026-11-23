@@ -4,6 +4,7 @@ import { useState } from "react";
 
 const navLinks = [
   { label: "Models", href: "#models" },
+  { label: "Gallery", href: "#gallery" },
   { label: "Features", href: "#features" },
   { label: "Pricing", href: "#pricing" },
   { label: "Reviews", href: "#testimonials" },
@@ -14,32 +15,37 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-lg border-b border-border">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/85 backdrop-blur-md border-b border-border shadow-xs">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-2">
-          <div className="w-10 h-10 bg-accent rounded-lg flex items-center justify-center">
-            <span className="text-white font-bold text-lg">J</span>
+        <a href="#" className="flex items-center gap-2.5 group">
+          <div className="w-10 h-10 bg-accent rounded-xl flex items-center justify-center shadow-md group-hover:scale-105 transition-transform">
+            <span className="text-white font-extrabold text-xl tracking-wider">J</span>
           </div>
-          <span className="text-xl font-bold tracking-widest text-accent">
-            JETOUR
-          </span>
+          <div className="flex flex-col">
+            <span className="text-xl font-black tracking-widest text-accent leading-none">
+              JETOUR
+            </span>
+            <span className="text-[10px] tracking-widest uppercase text-gold font-bold">
+              Travel+ Global
+            </span>
+          </div>
         </a>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-7">
           {navLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
-              className="text-sm font-medium text-muted hover:text-foreground transition-colors"
+              className="text-sm font-semibold text-muted hover:text-accent transition-colors"
             >
               {link.label}
             </a>
           ))}
           <a
             href="#pricing"
-            className="bg-accent text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-accent-light transition-colors"
+            className="bg-accent text-white px-5 py-2.5 rounded-xl text-sm font-bold hover:bg-accent-light transition-all shadow-sm hover:shadow-md"
           >
             Book a Test Drive
           </a>
@@ -47,7 +53,7 @@ export default function Navbar() {
 
         {/* Mobile Menu Toggle */}
         <button
-          className="md:hidden p-2"
+          className="md:hidden p-2 rounded-lg text-accent hover:bg-slate-100 transition-colors"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
         >
@@ -78,12 +84,12 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="md:hidden border-t border-border bg-white px-6 py-4 space-y-3">
+        <div className="md:hidden border-t border-border bg-white/95 backdrop-blur-lg px-6 py-5 space-y-3 shadow-xl">
           {navLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
-              className="block text-sm font-medium text-muted hover:text-foreground transition-colors"
+              className="block text-base font-semibold text-accent/80 hover:text-accent transition-colors py-1"
               onClick={() => setMenuOpen(false)}
             >
               {link.label}
@@ -91,7 +97,7 @@ export default function Navbar() {
           ))}
           <a
             href="#pricing"
-            className="block bg-accent text-white px-5 py-2.5 rounded-lg text-sm font-semibold text-center hover:bg-accent-light transition-colors"
+            className="block bg-accent text-white px-5 py-3 rounded-xl text-sm font-bold text-center hover:bg-accent-light transition-colors mt-4"
             onClick={() => setMenuOpen(false)}
           >
             Book a Test Drive
