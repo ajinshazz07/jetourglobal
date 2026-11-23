@@ -1,11 +1,12 @@
 import Image from "next/image";
+import { getAssetPath } from "@/lib/assets";
 
 const testimonials = [
   {
     name: "Ahmed Al-Rashid",
     location: "Dubai, UAE",
     model: "T2 Traveller 4WD",
-    image: "/images/jetour-t2-side.png",
+    image: getAssetPath("/images/jetour-t2-side.png"),
     quote:
       "Took the T2 on a weekend desert trip and it handled the dunes like a dream. The cabin is surprisingly quiet and premium for the price. Best value 4WD I've driven.",
     rating: 5,
@@ -14,7 +15,7 @@ const testimonials = [
     name: "Elena Rostova",
     location: "Almaty, Kazakhstan",
     model: "T8 Luxury Flagship",
-    image: "/images/jetour-t8.jpg",
+    image: getAssetPath("/images/jetour-t8.jpg"),
     quote:
       "The T8 flagship delivers executive tranquility. Exceptional acoustic insulation, commanding driving height, and seamless intelligent hybrid power across mountain roads.",
     rating: 5,
@@ -23,7 +24,7 @@ const testimonials = [
     name: "James Okonkwo",
     location: "Lagos, Nigeria",
     model: "T2 Stealth Obsidian",
-    image: "/images/jetour-t2-black.jpg",
+    image: getAssetPath("/images/jetour-t2-black.jpg"),
     quote:
       "The Obsidian edition turns heads everywhere. The illuminated JETOUR grille and robust squared-off stance look like a car twice its price. Urban presence is unmatched.",
     rating: 5,
@@ -32,7 +33,7 @@ const testimonials = [
     name: "Carlos & Sofia Mendez",
     location: "Santiago, Chile",
     model: "T2 Expedition Overland",
-    image: "/images/jetour-t2-hero.jpg",
+    image: getAssetPath("/images/jetour-t2-hero.jpg"),
     quote:
       "From coastal highways to rugged Patagonian gravel, the T2 Expedition roof platform carried all our gear effortlessly. Reliable, stylish, and built for true explorers.",
     rating: 5,

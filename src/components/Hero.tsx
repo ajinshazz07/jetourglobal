@@ -2,13 +2,14 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import { getAssetPath } from "@/lib/assets";
 
 const heroVehicles = [
   {
     id: "beach",
     name: "T2 Traveller Expedition",
     badge: "Overlanding Series",
-    image: "/images/jetour-t2-hero.jpg",
+    image: getAssetPath("/images/jetour-t2-hero.jpg"),
     alt: "Jetour T2 Traveller Expedition with roof rack at sunset beach",
     accent: "text-amber-400",
     specs: ["2.0T Turbo (254 HP)", "Smart X-WD System", "220mm Ground Clearance"],
@@ -18,7 +19,7 @@ const heroVehicles = [
     id: "t8",
     name: "JETOUR T8 Flagship",
     badge: "Auto Show Premiere",
-    image: "/images/jetour-t8.jpg",
+    image: getAssetPath("/images/jetour-t8.jpg"),
     alt: "Jetour T8 luxury flagship SUV on exhibition stage",
     accent: "text-rose-300",
     specs: ["Intelligent Hybrid PHEV", "Level 2.5 ADAS Pilot", "Executive Multi-Row Seating"],
@@ -28,7 +29,7 @@ const heroVehicles = [
     id: "profile",
     name: "T2 Silhouette Sunset",
     badge: "Design Icon",
-    image: "/images/jetour-t2-side.png",
+    image: getAssetPath("/images/jetour-t2-side.png"),
     alt: "Jetour T2 Traveller side profile in terracotta orange",
     accent: "text-orange-400",
     specs: ["Boxy Adventure Architecture", "Panoramic Glass Roof", "Exterior Gear Carrier"],
@@ -38,7 +39,7 @@ const heroVehicles = [
     id: "urban",
     name: "T2 Stealth Obsidian",
     badge: "Urban Edition",
-    image: "/images/jetour-t2-black.jpg",
+    image: getAssetPath("/images/jetour-t2-black.jpg"),
     alt: "Jetour T2 Traveller in obsidian black finish",
     accent: "text-emerald-400",
     specs: ["LED Matrix Light Grille", "20-inch Gloss Black Alloys", "Surround 360° Vision"],
@@ -48,7 +49,7 @@ const heroVehicles = [
     id: "mountain",
     name: "T2 Mountain Trail",
     badge: "Rock Crawler",
-    image: "/images/jetour-t2-mountain.png",
+    image: getAssetPath("/images/jetour-t2-mountain.png"),
     alt: "Jetour T2 silver SUV navigating steep rocky mountain pass",
     accent: "text-sky-400",
     specs: ["28° Approach Angle", "BorgWarner 6th Gen Torque", "Low-Range Crawl Control"],

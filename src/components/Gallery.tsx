@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import { getAssetPath } from "@/lib/assets";
 
 const galleryItems = [
   {
@@ -9,7 +10,7 @@ const galleryItems = [
     title: "T2 Traveller · Coastline Expedition",
     category: "expedition",
     location: "Coastal Dunes & Ocean Front",
-    image: "/images/jetour-t2-hero.jpg",
+    image: getAssetPath("/images/jetour-t2-hero.jpg"),
     description:
       "Equipped with custom modular roof platform, reinforced recovery points, and low-pressure sand calibration for boundless shore expeditions.",
     specs: "2.0T AWD · 220mm Clearance · 700mm Fording Depth",
@@ -20,7 +21,7 @@ const galleryItems = [
     title: "JETOUR T8 · Flagship Premiere",
     category: "flagship",
     location: "Global Auto Show Reveal",
-    image: "/images/jetour-t8.jpg",
+    image: getAssetPath("/images/jetour-t8.jpg"),
     description:
       "Next-generation luxury flagship boasting intelligent PHEV dual-motor architecture, acoustic executive cabin, and illuminated horizontal light bar.",
     specs: "Intelligent Hybrid · Executive 7-Seat · Level 2+ Pilot",
@@ -31,7 +32,7 @@ const galleryItems = [
     title: "T2 Traveller · Desert Amber Silhouette",
     category: "design",
     location: "Studio Aerodynamic & Proportions",
-    image: "/images/jetour-t2-side.png",
+    image: getAssetPath("/images/jetour-t2-side.png"),
     description:
       "Iconic geometric design language: squared wheel arches, high beltline, functional roof rails, and rear-mounted spare tire carrier.",
     specs: "High-Tensile Steel Body · 28° Approach · 30° Departure",
@@ -42,7 +43,7 @@ const galleryItems = [
     title: "T2 Traveller · Obsidian Black Edition",
     category: "urban",
     location: "Metropolitan District",
-    image: "/images/jetour-t2-black.jpg",
+    image: getAssetPath("/images/jetour-t2-black.jpg"),
     description:
       "High-contrast obsidian black styling featuring signature JETOUR grille illumination, sport lower valance, and 360° surround camera view.",
     specs: "Gloss Black Package · Matrix LED · Acoustic Glass",
@@ -53,7 +54,7 @@ const galleryItems = [
     title: "T2 Traveller · Alpine Rock Trail",
     category: "trail",
     location: "High Altitude Rocky Pass",
-    image: "/images/jetour-t2-mountain.png",
+    image: getAssetPath("/images/jetour-t2-mountain.png"),
     description:
       "Tested on extreme jagged terrain with BorgWarner 6th-Gen torque vectoring and electronic rear differential lock for unwavering grip.",
     specs: "X-WD All-Terrain System · Underbody Skid Plates · Hill Descent",
