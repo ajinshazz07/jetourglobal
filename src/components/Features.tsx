@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { getAssetPath } from "@/lib/assets";
+import { vehicleImages } from "@/assets/images";
 
 const features = [
   {
@@ -107,7 +107,7 @@ export default function Features() {
             {/* Visual */}
             <div className="relative h-72 sm:h-96 w-full bg-slate-900">
               <Image
-                src={getAssetPath("/images/jetour-t2-mountain.png")}
+                src={vehicleImages.t2Mountain}
                 alt="Jetour T2 tested on high altitude alpine rock trails"
                 fill
                 className="object-cover object-center"

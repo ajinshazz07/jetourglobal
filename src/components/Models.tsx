@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { getAssetPath } from "@/lib/assets";
+import { vehicleImages } from "@/assets/images";
 
 const models = [
   {
@@ -11,7 +11,7 @@ const models = [
       "Box-styled rugged SUV engineered with BorgWarner smart 4WD, 220mm ground clearance, and an aircraft-inspired digital cockpit.",
     specs: ["2.0T Engine (254 HP)", "Smart 4WD", "7 Drive Modes", "5-Star Safety"],
     badge: "Most Popular",
-    image: getAssetPath("/images/jetour-t2-side.png"),
+    image: vehicleImages.t2Side,
     alt: "Jetour T2 Traveller side profile in desert orange",
     imageFit: "contain",
     highlight: "Signature Silhouette",
@@ -24,7 +24,7 @@ const models = [
       "Full-size executive SUV featuring advanced hybrid power, intelligent air suspension, Level 2+ pilot assistance, and multi-row VIP comfort.",
     specs: ["Dual-Motor PHEV", "Intelligent AWD", "Acoustic Glass", "Level 2+ ADAS"],
     badge: "Flagship Concept",
-    image: getAssetPath("/images/jetour-t8.jpg"),
+    image: vehicleImages.t8,
     alt: "Jetour T8 luxury flagship SUV premiere",
     imageFit: "cover",
     highlight: "World Premiere",
@@ -37,7 +37,7 @@ const models = [
       "Overland-spec edition fitted with factory expedition roof rack, high-durability gear compartments, and coastal terrain calibration.",
     specs: ["Expedition Rack", "Heavy-Duty Shocks", "All-Terrain Tires", "Water Fording 700mm"],
     badge: "Overland Special",
-    image: getAssetPath("/images/jetour-t2-hero.jpg"),
+    image: vehicleImages.t2Hero,
     alt: "Jetour T2 Expedition on beach coastline",
     imageFit: "cover",
     highlight: "Adventure Ready",
@@ -50,7 +50,7 @@ const models = [
       "Monochromatic black exterior package with illuminated matrix JETOUR front grille, 20-inch gloss black alloys, and privacy glass.",
     specs: ["Obsidian Styling", "360° Night Vision", "Active Noise Cancellation", "Sony Sound"],
     badge: "Urban Edition",
-    image: getAssetPath("/images/jetour-t2-black.jpg"),
+    image: vehicleImages.t2Black,
     alt: "Jetour T2 in obsidian black finish",
     imageFit: "cover",
     highlight: "Black Edition",

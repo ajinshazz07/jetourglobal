@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { getAssetPath } from "@/lib/assets";
+import { vehicleImages } from "@/assets/images";
 
 const plans = [
   {
@@ -7,7 +7,7 @@ const plans = [
     subtitle: "Signature Adventure — 4WD",
     price: "32,990",
     period: "Starting MSRP",
-    image: getAssetPath("/images/jetour-t2-side.png"),
+    image: vehicleImages.t2Side,
     alt: "Jetour T2 Traveller profile",
     features: [
       "2.0T High-Performance Engine (254 HP)",
@@ -26,7 +26,7 @@ const plans = [
     subtitle: "Overland Spec with Roof Platform",
     price: "36,490",
     period: "Starting MSRP",
-    image: getAssetPath("/images/jetour-t2-hero.jpg"),
+    image: vehicleImages.t2Hero,
     alt: "Jetour T2 Overland Expedition with roof rack",
     features: [
       "Heavy-Duty Expedition Roof Platform",
@@ -44,7 +44,7 @@ const plans = [
     subtitle: "Executive Intelligent Hybrid",
     price: "49,990",
     period: "Starting MSRP",
-    image: getAssetPath("/images/jetour-t8.jpg"),
+    image: vehicleImages.t8,
     alt: "Jetour T8 luxury flagship SUV",
     features: [
       "Plug-in Hybrid (PHEV) Dual-Motor System",
