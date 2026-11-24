@@ -27,8 +27,11 @@ export default function MobileBottomBar() {
           <div className="text-white text-xs font-bold tracking-tight truncate">
             JETOUR T2 Traveller
           </div>
-          <div className="text-gold text-[10px] font-semibold truncate">
-            Available Now · 4WD · From $32,990
+          <div className="text-[10px] font-semibold truncate flex items-center gap-1.5 mt-0.5 select-none">
+            <span className="w-1.5 h-1.5 rounded-full neon-dot-emerald animate-pulse flex-shrink-0" />
+            <span className="neon-glow-emerald font-bold">AVAILABLE NOW</span>
+            <span className="text-white/30">·</span>
+            <span className="text-white/70">From $32,990</span>
           </div>
         </div>
 
