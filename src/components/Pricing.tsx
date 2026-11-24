@@ -1,16 +1,27 @@
-import Image from "next/image";
-import { vehicleImages } from "@/assets/images";
-
 const plans = [
   {
+    name: "X70 Plus",
+    subtitle: "The Smart Family Choice",
+    price: "24,990",
+    period: "Starting MSRP",
+    features: [
+      "1.5T Turbocharged Engine",
+      '10.25" Touchscreen Infotainment',
+      "Wireless Apple CarPlay & Android Auto",
+      "Rear Parking Camera",
+      "Keyless Entry & Push Start",
+      "5-Year / 100,000 km Warranty",
+    ],
+    cta: "Configure Yours",
+    featured: false,
+  },
+  {
     name: "T2 Traveller",
-    subtitle: "Signature Adventure — 4WD",
+    subtitle: "Best Seller — Adventure Ready",
     price: "32,990",
     period: "Starting MSRP",
-    image: vehicleImages.t2Side,
-    alt: "Jetour T2 Traveller profile",
     features: [
-      "2.0T High-Performance Engine (254 HP)",
+      "2.0T High-Performance Engine",
       "Smart 4WD with Terrain Modes",
       'Dual 12.3" Digital Cockpit',
       "Full ADAS Safety Suite",
@@ -18,43 +29,25 @@ const plans = [
       "Ventilated Leather Seats",
       "7-Year / 150,000 km Warranty",
     ],
-    cta: "Configure T2",
+    cta: "Configure Yours",
     featured: true,
   },
   {
-    name: "T2 Expedition Overland",
-    subtitle: "Overland Spec with Roof Platform",
-    price: "36,490",
-    period: "Starting MSRP",
-    image: vehicleImages.t2Hero,
-    alt: "Jetour T2 Overland Expedition with roof rack",
-    features: [
-      "Heavy-Duty Expedition Roof Platform",
-      "All-Terrain Tires & Reinforced Rims",
-      "BorgWarner X-WD with Rear E-Locker",
-      "Dual Recovery Tow Hooks & Underbody Armor",
-      "Water Fording Sensor Suite (700mm)",
-      "7-Year / 150,000 km Warranty",
-    ],
-    cta: "Configure Overland",
-    featured: false,
-  },
-  {
-    name: "T8 Flagship Luxury",
-    subtitle: "Executive Intelligent Hybrid",
+    name: "T8 Flagship",
+    subtitle: "Luxury Without Limits",
     price: "49,990",
     period: "Starting MSRP",
-    image: vehicleImages.t8,
-    alt: "Jetour T8 luxury flagship SUV",
     features: [
-      "Plug-in Hybrid (PHEV) Dual-Motor System",
-      "Executive 7-Seat VIP Layout",
-      "Level 2.5 Pilot Autonomous Suite",
-      "Acoustic Triple-Layer Glass",
-      "Head-Up Display & Smart Cockpit",
+      "Plug-in Hybrid (PHEV) Powertrain",
+      "Intelligent AWD System",
+      "Premium Multi-Row Seating",
+      "64-Color Ambient Lighting",
+      "Head-Up Display",
+      "Bose® Premium Audio",
+      "Autonomous Driving Level 2+",
       "7-Year / 150,000 km Warranty",
     ],
-    cta: "Inquire Flagship",
+    cta: "Configure Yours",
     featured: false,
   },
 ];
@@ -65,111 +58,94 @@ export default function Pricing() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <span className="text-sm font-semibold text-gold tracking-widest uppercase">
-            Transparent Pricing
+            Pricing
           </span>
           <h2 className="mt-3 text-4xl sm:text-5xl font-bold text-accent tracking-tight">
-            Premium Capability, Accessible Value
+            Premium, Priced Right
           </h2>
           <p className="mt-4 text-lg text-muted max-w-2xl mx-auto">
-            Adventure capability, uncompromising build quality, and comprehensive global
-            warranty coverage included with every vehicle.
+            Luxury features and adventure capability at prices that make sense.
+            All models include comprehensive warranty coverage.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 items-stretch">
+        <div className="grid md:grid-cols-3 gap-6 items-start">
           {plans.map((plan) => (
             <div
               key={plan.name}
-              className={`rounded-3xl p-8 border flex flex-col justify-between ${
+              className={`rounded-2xl p-8 border ${
                 plan.featured
-                  ? "border-gold bg-accent text-white scale-[1.02] shadow-2xl relative"
-                  : "border-border bg-white hover:border-gold/40 hover:shadow-xl transition-all"
+                  ? "border-gold bg-accent text-white scale-[1.03] shadow-2xl"
+                  : "border-border bg-white hover:border-gold/30 hover:shadow-lg"
               }`}
             >
               {plan.featured && (
-                <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 bg-gold text-accent text-xs font-black rounded-full tracking-wider uppercase shadow-md">
-                  Most Popular Choice
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-gold text-accent text-xs font-bold rounded-full tracking-wider uppercase">
+                  Most Popular
                 </div>
               )}
 
-              <div>
-                {/* Vehicle Thumbnail Preview */}
-                <div className="relative w-full h-44 rounded-2xl overflow-hidden mb-6 bg-slate-900 border border-white/10">
-                  <Image
-                    src={plan.image}
-                    alt={plan.alt}
-                    fill
-                    className="object-cover object-center"
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
-                  <span className="absolute bottom-2.5 left-3 text-xs font-semibold text-white/90 px-2.5 py-1 rounded-md bg-black/50 backdrop-blur-sm">
-                    {plan.name}
+              <div className="mb-6">
+                <h3
+                  className={`text-xl font-bold ${plan.featured ? "text-white" : "text-accent"}`}
+                >
+                  {plan.name}
+                </h3>
+                <p
+                  className={`text-sm mt-1 ${plan.featured ? "text-white/60" : "text-muted"}`}
+                >
+                  {plan.subtitle}
+                </p>
+              </div>
+
+              <div className="mb-6">
+                <div className="flex items-baseline gap-1">
+                  <span
+                    className={`text-sm ${plan.featured ? "text-white/60" : "text-muted"}`}
+                  >
+                    $
+                  </span>
+                  <span
+                    className={`text-4xl font-bold ${plan.featured ? "text-white" : "text-accent"}`}
+                  >
+                    {plan.price}
                   </span>
                 </div>
-
-                <div className="mb-6">
-                  <h3
-                    className={`text-2xl font-bold ${plan.featured ? "text-white" : "text-accent"}`}
-                  >
-                    {plan.name}
-                  </h3>
-                  <p
-                    className={`text-sm mt-1 ${plan.featured ? "text-white/70" : "text-muted"}`}
-                  >
-                    {plan.subtitle}
-                  </p>
-                </div>
-
-                <div className="mb-6 pb-6 border-b border-border/20">
-                  <div className="flex items-baseline gap-1">
-                    <span
-                      className={`text-sm ${plan.featured ? "text-white/60" : "text-muted"}`}
-                    >
-                      $
-                    </span>
-                    <span
-                      className={`text-4xl font-extrabold ${plan.featured ? "text-white" : "text-accent"}`}
-                    >
-                      {plan.price}
-                    </span>
-                  </div>
-                  <p
-                    className={`text-xs mt-1 font-medium ${plan.featured ? "text-gold" : "text-muted"}`}
-                  >
-                    {plan.period} · Standard Export Spec
-                  </p>
-                </div>
-
-                <ul className="space-y-3 mb-8">
-                  {plan.features.map((feature) => (
-                    <li key={feature} className="flex items-start gap-3">
-                      <svg
-                        className="w-5 h-5 mt-0.5 flex-shrink-0 text-gold"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M5 13l4 4L19 7"
-                        />
-                      </svg>
-                      <span
-                        className={`text-sm ${plan.featured ? "text-white/85" : "text-muted"}`}
-                      >
-                        {feature}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
+                <p
+                  className={`text-sm mt-1 ${plan.featured ? "text-white/40" : "text-muted"}`}
+                >
+                  {plan.period}
+                </p>
               </div>
+
+              <ul className="space-y-3 mb-8">
+                {plan.features.map((feature) => (
+                  <li key={feature} className="flex items-start gap-3">
+                    <svg
+                      className="w-5 h-5 mt-0.5 flex-shrink-0 text-gold"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                    <span
+                      className={`text-sm ${plan.featured ? "text-white/80" : "text-muted"}`}
+                    >
+                      {feature}
+                    </span>
+                  </li>
+                ))}
+              </ul>
 
               <a
                 href="#footer"
-                className={`block text-center py-3.5 rounded-xl font-bold text-sm transition-all shadow-md ${
+                className={`block text-center py-3.5 rounded-xl font-semibold text-sm transition-colors ${
                   plan.featured
                     ? "bg-gold text-accent hover:bg-gold-light"
                     : "bg-accent text-white hover:bg-accent-light"
