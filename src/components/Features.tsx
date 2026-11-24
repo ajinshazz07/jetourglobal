@@ -1,3 +1,6 @@
+import Image from "next/image";
+import { vehicleImages } from "@/assets/images";
+
 const features = [
   {
     icon: (
@@ -15,9 +18,9 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
       </svg>
     ),
-    title: "Hybrid Power",
+    title: "High-Output Turbo Power",
     description:
-      "Available PHEV technology across the range delivers high torque with lower emissions. Up to 100km pure electric range on select models.",
+      "2.0T turbocharged powerplants deliver up to 254 HP and 390 Nm of torque, pairing rapid highway acceleration with crawling power.",
   },
   {
     icon: (
@@ -25,9 +28,9 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
       </svg>
     ),
-    title: "Smart 4WD",
+    title: "Smart X-WD 4WD",
     description:
-      "Intelligent all-wheel drive with terrain response modes for sand, snow, mud, and rock. Adventure-ready from factory.",
+      "Intelligent all-wheel drive with 7 terrain response modes for sand, snow, mud, and rock. Instant power transfer in milliseconds.",
   },
   {
     icon: (
@@ -47,7 +50,7 @@ const features = [
     ),
     title: "Premium Comfort",
     description:
-      "Ventilated leather seats, panoramic sunroof, 64-color ambient lighting, and noise-cancelling cabin for a luxury experience.",
+      "Ventilated adventure leather seats, panoramic glass roof, 64-color ambient lighting, and acoustic noise-cancelling cabin.",
   },
   {
     icon: (
@@ -55,9 +58,9 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
       </svg>
     ),
-    title: "Best Value",
+    title: "Global 7-Year Warranty",
     description:
-      "Premium features at an accessible price. Industry-leading 7-year warranty and comprehensive after-sales service across 45+ countries.",
+      "Industry-leading 7-year / 150,000 km warranty coverage backed by authorized service centers across 45+ countries worldwide.",
   },
 ];
 
@@ -73,8 +76,8 @@ export default function Features() {
             Engineered for More
           </h2>
           <p className="mt-4 text-lg text-muted max-w-2xl mx-auto">
-            Every JETOUR is packed with technology and comfort features that
-            redefine what you expect from an SUV.
+            Every JETOUR is packed with rugged durability and smart technology that
+            redefines modern adventure.
           </p>
         </div>
 
@@ -95,6 +98,41 @@ export default function Features() {
               </p>
             </div>
           ))}
+        </div>
+
+        {/* Extreme Terrain Testing Spotlight */}
+        <div className="mt-16 rounded-3xl overflow-hidden bg-slate-900 border border-slate-800 grid md:grid-cols-2 items-center">
+          <div className="p-8 sm:p-12">
+            <span className="text-xs font-semibold tracking-wider text-gold uppercase px-3 py-1 rounded-full bg-gold/10 border border-gold/20 inline-block mb-4">
+              Rigorous Validation
+            </span>
+            <h3 className="text-3xl font-bold text-white tracking-tight">
+              Tested in the World’s Most Demanding Terrains
+            </h3>
+            <p className="mt-4 text-white/70 text-sm leading-relaxed">
+              Every Jetour Freedom model undergoes over 2 million kilometers of extreme endurance trials across scorching desert dunes, sub-zero snowfields, and rocky high-altitude passes.
+            </p>
+            <div className="mt-6 grid grid-cols-2 gap-4">
+              <div className="p-4 rounded-xl bg-white/5 border border-white/10">
+                <div className="text-2xl font-bold text-white">+53°C</div>
+                <div className="text-xs text-white/50 mt-1">Desert Heat Tested</div>
+              </div>
+              <div className="p-4 rounded-xl bg-white/5 border border-white/10">
+                <div className="text-2xl font-bold text-white">-40°C</div>
+                <div className="text-xs text-white/50 mt-1">Arctic Cold Start</div>
+              </div>
+            </div>
+          </div>
+          <div className="relative h-64 sm:h-80 md:h-full min-h-[320px]">
+            <Image
+              src={vehicleImages.desertAction}
+              alt="Jetour Freedom tested in extreme desert conditions"
+              fill
+              className="object-cover object-center"
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-slate-900 via-transparent to-transparent" />
+          </div>
         </div>
       </div>
     </section>

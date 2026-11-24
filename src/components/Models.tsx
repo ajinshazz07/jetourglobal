@@ -1,39 +1,46 @@
+import Image from "next/image";
+import { vehicleImages } from "@/assets/images";
+
 const models = [
   {
-    name: "T2 Traveller",
+    name: "T2 Freedom Expedition",
     tagline: "Born for the Wild",
     description:
-      "Box-styled rugged SUV with smart 4WD, high ground clearance, and a tech-forward cabin. Ready for any terrain.",
-    specs: ["2.0T Engine", "4WD", "7 Seats"],
-    gradient: "from-slate-800 via-slate-700 to-slate-900",
-    badge: "Adventure",
+      "Box-styled rugged SUV with smart 4WD, high ground clearance, and a tech-forward cabin. Ready for desert dunes and unpaved frontiers.",
+    specs: ["2.0T Turbo", "Smart X-WD", "220mm Clearance"],
+    image: vehicleImages.desertAction,
+    badge: "Overlanding",
+    gradient: "from-amber-950/80 via-slate-900 to-slate-950",
   },
   {
-    name: "Dashing",
-    tagline: "Future in Motion",
+    name: "Jetour Freedom 2.0T",
+    tagline: "Rugged Design & Power",
     description:
-      "Futuristic crossover with aggressive styling, flush door handles, and a minimalist digital cockpit for the urban driver.",
-    specs: ["1.6T Engine", "Sport Mode", "5 Seats"],
-    gradient: "from-blue-900 via-indigo-900 to-slate-900",
-    badge: "Urban",
+      "Bold geometric exterior with intelligent cockpit, spacious 5-seater versatility, and high-performance powertrain.",
+    specs: ["2.0T Engine", "7-Speed DCT", "Intelligent AWD"],
+    image: vehicleImages.freedom1,
+    badge: "Launch Edition",
+    gradient: "from-emerald-950/80 via-slate-900 to-slate-950",
   },
   {
-    name: "X70 Plus",
-    tagline: "Space for Everything",
+    name: "Freedom Off-Road",
+    tagline: "Uncharted Frontiers",
     description:
-      "Spacious family SUV with 7-seat flexibility, panoramic sunroof, and premium comfort for every journey.",
-    specs: ["1.5T Engine", "ADAS", "7 Seats"],
-    gradient: "from-emerald-900 via-teal-900 to-slate-900",
-    badge: "Family",
+      "Engineered with multi-terrain response modes, heavy-duty suspension, and full 360° trail surveillance cameras.",
+    specs: ["Terrain Select", "AWD Lock", "360° Cam"],
+    image: vehicleImages.freedom2,
+    badge: "Trail Master",
+    gradient: "from-blue-950/80 via-slate-900 to-slate-950",
   },
   {
-    name: "T8 Flagship",
-    tagline: "The Flagship",
+    name: "Freedom Desert Runner",
+    tagline: "High-Speed Dunes",
     description:
-      "Luxury all-terrain hybrid with intelligent driving tech, multi-row premium seating, and commanding presence.",
-    specs: ["PHEV", "AWD", "7 Seats"],
-    gradient: "from-amber-900 via-yellow-900 to-slate-900",
-    badge: "Flagship",
+      "Equipped with advanced cooling, sand traction algorithms, and reinforced underbody plates for relentless desert adventures.",
+    specs: ["254 HP", "Torque Vectoring", "7 Drive Modes"],
+    image: vehicleImages.desertAction,
+    badge: "Special Edition",
+    gradient: "from-orange-950/80 via-slate-900 to-slate-950",
   },
 ];
 
@@ -49,46 +56,62 @@ export default function Models() {
             Choose Your Journey
           </h2>
           <p className="mt-4 text-lg text-muted max-w-2xl mx-auto">
-            From rugged adventurers to sleek urban crossovers — find the JETOUR
+            From extreme desert conquerors to modern urban explorers — find the JETOUR
             that matches your lifestyle.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 gap-8">
           {models.map((model) => (
             <div
               key={model.name}
-              className={`relative group rounded-2xl bg-gradient-to-br ${model.gradient} p-8 sm:p-10 overflow-hidden min-h-[340px] flex flex-col justify-between transition-transform hover:scale-[1.02] cursor-pointer`}
+              className={`relative group rounded-3xl bg-gradient-to-br ${model.gradient} p-6 sm:p-8 overflow-hidden flex flex-col justify-between transition-all duration-300 hover:shadow-2xl hover:scale-[1.01] border border-slate-800`}
             >
-              {/* Decorative circle */}
-              <div className="absolute -right-16 -top-16 w-64 h-64 bg-white/5 rounded-full blur-2xl group-hover:bg-white/10 transition-colors" />
+              <div>
+                {/* Vehicle Image Frame */}
+                <div className="relative w-full h-56 sm:h-64 rounded-2xl overflow-hidden mb-6 bg-slate-950 border border-white/10">
+                  <Image
+                    src={model.image}
+                    alt={model.name}
+                    fill
+                    className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-black/20" />
+                  
+                  {/* Badge */}
+                  <div className="absolute top-3 left-3">
+                    <span className="px-3 py-1 rounded-full bg-black/60 backdrop-blur-md text-xs font-semibold text-white/90 border border-white/20">
+                      {model.badge}
+                    </span>
+                  </div>
+                </div>
 
-              <div className="relative z-10">
-                <span className="inline-block px-3 py-1 rounded-full bg-white/10 text-xs font-semibold text-white/70 tracking-wider uppercase mb-4">
-                  {model.badge}
-                </span>
-                <h3 className="text-3xl sm:text-4xl font-bold text-white">
+                <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
                   {model.name}
                 </h3>
-                <p className="text-gold font-medium mt-1">{model.tagline}</p>
-                <p className="mt-4 text-white/60 leading-relaxed max-w-sm">
+                <p className="text-gold font-medium text-sm mt-1">{model.tagline}</p>
+                <p className="mt-3 text-white/70 leading-relaxed text-sm">
                   {model.description}
                 </p>
               </div>
 
-              <div className="relative z-10 mt-6 flex flex-wrap items-center gap-3">
+              <div className="mt-6 pt-4 border-t border-white/10 flex flex-wrap items-center gap-2">
                 {model.specs.map((spec) => (
                   <span
                     key={spec}
-                    className="px-3 py-1.5 bg-white/10 rounded-lg text-sm text-white/80 font-medium"
+                    className="px-3 py-1 bg-white/10 rounded-lg text-xs sm:text-sm text-white/80 font-medium border border-white/5"
                   >
                     {spec}
                   </span>
                 ))}
-                <span className="ml-auto text-white/40 group-hover:text-gold transition-colors font-medium text-sm flex items-center gap-1">
-                  Learn more
+                <a
+                  href="#pricing"
+                  className="ml-auto text-gold hover:text-gold-light transition-colors font-medium text-sm flex items-center gap-1 group/btn"
+                >
+                  Configure
                   <svg
-                    className="w-4 h-4"
+                    className="w-4 h-4 transition-transform group-hover/btn:translate-x-1"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -100,7 +123,7 @@ export default function Models() {
                       d="M9 5l7 7-7 7"
                     />
                   </svg>
-                </span>
+                </a>
               </div>
             </div>
           ))}

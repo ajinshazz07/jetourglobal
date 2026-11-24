@@ -1,51 +1,50 @@
 const plans = [
   {
-    name: "X70 Plus",
-    subtitle: "The Smart Family Choice",
+    name: "Freedom 2.0T",
+    subtitle: "Launch Edition — Rugged & Agile",
     price: "24,990",
-    period: "Starting MSRP",
+    period: "Starting MSRP (~¥159,900)",
     features: [
-      "1.5T Turbocharged Engine",
-      '10.25" Touchscreen Infotainment',
+      "2.0T Turbocharged Direct-Injection Engine",
+      '10.25" Ultra-Clear Touchscreen Display',
       "Wireless Apple CarPlay & Android Auto",
-      "Rear Parking Camera",
-      "Keyless Entry & Push Start",
+      "Reverse Camera with Dynamic Guidelines",
+      "Keyless Entry & Remote Engine Start",
       "5-Year / 100,000 km Warranty",
     ],
     cta: "Configure Yours",
     featured: false,
   },
   {
-    name: "T2 Traveller",
-    subtitle: "Best Seller — Adventure Ready",
+    name: "T2 Freedom Expedition",
+    subtitle: "Best Seller — Desert & Trail Ready",
     price: "32,990",
     period: "Starting MSRP",
     features: [
-      "2.0T High-Performance Engine",
-      "Smart 4WD with Terrain Modes",
-      'Dual 12.3" Digital Cockpit',
-      "Full ADAS Safety Suite",
-      "Panoramic Sunroof",
-      "Ventilated Leather Seats",
-      "7-Year / 150,000 km Warranty",
+      "2.0T High-Performance Engine (254 HP)",
+      "Smart X-WD with 7 Terrain Modes",
+      'Dual 12.3" Full Digital Cockpit',
+      "Full ADAS Safety Pilot Suite",
+      "Panoramic Sunroof & Roof Carrier Mounts",
+      "Ventilated Leather Adventure Seats",
+      "7-Year / 150,000 km Global Warranty",
     ],
     cta: "Configure Yours",
     featured: true,
   },
   {
-    name: "T8 Flagship",
-    subtitle: "Luxury Without Limits",
-    price: "49,990",
+    name: "Freedom Off-Road Flagship",
+    subtitle: "Ultimate All-Terrain Dominance",
+    price: "42,990",
     period: "Starting MSRP",
     features: [
-      "Plug-in Hybrid (PHEV) Powertrain",
-      "Intelligent AWD System",
-      "Premium Multi-Row Seating",
-      "64-Color Ambient Lighting",
-      "Head-Up Display",
-      "Bose® Premium Audio",
-      "Autonomous Driving Level 2+",
-      "7-Year / 150,000 km Warranty",
+      "Torque Vectoring AWD with Rear Diff Lock",
+      "360° Transparent Chassis Trail Camera",
+      "Reinforced Underbody Steel Armor",
+      "64-Color Dynamic Ambient Cabin Lights",
+      "Sony Premium Sound System",
+      "Autonomous Trail Crawl & Descent Control",
+      "7-Year / 150,000 km Global Warranty",
     ],
     cta: "Configure Yours",
     featured: false,
@@ -58,14 +57,14 @@ export default function Pricing() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <span className="text-sm font-semibold text-gold tracking-widest uppercase">
-            Pricing
+            Pricing & Trims
           </span>
           <h2 className="mt-3 text-4xl sm:text-5xl font-bold text-accent tracking-tight">
             Premium, Priced Right
           </h2>
           <p className="mt-4 text-lg text-muted max-w-2xl mx-auto">
-            Luxury features and adventure capability at prices that make sense.
-            All models include comprehensive warranty coverage.
+            Rugged capability and premium luxury features at accessible prices.
+            All models include our industry-leading global warranty.
           </p>
         </div>
 
@@ -75,12 +74,12 @@ export default function Pricing() {
               key={plan.name}
               className={`rounded-2xl p-8 border ${
                 plan.featured
-                  ? "border-gold bg-accent text-white scale-[1.03] shadow-2xl"
-                  : "border-border bg-white hover:border-gold/30 hover:shadow-lg"
+                  ? "border-gold bg-accent text-white scale-[1.03] shadow-2xl relative"
+                  : "border-border bg-white hover:border-gold/30 hover:shadow-lg transition-all"
               }`}
             >
               {plan.featured && (
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-gold text-accent text-xs font-bold rounded-full tracking-wider uppercase">
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-gold text-accent text-xs font-bold rounded-full tracking-wider uppercase shadow-md">
                   Most Popular
                 </div>
               )}
