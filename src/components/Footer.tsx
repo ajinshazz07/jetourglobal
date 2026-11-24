@@ -1,3 +1,6 @@
+import Image from "next/image";
+import { brandLogos } from "@/assets/images";
+
 const footerLinks = {
   Models: [
     { label: "T2 Traveller 4WD (Available)", href: "#models" },
@@ -89,11 +92,14 @@ export default function Footer() {
       {/* Bottom Bar */}
       <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-gold/20 border border-gold/30 rounded-lg flex items-center justify-center">
-              <span className="text-gold font-bold text-sm">J</span>
-            </div>
-            <span className="text-sm font-bold tracking-widest">JETOUR</span>
+          <div className="relative h-6 w-28 flex items-center">
+            <Image
+              src={brandLogos.jetourLogoWhite}
+              alt="JETOUR"
+              fill
+              className="object-contain object-left"
+              sizes="112px"
+            />
           </div>
           <p className="text-xs text-white/40 text-center sm:text-left">
             © 2026 JETOUR Global. All rights reserved. A Chery Holding brand.

@@ -1,6 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
+import { brandLogos } from "@/assets/images";
 
 const navLinks = [
   { label: "Models", href: "#models" },
@@ -55,18 +57,21 @@ export default function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between">
           {/* Brand Logo */}
-          <a href="#" className="flex items-center gap-2.5 group">
-            <div className="w-9 h-9 sm:w-10 sm:h-10 bg-gold rounded-xl flex items-center justify-center shadow-md transition-transform group-hover:scale-105">
-              <span className="text-accent font-black text-base sm:text-lg">J</span>
+          <a href="#" className="flex items-center gap-3 group py-1" aria-label="JETOUR Home">
+            <div className="relative h-6 sm:h-7 w-32 sm:w-36 flex items-center transition-transform group-hover:scale-105">
+              <Image
+                src={brandLogos.jetourLogoWhite}
+                alt="JETOUR"
+                fill
+                priority
+                className="object-contain object-left"
+                sizes="(max-width: 640px) 128px, 144px"
+              />
             </div>
-            <div className="flex flex-col">
-              <span className="text-lg sm:text-xl font-extrabold tracking-widest text-white leading-none">
-                JETOUR
-              </span>
-              <span className="text-[9px] font-semibold text-gold tracking-wider uppercase mt-0.5">
-                Travel+ Global
-              </span>
-            </div>
+            <span className="hidden sm:inline-block h-3.5 w-[1px] bg-white/20" />
+            <span className="hidden sm:inline-block text-[10px] font-semibold text-gold tracking-widest uppercase">
+              Global
+            </span>
           </a>
 
           {/* Desktop Nav */}
@@ -144,13 +149,14 @@ export default function Navbar() {
           <div>
             {/* Header in drawer */}
             <div className="flex items-center justify-between pb-5 border-b border-white/10">
-              <div className="flex items-center gap-2">
-                <div className="w-8 h-8 bg-gold rounded-lg flex items-center justify-center text-accent font-black text-sm">
-                  J
-                </div>
-                <span className="text-white font-bold tracking-widest text-base">
-                  JETOUR
-                </span>
+              <div className="relative h-6 w-28 flex items-center">
+                <Image
+                  src={brandLogos.jetourLogoWhite}
+                  alt="JETOUR"
+                  fill
+                  className="object-contain object-left"
+                  sizes="112px"
+                />
               </div>
               <button
                 onClick={() => setMenuOpen(false)}

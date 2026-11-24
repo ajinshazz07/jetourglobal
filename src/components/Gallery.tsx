@@ -6,165 +6,165 @@ import { galleryImages } from "@/assets/images";
 
 interface GalleryItem {
   id: number;
-  image: typeof galleryImages.gallery01;
+  image: (typeof galleryImages)[keyof typeof galleryImages];
   title: string;
   location: string;
   category: "all" | "overlanding" | "expedition" | "lifestyle";
   tag: string;
-  colSpan?: string; // for bento layout highlights
-  aspectRatio?: string;
 }
 
 const galleryItems: GalleryItem[] = [
   {
     id: 1,
-    image: galleryImages.gallery01,
-    title: "Alpine River Fly-Fishing",
-    location: "High Sierra Valley",
-    category: "overlanding",
-    tag: "Overlanding",
-    colSpan: "col-span-1 sm:col-span-2 lg:col-span-2",
-    aspectRatio: "aspect-[16/9] sm:aspect-[21/9] lg:aspect-[16/8]",
+    image: galleryImages.galleryT2Sunset,
+    title: "Alpine Sunset Summit",
+    location: "High Peak Expedition Trail",
+    category: "expedition",
+    tag: "T2 Explorer",
   },
   {
     id: 2,
-    image: galleryImages.gallery02,
-    title: "Hidden Coastal Cove",
-    location: "Red Sea Lagoon, Marsa Alam",
+    image: galleryImages.galleryG700Red,
+    title: "Cinematic Desert Flare",
+    location: "Dune Basin Night Stage",
     category: "lifestyle",
-    tag: "Coastal",
-    colSpan: "col-span-1 sm:col-span-2 lg:col-span-1",
-    aspectRatio: "aspect-[4/3] sm:aspect-[16/10]",
+    tag: "G700 Flagship",
   },
   {
     id: 3,
-    image: galleryImages.gallery03,
-    title: "Global JETOUR Owners Club",
-    location: "International Desert Rally",
-    category: "lifestyle",
-    tag: "Community",
-    colSpan: "col-span-1 sm:col-span-2 lg:col-span-1",
-    aspectRatio: "aspect-[4/3] sm:aspect-[16/10]",
+    image: galleryImages.gallery01,
+    title: "High Mountain River Crossing",
+    location: "Alpine Snowpeak Stream",
+    category: "overlanding",
+    tag: "4WD Explorer",
   },
   {
     id: 4,
-    image: galleryImages.gallery04,
-    title: "Serengeti Cheetah Encounter",
-    location: "Namibian Wilderness Trail",
+    image: galleryImages.galleryG700Arch,
+    title: "Sandstone Canyon Arch",
+    location: "Terracotta Desert Pass",
     category: "expedition",
-    tag: "Safari",
-    colSpan: "col-span-1 sm:col-span-2 lg:col-span-2",
-    aspectRatio: "aspect-[16/9] sm:aspect-[21/9] lg:aspect-[16/8]",
+    tag: "Rock Crawling",
   },
   {
     id: 5,
-    image: galleryImages.gallery05,
-    title: "Open Sunroof Wildlife Shoot",
-    location: "Wax Palms Cloud Forest",
-    category: "lifestyle",
-    tag: "Highland",
-    colSpan: "col-span-1",
-    aspectRatio: "aspect-[4/3]",
+    image: galleryImages.gallery04,
+    title: "African Savannah Trail",
+    location: "Serengeti Wildlife Corridor",
+    category: "expedition",
+    tag: "Wild Safari",
   },
   {
     id: 6,
-    image: galleryImages.gallery06,
-    title: "Riverside Camp & Companion",
-    location: "Crystal River Basin",
-    category: "overlanding",
-    tag: "Camp Life",
-    colSpan: "col-span-1",
-    aspectRatio: "aspect-[4/3]",
+    image: galleryImages.gallery09,
+    title: "Arctic Aurora Stargazing",
+    location: "Lapland Sub-Zero Glacier",
+    category: "expedition",
+    tag: "Arctic Trial",
   },
   {
     id: 7,
-    image: galleryImages.gallery07,
-    title: "High Andean Volcanic Pass",
-    location: "Cotopaxi High Plateau (4,200m)",
-    category: "expedition",
-    tag: "High Altitude",
-    colSpan: "col-span-1 sm:col-span-2 lg:col-span-1",
-    aspectRatio: "aspect-[4/3]",
+    image: galleryImages.gallerySteppeRange,
+    title: "Vast High Plateau Horizon",
+    location: "Continental Mountain Divide",
+    category: "lifestyle",
+    tag: "Open Plains",
   },
   {
     id: 8,
-    image: galleryImages.gallery08,
-    title: "Sunset Surf Expedition",
-    location: "Gold Coast Dunes",
+    image: galleryImages.gallery02,
+    title: "Red Sea Coastal Lagoon",
+    location: "Marsa Alam Cliffside Cove",
     category: "lifestyle",
-    tag: "Ocean Coast",
-    colSpan: "col-span-1",
-    aspectRatio: "aspect-square",
+    tag: "Coastline",
   },
   {
     id: 9,
-    image: galleryImages.gallery09,
-    title: "Arctic Aurora Borealis Roof Watch",
-    location: "Lapland Sub-Zero Snowfields",
-    category: "expedition",
-    tag: "Arctic Nights",
-    colSpan: "col-span-1 sm:col-span-2 lg:col-span-1",
-    aspectRatio: "aspect-square",
+    image: galleryImages.gallery11,
+    title: "T2 TOPFIRE Custom Surf",
+    location: "Pacific Surf Coastline",
+    category: "overlanding",
+    tag: "TOPFIRE Edition",
   },
   {
     id: 10,
-    image: galleryImages.gallery10,
-    title: "Lakeside Glamping & Picnic",
-    location: "Emerald Mountain Lake",
+    image: galleryImages.gallery06,
+    title: "Riverside Camp & Companion",
+    location: "Crystal River Valley",
     category: "overlanding",
-    tag: "Glamping",
-    colSpan: "col-span-1",
-    aspectRatio: "aspect-square",
+    tag: "Basecamp",
   },
   {
     id: 11,
-    image: galleryImages.gallery11,
-    title: "T2 TOPFIRE Custom on Surf",
-    location: "Pacific Tide Coastline",
-    category: "overlanding",
-    tag: "TOPFIRE Livery",
-    colSpan: "col-span-1",
-    aspectRatio: "aspect-square",
+    image: galleryImages.gallery14,
+    title: "Arabian Desert Steppe Run",
+    location: "Golden Dune Gallop Challenge",
+    category: "expedition",
+    tag: "Desert Speed",
   },
   {
     id: 12,
-    image: galleryImages.gallery12,
-    title: "Golden Hour Desert Command",
-    location: "Arabian Dune Ridge",
-    category: "expedition",
-    tag: "Sunset",
-    colSpan: "col-span-1",
-    aspectRatio: "aspect-[4/3]",
+    image: galleryImages.gallery10,
+    title: "Lakeside Glamping & Retreat",
+    location: "Emerald Mountain Lake",
+    category: "overlanding",
+    tag: "Glamping",
   },
   {
     id: 13,
     image: galleryImages.gallery13,
-    title: "Bedouin Desert Campfire",
-    location: "Rub' al Khali Stargazing",
+    title: "Bedouin Campfire Stargazing",
+    location: "Rub' al Khali Deep Desert",
     category: "lifestyle",
     tag: "Night Camp",
-    colSpan: "col-span-1",
-    aspectRatio: "aspect-[4/3]",
   },
   {
     id: 14,
-    image: galleryImages.gallery14,
-    title: "Desert Horse Sprint Challenge",
-    location: "Arabian Peninsula Steppes",
+    image: galleryImages.gallery07,
+    title: "Cotopaxi Volcano High Pass",
+    location: "Andean High Altitude (4,200m)",
     category: "expedition",
-    tag: "Desert Speed",
-    colSpan: "col-span-1",
-    aspectRatio: "aspect-[4/3]",
+    tag: "High Altitude",
   },
   {
     id: 15,
+    image: galleryImages.gallery05,
+    title: "Highland Sunroof Photography",
+    location: "Wax Palms Cloud Forest",
+    category: "lifestyle",
+    tag: "Sunroof View",
+  },
+  {
+    id: 16,
+    image: galleryImages.gallery08,
+    title: "Ocean Dune Surf Trip",
+    location: "Gold Coast Sand Dunes",
+    category: "lifestyle",
+    tag: "Beach Adventure",
+  },
+  {
+    id: 17,
+    image: galleryImages.gallery03,
+    title: "Global JETOUR Owners Rally",
+    location: "International Desert Club Meet",
+    category: "lifestyle",
+    tag: "Community",
+  },
+  {
+    id: 18,
     image: galleryImages.gallery15,
     title: "Alpine Paddleboard Preparation",
-    location: "Highland Forest Reservoir",
+    location: "Highland Mountain Reservoir",
     category: "overlanding",
     tag: "Water Sports",
-    colSpan: "col-span-1 sm:col-span-2 lg:col-span-1",
-    aspectRatio: "aspect-[4/3]",
+  },
+  {
+    id: 19,
+    image: galleryImages.gallery12,
+    title: "Sunset Desert Ridge Command",
+    location: "Arabian Peninsula Escarpment",
+    category: "expedition",
+    tag: "Golden Hour",
   },
 ];
 
@@ -200,7 +200,7 @@ export default function Gallery() {
     );
   }, [activeLightboxIndex, filteredItems.length]);
 
-  // Keyboard controls for lightbox
+  // Keyboard navigation for lightbox
   useEffect(() => {
     if (activeLightboxIndex === null) return;
 
@@ -236,7 +236,7 @@ export default function Gallery() {
             Built for Every Horizon
           </h2>
           <p className="mt-3.5 text-white/70 text-sm sm:text-base md:text-lg leading-relaxed">
-            From arctic snowdrifts to deep desert sands and sun-drenched coastlines — experience how the JETOUR community takes adventure beyond boundaries.
+            From arctic snowdrifts to deep desert dunes and wild coastlines — experience how JETOUR drivers explore the world with zero compromises.
           </p>
 
           {/* Category Filter Pills */}
@@ -250,7 +250,7 @@ export default function Gallery() {
               },
               {
                 id: "expedition",
-                label: "Expedition & Nature",
+                label: "Expedition & Trail",
                 count: galleryItems.filter((i) => i.category === "expedition").length,
               },
               {
@@ -284,28 +284,26 @@ export default function Gallery() {
           </div>
         </div>
 
-        {/* Gallery Bento Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+        {/* Flawlessly Aligned Gallery Grid: 1 Col Mobile, 2 Col Tablet, 3 Col Desktop */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 w-full">
           {filteredItems.map((item, index) => (
             <div
               key={item.id}
               onClick={() => openLightbox(index)}
-              className={`group relative overflow-hidden rounded-2xl sm:rounded-3xl cursor-pointer border border-white/10 hover:border-gold/60 transition-all duration-500 hover:shadow-2xl hover:shadow-gold/15 bg-slate-900 ${
-                activeFilter === "all" ? item.colSpan || "col-span-1" : "col-span-1"
-              }`}
+              className="group relative overflow-hidden rounded-2xl sm:rounded-3xl cursor-pointer border border-white/10 hover:border-gold/60 transition-all duration-500 hover:shadow-2xl hover:shadow-gold/15 bg-slate-900"
             >
-              {/* Image Container with Hover Scale */}
-              <div className={`relative w-full ${item.aspectRatio || "aspect-[4/3]"} overflow-hidden`}>
+              {/* Perfectly Balanced Image Container with Hover Scale */}
+              <div className="relative w-full aspect-[16/11] overflow-hidden">
                 <Image
                   src={item.image}
                   alt={item.title}
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.08] group-hover:rotate-[0.5deg]"
+                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.07] group-hover:rotate-[0.5deg]"
                 />
 
-                {/* Always visible bottom vignette gradient */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent transition-opacity duration-500 group-hover:from-black/95 group-hover:via-black/45" />
+                {/* Dark Vignette Overlay with Deepening on Hover */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent transition-opacity duration-500 group-hover:from-black/95 group-hover:via-black/50" />
 
                 {/* Top Corner Badge & Hover Expand Button */}
                 <div className="absolute top-3.5 inset-x-3.5 flex items-center justify-between z-10 pointer-events-none">
@@ -314,7 +312,7 @@ export default function Gallery() {
                   </span>
 
                   {/* Expand icon appearing on hover */}
-                  <div className="w-8 h-8 rounded-full bg-gold/90 text-accent flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 scale-75 group-hover:scale-100 shadow-lg">
+                  <div className="w-8 h-8 rounded-full bg-gold text-accent flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 scale-75 group-hover:scale-100 shadow-lg">
                     <svg
                       className="w-4 h-4"
                       fill="none"
@@ -353,14 +351,14 @@ export default function Gallery() {
                         d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                       />
                     </svg>
-                    <span>{item.location}</span>
+                    <span className="truncate">{item.location}</span>
                   </div>
-                  <h3 className="text-base sm:text-lg md:text-xl font-bold text-white tracking-tight leading-snug drop-shadow-md">
+                  <h3 className="text-base sm:text-lg font-bold text-white tracking-tight leading-snug drop-shadow-md">
                     {item.title}
                   </h3>
                 </div>
 
-                {/* Subtle Inner Glow on Hover */}
+                {/* Subtle Inner Ring Glow on Hover */}
                 <div className="absolute inset-0 ring-1 ring-inset ring-white/10 group-hover:ring-gold/40 rounded-2xl sm:rounded-3xl transition-colors duration-500 pointer-events-none" />
               </div>
             </div>
@@ -386,7 +384,7 @@ export default function Gallery() {
               <span className="text-gold text-xs sm:text-sm font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-gold/10 border border-gold/30">
                 {filteredItems[activeLightboxIndex].tag}
               </span>
-              <span className="text-white/60 text-xs sm:text-sm">
+              <span className="text-white/60 text-xs sm:text-sm font-medium">
                 {activeLightboxIndex + 1} / {filteredItems.length}
               </span>
             </div>

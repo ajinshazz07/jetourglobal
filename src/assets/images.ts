@@ -1,3 +1,12 @@
+// Brand & Model Logos
+import jetourLogo from "./images/jetour-logo.png";
+import jetourLogoWhite from "./images/jetour-logo-white.png";
+import logoT2 from "./images/logo-t2.png";
+import logoG700 from "./images/logo-g700.png";
+import logoG700Topfire from "./images/logo-g700-topfire.png";
+import logoT1 from "./images/logo-t1.png";
+
+// Vehicle Studio Renders
 import g700Studio from "./images/jetour-g700-studio.jpg";
 import f700Pickup from "./images/jetour-f700-pickup.jpg";
 import t2Topfire from "./images/jetour-t2-topfire.png";
@@ -8,6 +17,10 @@ import t1Green from "./images/jetour-t1-green.png";
 import t1Gray from "./images/jetour-t1-gray.png";
 
 // Gallery Lifestyle & Adventure Images
+import galleryT2Sunset from "./images/gallery/gallery-new-t2-sunset.jpg";
+import galleryG700Arch from "./images/gallery/gallery-new-g700-arch.jpg";
+import galleryG700Red from "./images/gallery/gallery-new-g700-red.jpg";
+import gallerySteppeRange from "./images/gallery/gallery-new-steppe-range.jpg";
 import gallery01 from "./images/gallery/gallery-01.jpg";
 import gallery02 from "./images/gallery/gallery-02.jpg";
 import gallery03 from "./images/gallery/gallery-03.jpg";
@@ -24,6 +37,15 @@ import gallery13 from "./images/gallery/gallery-13.jpg";
 import gallery14 from "./images/gallery/gallery-14.jpg";
 import gallery15 from "./images/gallery/gallery-15.jpg";
 
+export const brandLogos = {
+  jetourLogo,
+  jetourLogoWhite,
+  logoT2,
+  logoG700,
+  logoG700Topfire,
+  logoT1,
+};
+
 export const vehicleImages = {
   g700Studio,
   f700Pickup,
@@ -36,6 +58,10 @@ export const vehicleImages = {
 };
 
 export const galleryImages = {
+  galleryT2Sunset,
+  galleryG700Arch,
+  galleryG700Red,
+  gallerySteppeRange,
   gallery01,
   gallery02,
   gallery03,
