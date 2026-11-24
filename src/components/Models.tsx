@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { vehicleImages } from "@/assets/images";
+import { vehicleImages, brandLogos } from "@/assets/images";
 
 const models = [
   {
@@ -9,6 +9,7 @@ const models = [
       "Box-styled rugged 4WD SUV with rear spare wheel carrier, intelligent BorgWarner torque distribution, dual 12.3\" cockpit, and 220mm ground clearance. In stock now.",
     specs: ["2.0T Turbo (254 HP)", "Smart X-WD", "Rear Spare Carrier", "220mm Clearance"],
     image: vehicleImages.t2Silver,
+    logo: brandLogos.logoT2,
     badge: "Available Now",
     isComingSoon: false,
     gradient: "from-emerald-950/70 via-slate-900 to-slate-950",
@@ -20,6 +21,7 @@ const models = [
       "Custom-tuned expedition specialist featuring iconic retro sunset mountain livery, heavy-duty all-terrain tires, roof expedition rack, and 7 terrain modes.",
     specs: ["TOPFIRE Tune", "AT Rugged Tires", "Roof Rack & Tent", "7 Modes"],
     image: vehicleImages.t2Topfire,
+    logo: brandLogos.logoT2,
     badge: "Special Edition · Available",
     isComingSoon: false,
     gradient: "from-sky-950/70 via-slate-900 to-slate-950",
@@ -31,6 +33,7 @@ const models = [
       "Commanding full-size luxury SUV with intelligent PHEV powertrain, triple digital displays, adaptive air suspension, and executive 7-seat versatility.",
     specs: ["380 HP Hybrid", "Smart AWD", "7 Seats", "Expected 2027"],
     image: vehicleImages.g700Studio,
+    logo: brandLogos.logoG700,
     badge: "Coming Soon",
     isComingSoon: true,
     gradient: "from-amber-950/50 via-slate-900 to-slate-950",
@@ -53,6 +56,7 @@ const models = [
       "Compact, boxy urban adventure crossover with flush door handles, class-leading fuel efficiency, and intelligent digital driver assistance.",
     specs: ["1.5T / 2.0T", "5.8 L/100km", "Dual 12.3\" Cockpit", "Late 2026"],
     image: vehicleImages.t1Green,
+    logo: brandLogos.logoT1,
     badge: "Coming Soon",
     isComingSoon: true,
     gradient: "from-slate-900 via-slate-900 to-slate-950",
@@ -64,6 +68,7 @@ const models = [
       "Deep metallic blue executive edition with intelligent multi-terrain drive selector, acoustic soundproofing, and panoramic glass roof.",
     specs: ["PHEV AWD", "Acoustic Glass", "Panoramic Roof", "Expected 2027"],
     image: vehicleImages.g700Blue,
+    logo: brandLogos.logoG700,
     badge: "Coming Soon",
     isComingSoon: true,
     gradient: "from-slate-900 via-slate-900 to-slate-950",
@@ -119,6 +124,19 @@ export default function Models() {
                       {model.badge}
                     </span>
                   </div>
+
+                  {/* Model Emblem */}
+                  {model.logo && (
+                    <div className="absolute top-3 right-3 h-5 sm:h-6 w-14 sm:w-16 flex items-center justify-end">
+                      <Image
+                        src={model.logo}
+                        alt={model.name}
+                        fill
+                        className="object-contain object-right opacity-80 group-hover:opacity-100 transition-opacity"
+                        sizes="64px"
+                      />
+                    </div>
+                  )}
                 </div>
 
                 <div className="flex items-baseline justify-between gap-2">
