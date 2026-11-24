@@ -16,7 +16,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
+      setScrolled(window.scrollY > 30);
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
@@ -48,18 +48,18 @@ export default function Navbar() {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 w-full ${
           scrolled
-            ? "bg-white/95 backdrop-blur-xl border-b border-border shadow-sm py-2.5 sm:py-3"
-            : "bg-white/80 backdrop-blur-md border-b border-white/20 py-3 sm:py-4"
+            ? "bg-slate-950/90 backdrop-blur-xl border-b border-white/10 shadow-xl py-2.5 sm:py-3"
+            : "bg-gradient-to-b from-black/85 via-black/40 to-transparent py-4 border-b border-transparent"
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between">
           {/* Brand Logo */}
           <a href="#" className="flex items-center gap-2.5 group">
-            <div className="w-9 h-9 sm:w-10 sm:h-10 bg-accent rounded-xl flex items-center justify-center shadow-md transition-transform group-hover:scale-105">
-              <span className="text-white font-bold text-base sm:text-lg">J</span>
+            <div className="w-9 h-9 sm:w-10 sm:h-10 bg-gold rounded-xl flex items-center justify-center shadow-md transition-transform group-hover:scale-105">
+              <span className="text-accent font-black text-base sm:text-lg">J</span>
             </div>
             <div className="flex flex-col">
-              <span className="text-lg sm:text-xl font-extrabold tracking-widest text-accent leading-none">
+              <span className="text-lg sm:text-xl font-extrabold tracking-widest text-white leading-none">
                 JETOUR
               </span>
               <span className="text-[9px] font-semibold text-gold tracking-wider uppercase mt-0.5">
@@ -74,14 +74,14 @@ export default function Navbar() {
               <a
                 key={link.label}
                 href={link.href}
-                className="text-sm font-medium text-muted hover:text-foreground transition-colors hover:text-accent relative py-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gold hover:after:w-full after:transition-all"
+                className="text-sm font-medium text-white/80 hover:text-white transition-colors relative py-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gold hover:after:w-full after:transition-all"
               >
                 {link.label}
               </a>
             ))}
             <a
               href="#pricing"
-              className="bg-accent text-white px-5 py-2.5 rounded-xl text-sm font-semibold hover:bg-accent-light transition-all shadow-md hover:shadow-accent/20 active:scale-95"
+              className="bg-gold hover:bg-gold-light text-accent px-5 py-2.5 rounded-xl text-sm font-bold transition-all shadow-lg hover:shadow-gold/20 active:scale-95"
             >
               Book a Test Drive
             </a>
@@ -89,7 +89,7 @@ export default function Navbar() {
 
           {/* Mobile Menu Hamburger Button */}
           <button
-            className="md:hidden w-10 h-10 flex items-center justify-center rounded-xl bg-slate-100 text-slate-800 hover:bg-slate-200 transition-colors cursor-pointer active:scale-90"
+            className="md:hidden w-10 h-10 flex items-center justify-center rounded-xl bg-white/10 text-white border border-white/20 hover:bg-white/20 transition-colors cursor-pointer active:scale-90"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle navigation menu"
             aria-expanded={menuOpen}
@@ -130,7 +130,7 @@ export default function Navbar() {
       >
         {/* Backdrop overlay */}
         <div
-          className="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity"
+          className="absolute inset-0 bg-black/70 backdrop-blur-md transition-opacity"
           onClick={() => setMenuOpen(false)}
         />
 

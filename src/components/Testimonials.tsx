@@ -2,7 +2,7 @@ const testimonials = [
   {
     name: "Ahmed Al-Rashid",
     location: "Dubai, UAE",
-    model: "T2 Freedom Expedition",
+    model: "T2 Traveller 4WD",
     quote:
       "Took the T2 on a weekend desert trip and it handled the high dunes like a dream. The cabin is quiet, robust, and luxurious for the price. Best value 4WD I've driven.",
     rating: 5,
@@ -10,15 +10,15 @@ const testimonials = [
   {
     name: "Maria Santos",
     location: "São Paulo, Brazil",
-    model: "Freedom 2.0T",
+    model: "T2 2.0T Smart X-WD",
     quote:
-      "With three kids, space and safety were everything. The Freedom gives us ample room for the whole family and all the tech to keep everyone entertained. The 7-year warranty is unmatched.",
+      "With three kids, space and safety were everything. The T2 gives us ample room for the whole family and all the tech to keep everyone entertained. The 7-year warranty is unmatched.",
     rating: 5,
   },
   {
     name: "James Okonkwo",
     location: "Lagos, Nigeria",
-    model: "Freedom Off-Road",
+    model: "T2 TOPFIRE Edition",
     quote:
       "The bold boxy styling turns heads everywhere. High ground clearance, full 360° trail cameras — it tackles unpaved roads with zero fuss and premium comfort.",
     rating: 5,
@@ -26,7 +26,7 @@ const testimonials = [
   {
     name: "Lin Mei Chen",
     location: "Kuala Lumpur, Malaysia",
-    model: "T2 Freedom",
+    model: "T2 4WD Explorer",
     quote:
       "Daily commutes in heavy monsoon rain feel totally secure with the intelligent X-WD system. High torque, sharp looks, and incredible fuel efficiency.",
     rating: 5,

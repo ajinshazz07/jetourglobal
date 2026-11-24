@@ -1,23 +1,24 @@
 const plans = [
   {
-    name: "Freedom 2.0T",
-    subtitle: "Launch Edition — Rugged & Agile",
-    price: "24,990",
-    period: "Starting MSRP (~¥159,900)",
+    name: "T1 Cross Urban",
+    subtitle: "Coming Soon · Expected Late 2026",
+    price: "21,990",
+    period: "Estimated Starting MSRP",
     features: [
-      "2.0T Turbocharged Direct-Injection Engine",
+      "1.5T / 2.0T Direct-Injection Turbo Engine",
       '10.25" Ultra-Clear Touchscreen Display',
       "Wireless Apple CarPlay & Android Auto",
-      "Reverse Camera with Dynamic Guidelines",
+      "5.8 L/100km Fuel Consumption",
       "Keyless Entry & Remote Engine Start",
-      "5-Year / 100,000 km Warranty",
+      "7-Year / 150,000 km Global Warranty",
     ],
-    cta: "Configure Yours",
+    cta: "Join Waitlist",
     featured: false,
+    comingSoon: true,
   },
   {
-    name: "T2 Freedom Expedition",
-    subtitle: "Best Seller — Desert & Trail Ready",
+    name: "T2 Traveller 4WD",
+    subtitle: "Available Now · Ready for Delivery",
     price: "32,990",
     period: "Starting MSRP",
     features: [
@@ -25,64 +26,69 @@ const plans = [
       "Smart X-WD with 7 Terrain Modes",
       'Dual 12.3" Full Digital Cockpit',
       "Full ADAS Safety Pilot Suite",
-      "Panoramic Sunroof & Roof Carrier Mounts",
-      "Ventilated Leather Adventure Seats",
+      "Rear Spare Wheel Carrier & Roof Mounts",
+      "Ventilated Adventure Leather Seats",
       "7-Year / 150,000 km Global Warranty",
     ],
-    cta: "Configure Yours",
+    cta: "Order T2 Now",
     featured: true,
+    comingSoon: false,
   },
   {
-    name: "Freedom Off-Road Flagship",
-    subtitle: "Ultimate All-Terrain Dominance",
-    price: "42,990",
-    period: "Starting MSRP",
+    name: "G700 / F700 Flagship",
+    subtitle: "Coming Soon · Expected 2027",
+    price: "48,990",
+    period: "Estimated Starting MSRP",
     features: [
-      "Torque Vectoring AWD with Rear Diff Lock",
+      "PHEV Hybrid 380 HP / 615 N·m Torque",
+      "3.5-Ton Towing / Dual Locking Diffs",
       "360° Transparent Chassis Trail Camera",
-      "Reinforced Underbody Steel Armor",
-      "64-Color Dynamic Ambient Cabin Lights",
+      "Executive 7-Seat Lounge & Triple Displays",
       "Sony Premium Sound System",
-      "Autonomous Trail Crawl & Descent Control",
+      "Adaptive Terrain Air Suspension",
       "7-Year / 150,000 km Global Warranty",
     ],
-    cta: "Configure Yours",
+    cta: "Join Waitlist",
     featured: false,
+    comingSoon: true,
   },
 ];
 
 export default function Pricing() {
   return (
-    <section id="pricing" className="py-16 sm:py-24 bg-white overflow-hidden">
+    <section id="pricing" className="py-16 sm:py-24 bg-white overflow-hidden w-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-10 sm:mb-16">
           <span className="text-xs sm:text-sm font-semibold text-gold tracking-widest uppercase">
             Pricing & Trims
           </span>
-          <h2 className="mt-2.5 text-3xl sm:text-5xl font-bold text-accent tracking-tight">
-            Premium, Priced Right
+          <h2 className="mt-2 text-3xl sm:text-4xl md:text-5xl font-extrabold text-accent tracking-tight">
+            Order Your JETOUR
           </h2>
-          <p className="mt-3 sm:mt-4 text-sm sm:text-lg text-muted max-w-2xl mx-auto">
-            Rugged capability and premium luxury features at accessible prices.
-            All models include our industry-leading global warranty.
+          <p className="mt-3 text-sm sm:text-base md:text-lg text-muted max-w-2xl mx-auto leading-relaxed">
+            The <span className="font-bold text-accent">JETOUR T2</span> is available now for custom configuration and immediate test drives.
           </p>
         </div>
 
-        {/* Pricing Cards: Stack on mobile, 3-Col on Desktop */}
-        <div className="grid md:grid-cols-3 gap-6 items-stretch max-w-5xl mx-auto">
+        {/* Pricing Cards: 1 Col on Mobile, 3 Col on Desktop */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch max-w-5xl mx-auto w-full">
           {plans.map((plan) => (
             <div
               key={plan.name}
               className={`rounded-2xl p-6 sm:p-8 border flex flex-col justify-between transition-all ${
                 plan.featured
-                  ? "border-gold bg-accent text-white shadow-2xl relative md:scale-[1.02] ring-1 ring-gold/40"
+                  ? "border-gold bg-accent text-white shadow-2xl relative md:scale-[1.02] ring-2 ring-gold/40"
                   : "border-border bg-white hover:border-gold/30 hover:shadow-lg"
               }`}
             >
               <div>
-                {plan.featured && (
+                {plan.featured ? (
                   <div className="inline-block md:absolute md:-top-3 md:left-1/2 md:-translate-x-1/2 px-3.5 py-1 bg-gold text-accent text-[11px] font-extrabold rounded-full tracking-wider uppercase shadow-md mb-4 md:mb-0">
-                    Most Popular
+                    Available Now · Most Popular
+                  </div>
+                ) : (
+                  <div className="inline-block px-2.5 py-0.5 bg-amber-500/10 text-amber-600 border border-amber-500/20 text-[10px] font-bold rounded-full tracking-wider uppercase mb-3">
+                    Coming Soon
                   </div>
                 )}
 
@@ -146,11 +152,11 @@ export default function Pricing() {
               </div>
 
               <a
-                href="#footer"
+                href={plan.comingSoon ? "#footer" : "#footer"}
                 className={`block text-center py-3.5 rounded-xl font-bold text-xs sm:text-sm transition-all active:scale-95 ${
                   plan.featured
                     ? "bg-gold text-accent hover:bg-gold-light shadow-md"
-                    : "bg-accent text-white hover:bg-accent-light"
+                    : "bg-slate-100 text-slate-800 hover:bg-slate-200 border border-slate-300"
                 }`}
               >
                 {plan.cta}

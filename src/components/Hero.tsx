@@ -6,37 +6,84 @@ import { vehicleImages } from "@/assets/images";
 
 const heroVehicles = [
   {
-    id: "desert-action",
-    name: "Jetour T2 Freedom",
-    badge: "Desert Overlanding",
-    image: vehicleImages.desertAction,
-    alt: "Jetour T2 Freedom SUV drifting aggressively on desert sand dunes",
-    accent: "text-amber-400",
-    specs: ["2.0T Turbo (254 HP)", "Smart X-WD System", "220mm Clearance"],
-    terrain: "Dunes & Overland Trails",
-    tagline: "Conquering extreme desert dunes with intelligent torque distribution",
+    id: "t2-traveller",
+    name: "JETOUR T2 Traveller",
+    subtitle: "Available Now · Born for the Wild · Intelligent 4WD Explorer",
+    badge: "Available Now",
+    isComingSoon: false,
+    image: vehicleImages.t2Silver,
+    alt: "Jetour T2 Traveller 4WD rugged SUV in silver",
+    specs: [
+      { label: "Power", value: "254 HP" },
+      { label: "Drive", value: "Smart X-WD" },
+      { label: "Clearance", value: "220 mm" },
+      { label: "Warranty", value: "7 Years" },
+    ],
+    price: "From $32,990",
   },
   {
-    id: "freedom-1",
-    name: "Jetour Freedom 2.0T",
-    badge: "Launch Edition",
-    image: vehicleImages.freedom1,
-    alt: "Jetour Freedom SUV 2.0T launched with rugged design and affordable pricing",
-    accent: "text-emerald-400",
-    specs: ["2.0T Direct Injection", "Intelligent AWD", "5-Seat Luxury Cabin"],
-    terrain: "Urban Highways & Trails",
-    tagline: "Rugged geometric architecture paired with modern comfort and power",
+    id: "t2-topfire",
+    name: "JETOUR T2 TOPFIRE",
+    subtitle: "Special Edition · Available Now · Glamping & Overlanding Livery",
+    badge: "Special Edition · Available",
+    isComingSoon: false,
+    image: vehicleImages.t2Topfire,
+    alt: "Jetour T2 TOPFIRE custom overlanding edition with mountain livery",
+    specs: [
+      { label: "Tuning", value: "TOPFIRE Spec" },
+      { label: "Tires", value: "AT Off-Road" },
+      { label: "Modes", value: "7 Terrain" },
+      { label: "Armor", value: "Steel Skid Plates" },
+    ],
+    price: "From $36,990",
   },
   {
-    id: "freedom-2",
-    name: "Jetour Freedom Expedition",
-    badge: "Overland Series",
-    image: vehicleImages.freedom2,
-    alt: "Jetour Freedom SUV adventure edition ready for rugged terrains",
-    accent: "text-sky-400",
-    specs: ["Multi-Terrain Select", "Heavy-Duty Suspension", "360° Trail Camera"],
-    terrain: "Rock, Sand & Wilderness",
-    tagline: "Built for intrepid explorers seeking reliability in extreme climates",
+    id: "g700",
+    name: "JETOUR G700",
+    subtitle: "Coming Soon · Flagship Luxury All-Terrain Hybrid SUV",
+    badge: "Coming Soon",
+    isComingSoon: true,
+    image: vehicleImages.g700Studio,
+    alt: "Jetour G700 luxury all-terrain SUV prototype in studio",
+    specs: [
+      { label: "Power", value: "380 HP" },
+      { label: "Torque", value: "615 N·m" },
+      { label: "Powertrain", value: "PHEV Hybrid" },
+      { label: "Status", value: "Expected 2027" },
+    ],
+    price: "Est. $49,990",
+  },
+  {
+    id: "f700",
+    name: "JETOUR F700",
+    subtitle: "Coming Soon · Heavy-Duty Double-Cab Adventure Pickup",
+    badge: "Coming Soon",
+    isComingSoon: true,
+    image: vehicleImages.f700Pickup,
+    alt: "Jetour F700 adventure double-cab pickup truck",
+    specs: [
+      { label: "Engine", value: "2.0T / PHEV" },
+      { label: "Towing", value: "3,500 kg" },
+      { label: "Payload", value: "1,150 kg" },
+      { label: "Status", value: "Expected 2027" },
+    ],
+    price: "Est. $38,990",
+  },
+  {
+    id: "t1-cross",
+    name: "JETOUR T1 Cross",
+    subtitle: "Coming Soon · Modern Compact Urban Crossover",
+    badge: "Coming Soon",
+    isComingSoon: true,
+    image: vehicleImages.t1Green,
+    alt: "Jetour T1 compact crossover in mint green",
+    specs: [
+      { label: "Engine", value: "1.5T / 2.0T" },
+      { label: "Efficiency", value: "5.8 L/100km" },
+      { label: "Cockpit", value: 'Dual 12.3"' },
+      { label: "Status", value: "Late 2026" },
+    ],
+    price: "Est. $21,990",
   },
 ];
 
@@ -44,52 +91,168 @@ export default function Hero() {
   const [selectedVehicle, setSelectedVehicle] = useState(heroVehicles[0]);
 
   return (
-    <section className="relative min-h-[90vh] sm:min-h-screen flex flex-col justify-center hero-gradient overflow-hidden pt-24 sm:pt-28 pb-12 sm:pb-16 w-full">
-      {/* Decorative ambient lighting elements */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-16 right-5 w-72 sm:w-96 h-72 sm:h-96 bg-gold/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-16 left-5 w-60 sm:w-72 h-60 sm:h-72 bg-blue-500/10 rounded-full blur-3xl" />
-        {/* Subtle grid pattern */}
-        <div
-          className="absolute inset-0 opacity-[0.03]"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px)",
-            backgroundSize: "40px 40px",
-          }}
-        />
-      </div>
-
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 text-center w-full">
-        {/* Top Tagline Pill */}
-        <div className="animate-fade-in-up">
-          <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 text-gold text-xs sm:text-sm font-medium tracking-wide mb-4 sm:mb-6 border border-white/15 backdrop-blur-md shadow-sm">
-            <span className="w-2 h-2 rounded-full bg-gold animate-pulse" />
-            Travel+ Philosophy — Engineered for Adventure
-          </span>
+    <>
+      {/* 100% Full-Screen Hero Showcase */}
+      <section className="relative w-full h-screen min-h-[100svh] overflow-hidden flex flex-col justify-between bg-slate-950">
+        {/* Full-Screen Edge-to-Edge Car Background */}
+        <div className="absolute inset-0 w-full h-full z-0 flex items-center justify-center">
+          <Image
+            src={selectedVehicle.image}
+            alt={selectedVehicle.alt}
+            fill
+            priority
+            className="object-contain p-4 sm:p-12 transition-all duration-700"
+            sizes="100vw"
+          />
+          {/* Cinematic Studio Lighting Overlays */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/85 via-black/20 to-black/95 pointer-events-none" />
+          <div className="absolute inset-0 bg-radial-gradient from-transparent via-slate-950/20 to-black/60 pointer-events-none" />
         </div>
 
-        {/* Dynamic Fluid Headline */}
-        <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-[1.12] sm:leading-[1.08] animate-fade-in-up-delay">
-          Explore Beyond
-          <br />
-          <span className="gold-shimmer">Boundaries</span>
-        </h1>
+        {/* Top Headline Section (Under Transparent Navbar) */}
+        <div className="relative z-10 pt-24 sm:pt-32 px-4 sm:px-6 text-center max-w-4xl mx-auto w-full">
+          <div className="animate-fade-in-up">
+            <span
+              className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold tracking-wider uppercase border backdrop-blur-md shadow-xl ${
+                selectedVehicle.isComingSoon
+                  ? "bg-amber-500/20 text-amber-300 border-amber-400/40"
+                  : "bg-emerald-500/20 text-emerald-300 border-emerald-400/40"
+              }`}
+            >
+              <span
+                className={`w-2 h-2 rounded-full animate-pulse ${
+                  selectedVehicle.isComingSoon ? "bg-amber-400" : "bg-emerald-400"
+                }`}
+              />
+              {selectedVehicle.badge}
+            </span>
+          </div>
 
-        <p className="mt-4 sm:mt-5 text-sm sm:text-base md:text-lg text-white/70 max-w-2xl mx-auto leading-relaxed px-2 animate-fade-in-up-delay-2">
-          SUVs engineered for wild horizons, intelligent comfort, and modern lifestyles.
-          Experience the high-performance <span className="text-white font-semibold">Jetour Freedom</span> lineup.
-        </p>
+          <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-white tracking-tight leading-[1.05] drop-shadow-2xl mt-4 sm:mt-5 animate-fade-in-up-delay">
+            {selectedVehicle.name.split(" ")[0]}{" "}
+            <span className="gold-shimmer">
+              {selectedVehicle.name.split(" ").slice(1).join(" ")}
+            </span>
+          </h1>
 
-        {/* Primary CTA Buttons */}
-        <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center w-full max-w-xs sm:max-w-none mx-auto animate-fade-in-up-delay-2">
+          <p className="text-white/85 text-xs sm:text-base md:text-xl font-medium tracking-wide mt-2.5 sm:mt-3 drop-shadow-md animate-fade-in-up-delay-2 max-w-2xl mx-auto">
+            {selectedVehicle.subtitle} ·{" "}
+            <span className="text-gold font-bold">{selectedVehicle.price}</span>
+          </p>
+        </div>
+
+        {/* Bottom Cockpit Section: Specs + CTAs + Model Switcher */}
+        <div className="relative z-10 pb-6 sm:pb-10 px-4 sm:px-6 max-w-7xl mx-auto w-full flex flex-col items-center gap-4 sm:gap-5">
+          {/* High-Impact Specs Bar */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-4 md:gap-6 max-w-xl sm:max-w-3xl w-full text-center">
+            {selectedVehicle.specs.map((spec) => (
+              <div
+                key={spec.label}
+                className="p-2 sm:p-3 rounded-2xl bg-black/60 backdrop-blur-md border border-white/15 shadow-xl transition-transform hover:scale-[1.02]"
+              >
+                <div className="text-base sm:text-2xl md:text-3xl font-black text-white tracking-tight">
+                  {spec.value}
+                </div>
+                <div className="text-[10px] sm:text-xs text-white/60 font-semibold uppercase tracking-wider mt-0.5">
+                  {spec.label}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Action CTAs */}
+          <div className="flex flex-col sm:flex-row gap-2.5 sm:gap-4 w-full max-w-sm sm:max-w-md justify-center items-center">
+            {selectedVehicle.isComingSoon ? (
+              <>
+                <a
+                  href="#models"
+                  className="w-full sm:w-auto flex-1 inline-flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold px-6 py-3.5 rounded-xl text-sm sm:text-base transition-all shadow-xl active:scale-95 whitespace-nowrap"
+                >
+                  Join Waitlist
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                  </svg>
+                </a>
+                <button
+                  onClick={() => setSelectedVehicle(heroVehicles[0])}
+                  className="w-full sm:w-auto flex-1 inline-flex items-center justify-center gap-2 bg-white/15 hover:bg-white/25 text-white font-bold px-6 py-3.5 rounded-xl text-sm sm:text-base transition-all border border-white/20 backdrop-blur-md active:scale-95 whitespace-nowrap shadow-xl"
+                >
+                  Explore T2 Instead
+                </button>
+              </>
+            ) : (
+              <>
+                <a
+                  href="#models"
+                  className="w-full sm:w-auto flex-1 inline-flex items-center justify-center gap-2 bg-gold hover:bg-gold-light text-accent font-extrabold px-6 py-3.5 rounded-xl text-sm sm:text-base transition-all shadow-xl hover:shadow-gold/30 active:scale-95 whitespace-nowrap"
+                >
+                  Order T2 Now
+                  <svg
+                    className="w-4 h-4"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2.5}
+                      d="M17 8l4 4m0 0l-4 4m4-4H3"
+                    />
+                  </svg>
+                </a>
+                <a
+                  href="#pricing"
+                  className="w-full sm:w-auto flex-1 inline-flex items-center justify-center gap-2 bg-white/15 hover:bg-white/25 text-white font-bold px-6 py-3.5 rounded-xl text-sm sm:text-base transition-all border border-white/20 backdrop-blur-md active:scale-95 whitespace-nowrap shadow-xl"
+                >
+                  Book a Test Drive
+                </a>
+              </>
+            )}
+          </div>
+
+          {/* Model Switcher Pill Bar */}
+          <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 p-1.5 rounded-2xl bg-black/70 backdrop-blur-xl border border-white/15 shadow-2xl">
+            {heroVehicles.map((vehicle) => {
+              const isSelected = selectedVehicle.id === vehicle.id;
+              return (
+                <button
+                  key={vehicle.id}
+                  onClick={() => setSelectedVehicle(vehicle)}
+                  className={`flex items-center gap-2 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all cursor-pointer ${
+                    isSelected
+                      ? "bg-gold text-accent font-black shadow-lg scale-[1.03]"
+                      : "text-white/70 hover:text-white hover:bg-white/10"
+                  }`}
+                >
+                  <div className="relative w-5 h-5 sm:w-6 sm:h-6 rounded-md overflow-hidden border border-white/20 flex-shrink-0 bg-slate-900">
+                    <Image
+                      src={vehicle.image}
+                      alt={vehicle.name}
+                      fill
+                      className="object-contain p-0.5"
+                      sizes="24px"
+                    />
+                  </div>
+                  <span>{vehicle.name.replace("JETOUR ", "")}</span>
+                  {vehicle.isComingSoon && (
+                    <span className="text-[9px] px-1.5 py-0.5 rounded-full bg-amber-500/20 text-amber-300 font-bold border border-amber-500/30">
+                      Soon
+                    </span>
+                  )}
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Scroll Prompt Arrow */}
           <a
-            href="#models"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-gold hover:bg-gold-light text-accent font-bold px-7 py-3.5 rounded-xl text-sm sm:text-base transition-all shadow-lg hover:shadow-gold/20 active:scale-95"
+            href="#stats"
+            className="inline-flex items-center justify-center text-white/50 hover:text-white transition-colors animate-bounce pt-1"
+            aria-label="Scroll to details"
           >
-            Explore Lineup
             <svg
-              className="w-4 h-4"
+              className="w-5 h-5 text-gold/80"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -98,130 +261,31 @@ export default function Hero() {
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth={2}
-                d="M17 8l4 4m0 0l-4 4m4-4H3"
+                d="M19 14l-7 7m0 0l-7-7m7 7V3"
               />
             </svg>
           </a>
-          <a
-            href="#pricing"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-semibold px-7 py-3.5 rounded-xl text-sm sm:text-base transition-all border border-white/15 backdrop-blur-md active:scale-95"
-          >
-            Book a Test Drive
-          </a>
         </div>
+      </section>
 
-        {/* Hero Vehicle Showcase Card */}
-        <div className="mt-10 sm:mt-12 max-w-5xl mx-auto w-full">
-          <div className="relative group rounded-2xl sm:rounded-3xl overflow-hidden border border-white/15 bg-slate-900/90 shadow-2xl backdrop-blur-md w-full">
-            {/* Aspect Ratio Driven Height */}
-            <div className="relative w-full aspect-[4/3] sm:aspect-[16/10] md:aspect-[16/9] min-h-[320px] max-h-[580px]">
-              <Image
-                src={selectedVehicle.image}
-                alt={selectedVehicle.alt}
-                fill
-                priority
-                className="object-cover object-center transition-all duration-700 group-hover:scale-105"
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 1100px"
-              />
-              {/* Responsive Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-black/30 pointer-events-none" />
-
-              {/* Top floating badges */}
-              <div className="absolute top-3 sm:top-5 left-3 sm:left-6 right-3 sm:right-6 flex items-center justify-between gap-2 pointer-events-none">
-                <div className="flex items-center gap-1.5 sm:gap-2">
-                  <span className="px-3 py-1 rounded-full bg-black/70 backdrop-blur-md text-[11px] sm:text-xs font-bold text-white border border-white/20 shadow-md">
-                    {selectedVehicle.badge}
-                  </span>
-                  <span className="hidden xs:inline-block px-2.5 py-1 rounded-full bg-gold/20 text-gold border border-gold/30 text-[10px] sm:text-xs font-semibold backdrop-blur-md">
-                    {selectedVehicle.terrain}
-                  </span>
-                </div>
-                <span className="text-[10px] sm:text-xs text-white/50 px-2 py-0.5 rounded-md bg-black/40 backdrop-blur-sm">
-                  Freedom 4WD
-                </span>
-              </div>
-
-              {/* Bottom information bar */}
-              <div className="absolute bottom-0 inset-x-0 p-4 sm:p-6 md:p-8 text-left flex flex-col md:flex-row md:items-end justify-between gap-3 sm:gap-4">
-                <div className="max-w-xl">
-                  <h3 className="text-xl sm:text-3xl md:text-4xl font-extrabold text-white tracking-tight drop-shadow-sm">
-                    {selectedVehicle.name}
-                  </h3>
-                  <p className="hidden sm:block text-white/80 text-xs sm:text-sm mt-1 max-w-md line-clamp-2">
-                    {selectedVehicle.tagline}
-                  </p>
-                  <div className="mt-2.5 sm:mt-3 flex flex-wrap gap-1.5 sm:gap-2">
-                    {selectedVehicle.specs.map((spec) => (
-                      <span
-                        key={spec}
-                        className="px-2.5 py-1 rounded-lg bg-white/15 backdrop-blur-md text-[11px] sm:text-xs font-medium text-white border border-white/10"
-                      >
-                        {spec}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                <a
-                  href="#pricing"
-                  className="self-start md:self-end inline-flex items-center gap-1.5 sm:gap-2 bg-gold hover:bg-gold-light text-accent text-xs sm:text-sm font-bold px-4 sm:px-5 py-2.5 rounded-xl transition-all shadow-md active:scale-95 whitespace-nowrap"
-                >
-                  Configure Model
-                  <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          {/* Vehicle Switcher: Responsive Centered Wrap */}
-          <div className="mt-4 sm:mt-6 flex flex-wrap items-center justify-center gap-2 sm:gap-3 px-2 w-full">
-            {heroVehicles.map((vehicle) => {
-              const isSelected = selectedVehicle.id === vehicle.id;
-              return (
-                <button
-                  key={vehicle.id}
-                  onClick={() => setSelectedVehicle(vehicle)}
-                  className={`flex items-center gap-2 sm:gap-2.5 px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all cursor-pointer whitespace-nowrap border ${
-                    isSelected
-                      ? "bg-white/20 text-white border-gold shadow-lg shadow-gold/10 scale-[1.02]"
-                      : "bg-white/5 text-white/60 hover:text-white hover:bg-white/10 border-white/10"
-                  }`}
-                >
-                  <div className="relative w-6 h-6 sm:w-7 sm:h-7 rounded-md overflow-hidden border border-white/20 flex-shrink-0">
-                    <Image
-                      src={vehicle.image}
-                      alt={vehicle.name}
-                      fill
-                      className="object-cover"
-                      sizes="28px"
-                    />
-                  </div>
-                  <span>{vehicle.name}</span>
-                </button>
-              );
-            })}
-          </div>
-        </div>
-
-        {/* Global Statistics Bar */}
-        <div className="mt-12 sm:mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 max-w-4xl mx-auto pt-6 sm:pt-8 border-t border-white/10 w-full">
+      {/* Global Brand Stats Strip (Directly Follows Full-Screen Hero) */}
+      <section id="stats" className="bg-slate-950 border-y border-white/10 py-10 px-4 sm:px-6 w-full">
+        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 text-center">
           {[
             { value: "45+", label: "Countries & Regions" },
             { value: "1.2M+", label: "Vehicles Delivered" },
-            { value: "No. 1", label: "Fastest Growing SUV" },
-            { value: "7 Years", label: "Global Warranty" },
+            { value: "No. 1", label: "Fastest Growing SUV Brand" },
+            { value: "7 Years", label: "Global Warranty Coverage" },
           ].map((stat) => (
-            <div key={stat.label} className="text-center p-2 rounded-xl bg-white/[0.02]">
-              <div className="text-xl sm:text-3xl md:text-4xl font-extrabold text-white">
+            <div key={stat.label} className="p-2 sm:p-3">
+              <div className="text-2xl sm:text-3xl md:text-4xl font-black text-white tracking-tight">
                 {stat.value}
               </div>
-              <div className="text-[11px] sm:text-xs text-white/50 mt-0.5 break-words">{stat.label}</div>
+              <div className="text-xs sm:text-sm text-white/50 mt-1 font-medium">{stat.label}</div>
             </div>
           ))}
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }
