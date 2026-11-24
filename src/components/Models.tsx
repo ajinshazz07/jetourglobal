@@ -3,64 +3,70 @@ import { vehicleImages } from "@/assets/images";
 
 const models = [
   {
-    name: "JETOUR G700 Flagship",
-    tagline: "Luxury All-Terrain Command",
+    name: "JETOUR T2 Traveller",
+    tagline: "Born for the Wild · Available Now",
     description:
-      "Commanding full-size luxury SUV with intelligent PHEV powertrain, triple digital displays, adaptive air suspension, and executive 7-seat versatility.",
-    specs: ["380 HP Hybrid", "Smart AWD", "7 Seats", "235mm Clearance"],
-    image: vehicleImages.g700Studio,
-    badge: "Flagship SUV",
-    gradient: "from-blue-950/70 via-slate-900 to-slate-950",
-  },
-  {
-    name: "JETOUR F700 Adventure Truck",
-    tagline: "Heavy-Duty Dual-Cab Dominance",
-    description:
-      "Engineered for high-tonnage hauling, desert overlanding, and commercial toughness with reinforced steel bed and dual-diff lock AWD.",
-    specs: ["2.0T / PHEV", "3,500 kg Towing", "1,150 kg Payload", "Locking Diffs"],
-    image: vehicleImages.f700Pickup,
-    badge: "Off-Road Truck",
-    gradient: "from-amber-950/70 via-slate-900 to-slate-950",
+      "Box-styled rugged 4WD SUV with rear spare wheel carrier, intelligent BorgWarner torque distribution, dual 12.3\" cockpit, and 220mm ground clearance. In stock now.",
+    specs: ["2.0T Turbo (254 HP)", "Smart X-WD", "Rear Spare Carrier", "220mm Clearance"],
+    image: vehicleImages.t2Silver,
+    badge: "Available Now",
+    isComingSoon: false,
+    gradient: "from-emerald-950/70 via-slate-900 to-slate-950",
   },
   {
     name: "JETOUR T2 TOPFIRE Custom",
-    tagline: "The Glamping Overlander",
+    tagline: "The Glamping Overlander · Available Now",
     description:
-      "Custom-tuned expedition specialist featuring iconic retro sunset mountain livery, heavy-duty all-terrain tires, and reinforced roof mounting.",
-    specs: ["TOPFIRE Tune", "AT Rugged Tires", "Roof Expedition Rack", "7 Modes"],
+      "Custom-tuned expedition specialist featuring iconic retro sunset mountain livery, heavy-duty all-terrain tires, roof expedition rack, and 7 terrain modes.",
+    specs: ["TOPFIRE Tune", "AT Rugged Tires", "Roof Rack & Tent", "7 Modes"],
     image: vehicleImages.t2Topfire,
-    badge: "Special Edition",
+    badge: "Special Edition · Available",
+    isComingSoon: false,
     gradient: "from-sky-950/70 via-slate-900 to-slate-950",
   },
   {
-    name: "JETOUR T2 Traveller",
-    tagline: "Born for the Wild",
+    name: "JETOUR G700 Flagship",
+    tagline: "Luxury All-Terrain Command · Coming Soon",
     description:
-      "Box-styled rugged 4WD SUV with rear spare wheel carrier, intelligent BorgWarner torque distribution, and 220mm ground clearance.",
-    specs: ["2.0T Turbo (254 HP)", "Smart X-WD", "Rear Wheel Carrier", "220mm Clearance"],
-    image: vehicleImages.t2Silver,
-    badge: "Adventure Icon",
+      "Commanding full-size luxury SUV with intelligent PHEV powertrain, triple digital displays, adaptive air suspension, and executive 7-seat versatility.",
+    specs: ["380 HP Hybrid", "Smart AWD", "7 Seats", "Expected 2027"],
+    image: vehicleImages.g700Studio,
+    badge: "Coming Soon",
+    isComingSoon: true,
+    gradient: "from-amber-950/50 via-slate-900 to-slate-950",
+  },
+  {
+    name: "JETOUR F700 Adventure Truck",
+    tagline: "Heavy-Duty Dual-Cab Dominance · Coming Soon",
+    description:
+      "Engineered for high-tonnage hauling, desert overlanding, and commercial toughness with reinforced steel bed and dual-diff lock AWD.",
+    specs: ["2.0T / PHEV", "3,500 kg Towing", "1,150 kg Payload", "Expected 2027"],
+    image: vehicleImages.f700Pickup,
+    badge: "Coming Soon",
+    isComingSoon: true,
     gradient: "from-slate-900 via-slate-900 to-slate-950",
   },
   {
     name: "JETOUR T1 Cross",
-    tagline: "Next-Gen Urban Freedom",
+    tagline: "Next-Gen Urban Adventure · Coming Soon",
     description:
       "Compact, boxy urban adventure crossover with flush door handles, class-leading fuel efficiency, and intelligent digital driver assistance.",
-    specs: ["1.5T / 2.0T", "5.8 L/100km", "Dual 12.3\" Cockpit", "Level 2 ADAS"],
+    specs: ["1.5T / 2.0T", "5.8 L/100km", "Dual 12.3\" Cockpit", "Late 2026"],
     image: vehicleImages.t1Green,
-    badge: "Urban Explorer",
-    gradient: "from-emerald-950/70 via-slate-900 to-slate-950",
+    badge: "Coming Soon",
+    isComingSoon: true,
+    gradient: "from-slate-900 via-slate-900 to-slate-950",
   },
   {
     name: "JETOUR G700 Ocean Edition",
-    tagline: "Deep Ocean All-Terrain",
+    tagline: "Deep Ocean All-Terrain · Coming Soon",
     description:
       "Deep metallic blue executive edition with intelligent multi-terrain drive selector, acoustic soundproofing, and panoramic glass roof.",
-    specs: ["PHEV AWD", "Acoustic Glass", "Panoramic Roof", "Executive Seats"],
+    specs: ["PHEV AWD", "Acoustic Glass", "Panoramic Roof", "Expected 2027"],
     image: vehicleImages.g700Blue,
-    badge: "Executive Edition",
-    gradient: "from-indigo-950/70 via-slate-900 to-slate-950",
+    badge: "Coming Soon",
+    isComingSoon: true,
+    gradient: "from-slate-900 via-slate-900 to-slate-950",
   },
 ];
 
@@ -73,10 +79,10 @@ export default function Models() {
             Official Lineup
           </span>
           <h2 className="mt-2 text-3xl sm:text-4xl md:text-5xl font-extrabold text-accent tracking-tight">
-            Choose Your JETOUR
+            Explore JETOUR Models
           </h2>
           <p className="mt-3 text-sm sm:text-base md:text-lg text-muted max-w-2xl mx-auto leading-relaxed">
-            From the heavy-duty F700 truck and flagship G700 to the iconic T2 and agile T1 Cross — engineered for every journey.
+            The award-winning <span className="font-bold text-accent">JETOUR T2</span> is available now for order and delivery. Preview our upcoming flagship SUVs and adventure truck lineup.
           </p>
         </div>
 
@@ -85,7 +91,9 @@ export default function Models() {
           {models.map((model) => (
             <div
               key={model.name}
-              className={`w-full relative group rounded-2xl sm:rounded-3xl bg-gradient-to-br ${model.gradient} p-5 sm:p-7 md:p-8 overflow-hidden flex flex-col justify-between transition-all duration-300 hover:shadow-2xl hover:scale-[1.01] border border-slate-800 shadow-xl`}
+              className={`w-full relative group rounded-2xl sm:rounded-3xl bg-gradient-to-br ${model.gradient} p-5 sm:p-7 md:p-8 overflow-hidden flex flex-col justify-between transition-all duration-300 hover:shadow-2xl hover:scale-[1.01] border ${
+                model.isComingSoon ? "border-slate-800 opacity-90" : "border-gold/40 shadow-xl ring-1 ring-gold/20"
+              }`}
             >
               <div>
                 {/* Vehicle Studio Image Frame */}
@@ -101,15 +109,28 @@ export default function Models() {
 
                   {/* Floating Badge */}
                   <div className="absolute top-3 left-3">
-                    <span className="px-3 py-1 rounded-full bg-black/70 backdrop-blur-md text-[11px] sm:text-xs font-semibold text-white/90 border border-white/20">
+                    <span
+                      className={`px-3 py-1 rounded-full backdrop-blur-md text-[11px] sm:text-xs font-bold border shadow-md ${
+                        model.isComingSoon
+                          ? "bg-amber-500/20 text-amber-300 border-amber-400/40"
+                          : "bg-emerald-500/25 text-emerald-300 border-emerald-400/50"
+                      }`}
+                    >
                       {model.badge}
                     </span>
                   </div>
                 </div>
 
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-white tracking-tight">
-                  {model.name}
-                </h3>
+                <div className="flex items-baseline justify-between gap-2">
+                  <h3 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-white tracking-tight">
+                    {model.name}
+                  </h3>
+                  {model.isComingSoon && (
+                    <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-white/10 text-white/60">
+                      Preview
+                    </span>
+                  )}
+                </div>
                 <p className="text-gold font-medium text-xs sm:text-sm mt-1">{model.tagline}</p>
                 <p className="mt-2.5 text-white/70 leading-relaxed text-xs sm:text-sm">
                   {model.description}
@@ -127,25 +148,48 @@ export default function Models() {
                     </span>
                   ))}
                 </div>
-                <a
-                  href="#pricing"
-                  className="text-gold hover:text-gold-light transition-colors font-semibold text-xs sm:text-sm flex items-center gap-1 group/btn active:scale-95 whitespace-nowrap"
-                >
-                  Configure
-                  <svg
-                    className="w-3.5 h-3.5 sm:w-4 sm:h-4 transition-transform group-hover/btn:translate-x-1"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
+
+                {model.isComingSoon ? (
+                  <a
+                    href="#footer"
+                    className="text-amber-400 hover:text-amber-300 transition-colors font-semibold text-xs sm:text-sm flex items-center gap-1 active:scale-95 whitespace-nowrap"
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
-                </a>
+                    Join Waitlist
+                    <svg
+                      className="w-3.5 h-3.5 sm:w-4 sm:h-4"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
+                      />
+                    </svg>
+                  </a>
+                ) : (
+                  <a
+                    href="#pricing"
+                    className="text-gold hover:text-gold-light transition-colors font-bold text-xs sm:text-sm flex items-center gap-1 group/btn active:scale-95 whitespace-nowrap"
+                  >
+                    Order T2
+                    <svg
+                      className="w-3.5 h-3.5 sm:w-4 sm:h-4 transition-transform group-hover/btn:translate-x-1"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 5l7 7-7 7"
+                      />
+                    </svg>
+                  </a>
+                )}
               </div>
             </div>
           ))}

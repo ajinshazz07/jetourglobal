@@ -101,7 +101,7 @@ export default function Features() {
           ))}
         </div>
 
-        {/* Extreme Terrain Testing Spotlight featuring F700 Truck */}
+        {/* Extreme Terrain Testing Spotlight featuring JETOUR T2 */}
         <div className="mt-12 sm:mt-16 rounded-2xl sm:rounded-3xl overflow-hidden bg-slate-900 border border-slate-800 grid md:grid-cols-2 items-center shadow-xl">
           <div className="p-6 sm:p-10 md:p-12 order-2 md:order-1">
             <span className="text-[11px] sm:text-xs font-semibold tracking-wider text-gold uppercase px-3 py-1 rounded-full bg-gold/10 border border-gold/20 inline-block mb-3 sm:mb-4">
@@ -111,7 +111,7 @@ export default function Features() {
               Tested in the World’s Most Demanding Terrains
             </h3>
             <p className="mt-3 sm:mt-4 text-white/70 text-xs sm:text-sm leading-relaxed">
-              Every Jetour model undergoes over 2 million kilometers of extreme endurance trials across scorching desert dunes, sub-zero snowfields, and rocky high-altitude passes.
+              The JETOUR T2 undergoes over 2 million kilometers of extreme endurance trials across scorching desert dunes, sub-zero snowfields, and rocky high-altitude passes.
             </p>
             <div className="mt-5 sm:mt-6 grid grid-cols-2 gap-3 sm:gap-4">
               <div className="p-3.5 sm:p-4 rounded-xl bg-white/5 border border-white/10">
@@ -127,8 +127,8 @@ export default function Features() {
 
           <div className="relative aspect-[16/10] md:aspect-auto md:h-full min-h-[260px] sm:min-h-[320px] order-1 md:order-2 bg-slate-950 flex items-center justify-center p-4">
             <Image
-              src={vehicleImages.f700Pickup}
-              alt="Jetour F700 heavy-duty pickup truck tested in extreme conditions"
+              src={vehicleImages.t2Topfire}
+              alt="Jetour T2 rugged 4WD SUV tested in extreme conditions"
               fill
               className="object-contain p-2"
               sizes="(max-width: 768px) 100vw, 50vw"

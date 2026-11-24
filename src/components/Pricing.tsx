@@ -1,9 +1,9 @@
 const plans = [
   {
     name: "T1 Cross Urban",
-    subtitle: "Modern Adventure & Everyday Efficiency",
+    subtitle: "Coming Soon · Expected Late 2026",
     price: "21,990",
-    period: "Starting MSRP",
+    period: "Estimated Starting MSRP",
     features: [
       "1.5T / 2.0T Direct-Injection Turbo Engine",
       '10.25" Ultra-Clear Touchscreen Display',
@@ -12,12 +12,13 @@ const plans = [
       "Keyless Entry & Remote Engine Start",
       "7-Year / 150,000 km Global Warranty",
     ],
-    cta: "Configure Yours",
+    cta: "Join Waitlist",
     featured: false,
+    comingSoon: true,
   },
   {
-    name: "T2 Traveller & TOPFIRE",
-    subtitle: "Best Seller — All-Terrain Explorer",
+    name: "T2 Traveller 4WD",
+    subtitle: "Available Now · Ready for Delivery",
     price: "32,990",
     period: "Starting MSRP",
     features: [
@@ -29,14 +30,15 @@ const plans = [
       "Ventilated Adventure Leather Seats",
       "7-Year / 150,000 km Global Warranty",
     ],
-    cta: "Configure Yours",
+    cta: "Order T2 Now",
     featured: true,
+    comingSoon: false,
   },
   {
     name: "G700 / F700 Flagship",
-    subtitle: "Ultimate Luxury & Heavy-Duty Hauling",
+    subtitle: "Coming Soon · Expected 2027",
     price: "48,990",
-    period: "Starting MSRP",
+    period: "Estimated Starting MSRP",
     features: [
       "PHEV Hybrid 380 HP / 615 N·m Torque",
       "3.5-Ton Towing / Dual Locking Diffs",
@@ -46,8 +48,9 @@ const plans = [
       "Adaptive Terrain Air Suspension",
       "7-Year / 150,000 km Global Warranty",
     ],
-    cta: "Configure Yours",
+    cta: "Join Waitlist",
     featured: false,
+    comingSoon: true,
   },
 ];
 
@@ -60,11 +63,10 @@ export default function Pricing() {
             Pricing & Trims
           </span>
           <h2 className="mt-2 text-3xl sm:text-4xl md:text-5xl font-extrabold text-accent tracking-tight">
-            Premium, Priced Right
+            Order Your JETOUR
           </h2>
           <p className="mt-3 text-sm sm:text-base md:text-lg text-muted max-w-2xl mx-auto leading-relaxed">
-            From agile urban crossovers to heavy-duty flagship off-roaders.
-            All models include our industry-leading 7-year global warranty.
+            The <span className="font-bold text-accent">JETOUR T2</span> is available now for custom configuration and immediate test drives.
           </p>
         </div>
 
@@ -75,14 +77,18 @@ export default function Pricing() {
               key={plan.name}
               className={`rounded-2xl p-6 sm:p-8 border flex flex-col justify-between transition-all ${
                 plan.featured
-                  ? "border-gold bg-accent text-white shadow-2xl relative md:scale-[1.02] ring-1 ring-gold/40"
+                  ? "border-gold bg-accent text-white shadow-2xl relative md:scale-[1.02] ring-2 ring-gold/40"
                   : "border-border bg-white hover:border-gold/30 hover:shadow-lg"
               }`}
             >
               <div>
-                {plan.featured && (
+                {plan.featured ? (
                   <div className="inline-block md:absolute md:-top-3 md:left-1/2 md:-translate-x-1/2 px-3.5 py-1 bg-gold text-accent text-[11px] font-extrabold rounded-full tracking-wider uppercase shadow-md mb-4 md:mb-0">
-                    Most Popular
+                    Available Now · Most Popular
+                  </div>
+                ) : (
+                  <div className="inline-block px-2.5 py-0.5 bg-amber-500/10 text-amber-600 border border-amber-500/20 text-[10px] font-bold rounded-full tracking-wider uppercase mb-3">
+                    Coming Soon
                   </div>
                 )}
 
@@ -146,11 +152,11 @@ export default function Pricing() {
               </div>
 
               <a
-                href="#footer"
+                href={plan.comingSoon ? "#footer" : "#footer"}
                 className={`block text-center py-3.5 rounded-xl font-bold text-xs sm:text-sm transition-all active:scale-95 ${
                   plan.featured
                     ? "bg-gold text-accent hover:bg-gold-light shadow-md"
-                    : "bg-accent text-white hover:bg-accent-light"
+                    : "bg-slate-100 text-slate-800 hover:bg-slate-200 border border-slate-300"
                 }`}
               >
                 {plan.cta}

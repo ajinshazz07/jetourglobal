@@ -6,64 +6,84 @@ import { vehicleImages } from "@/assets/images";
 
 const heroVehicles = [
   {
-    id: "g700",
-    name: "JETOUR G700",
-    subtitle: "Flagship Luxury All-Terrain SUV · Executive Command",
-    badge: "Flagship Series",
-    image: vehicleImages.g700Studio,
-    alt: "Jetour G700 luxury all-terrain SUV in studio",
+    id: "t2-traveller",
+    name: "JETOUR T2 Traveller",
+    subtitle: "Available Now · Born for the Wild · Intelligent 4WD Explorer",
+    badge: "Available Now",
+    isComingSoon: false,
+    image: vehicleImages.t2Silver,
+    alt: "Jetour T2 Traveller 4WD rugged SUV in silver",
     specs: [
-      { label: "Power", value: "380 HP" },
-      { label: "Torque", value: "615 N·m" },
-      { label: "Powertrain", value: "PHEV Hybrid" },
-      { label: "Clearance", value: "235 mm" },
+      { label: "Power", value: "254 HP" },
+      { label: "Drive", value: "Smart X-WD" },
+      { label: "Clearance", value: "220 mm" },
+      { label: "Warranty", value: "7 Years" },
     ],
-    price: "From $49,990",
-  },
-  {
-    id: "f700",
-    name: "JETOUR F700",
-    subtitle: "Heavy-Duty Adventure Pickup · Double-Cab Dominance",
-    badge: "Off-Road Truck",
-    image: vehicleImages.f700Pickup,
-    alt: "Jetour F700 double-cab adventure pickup truck in metallic bronze",
-    specs: [
-      { label: "Engine", value: "2.0T / PHEV" },
-      { label: "Towing", value: "3,500 kg" },
-      { label: "Payload", value: "1,150 kg" },
-      { label: "Drive", value: "Dual-Diff AWD" },
-    ],
-    price: "From $38,990",
+    price: "From $32,990",
   },
   {
     id: "t2-topfire",
     name: "JETOUR T2 TOPFIRE",
-    subtitle: "Overlanding & Glamping Custom Edition · Sunset Livery",
-    badge: "Special Edition",
+    subtitle: "Special Edition · Available Now · Glamping & Overlanding Livery",
+    badge: "Special Edition · Available",
+    isComingSoon: false,
     image: vehicleImages.t2Topfire,
-    alt: "Jetour T2 TOPFIRE custom overlanding edition with mountain graphic",
+    alt: "Jetour T2 TOPFIRE custom overlanding edition with mountain livery",
     specs: [
       { label: "Tuning", value: "TOPFIRE Spec" },
       { label: "Tires", value: "AT Off-Road" },
       { label: "Modes", value: "7 Terrain" },
-      { label: "Armor", value: "Skid Plates" },
+      { label: "Armor", value: "Steel Skid Plates" },
     ],
     price: "From $36,990",
   },
   {
+    id: "g700",
+    name: "JETOUR G700",
+    subtitle: "Coming Soon · Flagship Luxury All-Terrain Hybrid SUV",
+    badge: "Coming Soon",
+    isComingSoon: true,
+    image: vehicleImages.g700Studio,
+    alt: "Jetour G700 luxury all-terrain SUV prototype in studio",
+    specs: [
+      { label: "Power", value: "380 HP" },
+      { label: "Torque", value: "615 N·m" },
+      { label: "Powertrain", value: "PHEV Hybrid" },
+      { label: "Status", value: "Expected 2027" },
+    ],
+    price: "Est. $49,990",
+  },
+  {
+    id: "f700",
+    name: "JETOUR F700",
+    subtitle: "Coming Soon · Heavy-Duty Double-Cab Adventure Pickup",
+    badge: "Coming Soon",
+    isComingSoon: true,
+    image: vehicleImages.f700Pickup,
+    alt: "Jetour F700 adventure double-cab pickup truck",
+    specs: [
+      { label: "Engine", value: "2.0T / PHEV" },
+      { label: "Towing", value: "3,500 kg" },
+      { label: "Payload", value: "1,150 kg" },
+      { label: "Status", value: "Expected 2027" },
+    ],
+    price: "Est. $38,990",
+  },
+  {
     id: "t1-cross",
     name: "JETOUR T1 Cross",
-    subtitle: "Next-Gen Urban Adventure · Modern Geometric Silhouette",
-    badge: "Urban Explorer",
+    subtitle: "Coming Soon · Modern Compact Urban Crossover",
+    badge: "Coming Soon",
+    isComingSoon: true,
     image: vehicleImages.t1Green,
-    alt: "Jetour T1 compact adventure SUV in mint green",
+    alt: "Jetour T1 compact crossover in mint green",
     specs: [
       { label: "Engine", value: "1.5T / 2.0T" },
-      { label: "Economy", value: "5.8 L/100km" },
+      { label: "Efficiency", value: "5.8 L/100km" },
       { label: "Cockpit", value: 'Dual 12.3"' },
-      { label: "Warranty", value: "7 Years" },
+      { label: "Status", value: "Late 2026" },
     ],
-    price: "From $21,990",
+    price: "Est. $21,990",
   },
 ];
 
@@ -81,19 +101,29 @@ export default function Hero() {
             alt={selectedVehicle.alt}
             fill
             priority
-            className="object-cover sm:object-contain object-center transition-all duration-700"
+            className="object-contain p-4 sm:p-12 transition-all duration-700"
             sizes="100vw"
           />
           {/* Cinematic Studio Lighting Overlays */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/85 via-black/30 to-black/95 pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/85 via-black/20 to-black/95 pointer-events-none" />
           <div className="absolute inset-0 bg-radial-gradient from-transparent via-slate-950/20 to-black/60 pointer-events-none" />
         </div>
 
         {/* Top Headline Section (Under Transparent Navbar) */}
         <div className="relative z-10 pt-24 sm:pt-32 px-4 sm:px-6 text-center max-w-4xl mx-auto w-full">
           <div className="animate-fade-in-up">
-            <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/60 text-gold text-xs sm:text-sm font-semibold tracking-wider uppercase border border-gold/40 backdrop-blur-md shadow-xl">
-              <span className="w-2 h-2 rounded-full bg-gold animate-pulse" />
+            <span
+              className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold tracking-wider uppercase border backdrop-blur-md shadow-xl ${
+                selectedVehicle.isComingSoon
+                  ? "bg-amber-500/20 text-amber-300 border-amber-400/40"
+                  : "bg-emerald-500/20 text-emerald-300 border-emerald-400/40"
+              }`}
+            >
+              <span
+                className={`w-2 h-2 rounded-full animate-pulse ${
+                  selectedVehicle.isComingSoon ? "bg-amber-400" : "bg-emerald-400"
+                }`}
+              />
               {selectedVehicle.badge}
             </span>
           </div>
@@ -132,31 +162,53 @@ export default function Hero() {
 
           {/* Action CTAs */}
           <div className="flex flex-col sm:flex-row gap-2.5 sm:gap-4 w-full max-w-sm sm:max-w-md justify-center items-center">
-            <a
-              href="#models"
-              className="w-full sm:w-auto flex-1 inline-flex items-center justify-center gap-2 bg-gold hover:bg-gold-light text-accent font-extrabold px-6 py-3.5 rounded-xl text-sm sm:text-base transition-all shadow-xl hover:shadow-gold/30 active:scale-95 whitespace-nowrap"
-            >
-              Explore Lineup
-              <svg
-                className="w-4 h-4"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2.5}
-                  d="M17 8l4 4m0 0l-4 4m4-4H3"
-                />
-              </svg>
-            </a>
-            <a
-              href="#pricing"
-              className="w-full sm:w-auto flex-1 inline-flex items-center justify-center gap-2 bg-white/15 hover:bg-white/25 text-white font-bold px-6 py-3.5 rounded-xl text-sm sm:text-base transition-all border border-white/20 backdrop-blur-md active:scale-95 whitespace-nowrap shadow-xl"
-            >
-              Book a Test Drive
-            </a>
+            {selectedVehicle.isComingSoon ? (
+              <>
+                <a
+                  href="#models"
+                  className="w-full sm:w-auto flex-1 inline-flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold px-6 py-3.5 rounded-xl text-sm sm:text-base transition-all shadow-xl active:scale-95 whitespace-nowrap"
+                >
+                  Join Waitlist
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                  </svg>
+                </a>
+                <button
+                  onClick={() => setSelectedVehicle(heroVehicles[0])}
+                  className="w-full sm:w-auto flex-1 inline-flex items-center justify-center gap-2 bg-white/15 hover:bg-white/25 text-white font-bold px-6 py-3.5 rounded-xl text-sm sm:text-base transition-all border border-white/20 backdrop-blur-md active:scale-95 whitespace-nowrap shadow-xl"
+                >
+                  Explore T2 Instead
+                </button>
+              </>
+            ) : (
+              <>
+                <a
+                  href="#models"
+                  className="w-full sm:w-auto flex-1 inline-flex items-center justify-center gap-2 bg-gold hover:bg-gold-light text-accent font-extrabold px-6 py-3.5 rounded-xl text-sm sm:text-base transition-all shadow-xl hover:shadow-gold/30 active:scale-95 whitespace-nowrap"
+                >
+                  Order T2 Now
+                  <svg
+                    className="w-4 h-4"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2.5}
+                      d="M17 8l4 4m0 0l-4 4m4-4H3"
+                    />
+                  </svg>
+                </a>
+                <a
+                  href="#pricing"
+                  className="w-full sm:w-auto flex-1 inline-flex items-center justify-center gap-2 bg-white/15 hover:bg-white/25 text-white font-bold px-6 py-3.5 rounded-xl text-sm sm:text-base transition-all border border-white/20 backdrop-blur-md active:scale-95 whitespace-nowrap shadow-xl"
+                >
+                  Book a Test Drive
+                </a>
+              </>
+            )}
           </div>
 
           {/* Model Switcher Pill Bar */}
@@ -167,22 +219,27 @@ export default function Hero() {
                 <button
                   key={vehicle.id}
                   onClick={() => setSelectedVehicle(vehicle)}
-                  className={`flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all cursor-pointer ${
+                  className={`flex items-center gap-2 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all cursor-pointer ${
                     isSelected
                       ? "bg-gold text-accent font-black shadow-lg scale-[1.03]"
                       : "text-white/70 hover:text-white hover:bg-white/10"
                   }`}
                 >
-                  <div className="relative w-6 h-6 sm:w-7 sm:h-7 rounded-md overflow-hidden border border-white/20 flex-shrink-0 bg-slate-900">
+                  <div className="relative w-5 h-5 sm:w-6 sm:h-6 rounded-md overflow-hidden border border-white/20 flex-shrink-0 bg-slate-900">
                     <Image
                       src={vehicle.image}
                       alt={vehicle.name}
                       fill
                       className="object-contain p-0.5"
-                      sizes="28px"
+                      sizes="24px"
                     />
                   </div>
                   <span>{vehicle.name.replace("JETOUR ", "")}</span>
+                  {vehicle.isComingSoon && (
+                    <span className="text-[9px] px-1.5 py-0.5 rounded-full bg-amber-500/20 text-amber-300 font-bold border border-amber-500/30">
+                      Soon
+                    </span>
+                  )}
                 </button>
               );
             })}
