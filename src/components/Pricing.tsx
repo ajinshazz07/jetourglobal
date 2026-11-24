@@ -82,15 +82,21 @@ export default function Pricing() {
               }`}
             >
               <div>
-                {plan.featured ? (
-                  <div className="inline-block md:absolute md:-top-3 md:left-1/2 md:-translate-x-1/2 px-3.5 py-1 bg-gold text-accent text-[11px] font-extrabold rounded-full tracking-wider uppercase shadow-md mb-4 md:mb-0">
-                    Available Now · Most Popular
-                  </div>
-                ) : (
-                  <div className="inline-block px-2.5 py-0.5 bg-amber-500/10 text-amber-600 border border-amber-500/20 text-[10px] font-bold rounded-full tracking-wider uppercase mb-3">
-                    Coming Soon
-                  </div>
-                )}
+                {/* Neon Status Indicator - No Curved Container */}
+                <div className="flex items-center gap-2 mb-3 select-none">
+                  <span
+                    className={`w-1.5 h-1.5 rounded-full ${
+                      plan.comingSoon ? "neon-dot-amber" : "neon-dot-emerald animate-pulse"
+                    }`}
+                  />
+                  <span
+                    className={`text-[10px] sm:text-[11px] font-extrabold uppercase ${
+                      plan.comingSoon ? "neon-glow-amber" : "neon-glow-emerald"
+                    }`}
+                  >
+                    {plan.comingSoon ? "Coming Soon" : "Available Now"}
+                  </span>
+                </div>
 
                 <div className="mb-5 sm:mb-6">
                   <h3

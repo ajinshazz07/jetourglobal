@@ -112,13 +112,18 @@ export default function Models() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none" />
 
-                  {/* Floating Badge */}
-                  <div className="absolute top-3 left-3">
+                  {/* Neon Availability Indicator - No Curved Container */}
+                  <div className="absolute top-3.5 left-3.5 flex items-center gap-2 select-none">
                     <span
-                      className={`px-3 py-1 rounded-full backdrop-blur-md text-[11px] sm:text-xs font-bold border shadow-md ${
+                      className={`w-1.5 h-1.5 rounded-full ${
                         model.isComingSoon
-                          ? "bg-amber-500/20 text-amber-300 border-amber-400/40"
-                          : "bg-emerald-500/25 text-emerald-300 border-emerald-400/50"
+                          ? "neon-dot-amber"
+                          : "neon-dot-emerald animate-pulse"
+                      }`}
+                    />
+                    <span
+                      className={`text-[10px] sm:text-[11px] font-extrabold uppercase ${
+                        model.isComingSoon ? "neon-glow-amber" : "neon-glow-emerald"
                       }`}
                     >
                       {model.badge}
@@ -143,11 +148,6 @@ export default function Models() {
                   <h3 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-white tracking-tight">
                     {model.name}
                   </h3>
-                  {model.isComingSoon && (
-                    <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-white/10 text-white/60">
-                      Preview
-                    </span>
-                  )}
                 </div>
                 <p className="text-gold font-medium text-xs sm:text-sm mt-1">{model.tagline}</p>
                 <p className="mt-2.5 text-white/70 leading-relaxed text-xs sm:text-sm">
