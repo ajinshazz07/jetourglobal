@@ -6,49 +6,64 @@ import { vehicleImages } from "@/assets/images";
 
 const heroVehicles = [
   {
-    id: "desert-action",
-    name: "Jetour T2 Freedom",
-    subtitle: "Conquer Every Horizon · Engineered for Adventure",
-    badge: "Desert Overlanding Series",
-    image: vehicleImages.desertAction,
-    alt: "Jetour T2 Freedom SUV drifting aggressively on desert sand dunes",
+    id: "g700",
+    name: "JETOUR G700",
+    subtitle: "Flagship Luxury All-Terrain SUV · Executive Command",
+    badge: "Flagship Series",
+    image: vehicleImages.g700Studio,
+    alt: "Jetour G700 luxury all-terrain SUV in studio",
     specs: [
-      { label: "Power", value: "254 HP" },
-      { label: "Torque", value: "390 N·m" },
-      { label: "Drive", value: "Smart X-WD" },
-      { label: "Clearance", value: "220 mm" },
+      { label: "Power", value: "380 HP" },
+      { label: "Torque", value: "615 N·m" },
+      { label: "Powertrain", value: "PHEV Hybrid" },
+      { label: "Clearance", value: "235 mm" },
     ],
-    price: "From $24,990",
+    price: "From $49,990",
   },
   {
-    id: "freedom-1",
-    name: "Jetour Freedom 2.0T",
-    subtitle: "Bold Geometric Architecture · Intelligent Cockpit",
-    badge: "Launch Edition",
-    image: vehicleImages.freedom1,
-    alt: "Jetour Freedom SUV 2.0T launched with rugged design and affordable pricing",
+    id: "f700",
+    name: "JETOUR F700",
+    subtitle: "Heavy-Duty Adventure Pickup · Double-Cab Dominance",
+    badge: "Off-Road Truck",
+    image: vehicleImages.f700Pickup,
+    alt: "Jetour F700 double-cab adventure pickup truck in metallic bronze",
     specs: [
-      { label: "Engine", value: "2.0T GDI" },
-      { label: "Gearbox", value: "7-Speed DCT" },
-      { label: "Display", value: 'Dual 12.3"' },
-      { label: "Capacity", value: "5 Seats" },
+      { label: "Engine", value: "2.0T / PHEV" },
+      { label: "Towing", value: "3,500 kg" },
+      { label: "Payload", value: "1,150 kg" },
+      { label: "Drive", value: "Dual-Diff AWD" },
     ],
-    price: "From $24,990",
+    price: "From $38,990",
   },
   {
-    id: "freedom-2",
-    name: "Jetour Freedom Expedition",
-    subtitle: "Uncharted Wilderness Ready · Reinforced Chassis",
-    badge: "Overland Expedition",
-    image: vehicleImages.freedom2,
-    alt: "Jetour Freedom SUV adventure edition ready for rugged terrains",
+    id: "t2-topfire",
+    name: "JETOUR T2 TOPFIRE",
+    subtitle: "Overlanding & Glamping Custom Edition · Sunset Livery",
+    badge: "Special Edition",
+    image: vehicleImages.t2Topfire,
+    alt: "Jetour T2 TOPFIRE custom overlanding edition with mountain graphic",
     specs: [
+      { label: "Tuning", value: "TOPFIRE Spec" },
+      { label: "Tires", value: "AT Off-Road" },
       { label: "Modes", value: "7 Terrain" },
-      { label: "Vision", value: "360° Trail" },
-      { label: "Protection", value: "Steel Armor" },
-      { label: "Coverage", value: "7 Years" },
+      { label: "Armor", value: "Skid Plates" },
     ],
-    price: "From $32,990",
+    price: "From $36,990",
+  },
+  {
+    id: "t1-cross",
+    name: "JETOUR T1 Cross",
+    subtitle: "Next-Gen Urban Adventure · Modern Geometric Silhouette",
+    badge: "Urban Explorer",
+    image: vehicleImages.t1Green,
+    alt: "Jetour T1 compact adventure SUV in mint green",
+    specs: [
+      { label: "Engine", value: "1.5T / 2.0T" },
+      { label: "Economy", value: "5.8 L/100km" },
+      { label: "Cockpit", value: 'Dual 12.3"' },
+      { label: "Warranty", value: "7 Years" },
+    ],
+    price: "From $21,990",
   },
 ];
 
@@ -57,21 +72,21 @@ export default function Hero() {
 
   return (
     <>
-      {/* 100% Full-Screen Hero Car Showcase */}
-      <section className="relative w-full h-screen min-h-[100svh] overflow-hidden flex flex-col justify-between">
+      {/* 100% Full-Screen Hero Showcase */}
+      <section className="relative w-full h-screen min-h-[100svh] overflow-hidden flex flex-col justify-between bg-slate-950">
         {/* Full-Screen Edge-to-Edge Car Background */}
-        <div className="absolute inset-0 w-full h-full z-0">
+        <div className="absolute inset-0 w-full h-full z-0 flex items-center justify-center">
           <Image
             src={selectedVehicle.image}
             alt={selectedVehicle.alt}
             fill
             priority
-            className="object-cover object-[center_35%] sm:object-center transition-all duration-1000 scale-100"
+            className="object-cover sm:object-contain object-center transition-all duration-700"
             sizes="100vw"
           />
-          {/* Cinematic Lighting & Contrast Overlays */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/85 via-black/25 to-black/95 pointer-events-none" />
-          <div className="absolute inset-0 bg-radial-gradient from-transparent via-black/10 to-black/40 pointer-events-none" />
+          {/* Cinematic Studio Lighting Overlays */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/85 via-black/30 to-black/95 pointer-events-none" />
+          <div className="absolute inset-0 bg-radial-gradient from-transparent via-slate-950/20 to-black/60 pointer-events-none" />
         </div>
 
         {/* Top Headline Section (Under Transparent Navbar) */}
@@ -103,7 +118,7 @@ export default function Hero() {
             {selectedVehicle.specs.map((spec) => (
               <div
                 key={spec.label}
-                className="p-2 sm:p-3 rounded-2xl bg-black/50 backdrop-blur-md border border-white/15 shadow-xl transition-transform hover:scale-[1.02]"
+                className="p-2 sm:p-3 rounded-2xl bg-black/60 backdrop-blur-md border border-white/15 shadow-xl transition-transform hover:scale-[1.02]"
               >
                 <div className="text-base sm:text-2xl md:text-3xl font-black text-white tracking-tight">
                   {spec.value}
@@ -145,7 +160,7 @@ export default function Hero() {
           </div>
 
           {/* Model Switcher Pill Bar */}
-          <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 p-1.5 rounded-2xl bg-black/60 backdrop-blur-xl border border-white/15 shadow-2xl">
+          <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 p-1.5 rounded-2xl bg-black/70 backdrop-blur-xl border border-white/15 shadow-2xl">
             {heroVehicles.map((vehicle) => {
               const isSelected = selectedVehicle.id === vehicle.id;
               return (
@@ -158,16 +173,16 @@ export default function Hero() {
                       : "text-white/70 hover:text-white hover:bg-white/10"
                   }`}
                 >
-                  <div className="relative w-5 h-5 sm:w-6 sm:h-6 rounded-md overflow-hidden border border-white/20 flex-shrink-0">
+                  <div className="relative w-6 h-6 sm:w-7 sm:h-7 rounded-md overflow-hidden border border-white/20 flex-shrink-0 bg-slate-900">
                     <Image
                       src={vehicle.image}
                       alt={vehicle.name}
                       fill
-                      className="object-cover"
-                      sizes="24px"
+                      className="object-contain p-0.5"
+                      sizes="28px"
                     />
                   </div>
-                  <span>{vehicle.name}</span>
+                  <span>{vehicle.name.replace("JETOUR ", "")}</span>
                 </button>
               );
             })}

@@ -1,10 +1,10 @@
 const footerLinks = {
   Models: [
-    { label: "T2 Freedom Expedition", href: "#models" },
-    { label: "Freedom 2.0T", href: "#models" },
-    { label: "Freedom Off-Road", href: "#models" },
-    { label: "Desert Runner", href: "#models" },
-    { label: "Compare Models", href: "#models" },
+    { label: "G700 Flagship SUV", href: "#models" },
+    { label: "F700 Off-Road Truck", href: "#models" },
+    { label: "T2 TOPFIRE Edition", href: "#models" },
+    { label: "T2 Traveller 4WD", href: "#models" },
+    { label: "T1 Freedom Cross", href: "#models" },
   ],
   Company: [
     { label: "About JETOUR", href: "#" },
@@ -40,7 +40,7 @@ export default function Footer() {
             </h3>
             <p className="mt-2 text-white/60 text-sm max-w-md leading-relaxed">
               Visit your nearest JETOUR showroom for a test drive, or configure
-              your dream SUV online today.
+              your dream G700, F700, or T2 online today.
             </p>
           </div>
           <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">

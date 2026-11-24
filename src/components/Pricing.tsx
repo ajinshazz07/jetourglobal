@@ -1,23 +1,23 @@
 const plans = [
   {
-    name: "Freedom 2.0T",
-    subtitle: "Launch Edition — Rugged & Agile",
-    price: "24,990",
-    period: "Starting MSRP (~¥159,900)",
+    name: "T1 Cross Urban",
+    subtitle: "Modern Adventure & Everyday Efficiency",
+    price: "21,990",
+    period: "Starting MSRP",
     features: [
-      "2.0T Turbocharged Direct-Injection Engine",
+      "1.5T / 2.0T Direct-Injection Turbo Engine",
       '10.25" Ultra-Clear Touchscreen Display',
       "Wireless Apple CarPlay & Android Auto",
-      "Reverse Camera with Dynamic Guidelines",
+      "5.8 L/100km Fuel Consumption",
       "Keyless Entry & Remote Engine Start",
-      "5-Year / 100,000 km Warranty",
+      "7-Year / 150,000 km Global Warranty",
     ],
     cta: "Configure Yours",
     featured: false,
   },
   {
-    name: "T2 Freedom Expedition",
-    subtitle: "Best Seller — Desert & Trail Ready",
+    name: "T2 Traveller & TOPFIRE",
+    subtitle: "Best Seller — All-Terrain Explorer",
     price: "32,990",
     period: "Starting MSRP",
     features: [
@@ -25,25 +25,25 @@ const plans = [
       "Smart X-WD with 7 Terrain Modes",
       'Dual 12.3" Full Digital Cockpit',
       "Full ADAS Safety Pilot Suite",
-      "Panoramic Sunroof & Roof Carrier Mounts",
-      "Ventilated Leather Adventure Seats",
+      "Rear Spare Wheel Carrier & Roof Mounts",
+      "Ventilated Adventure Leather Seats",
       "7-Year / 150,000 km Global Warranty",
     ],
     cta: "Configure Yours",
     featured: true,
   },
   {
-    name: "Freedom Off-Road Flagship",
-    subtitle: "Ultimate All-Terrain Dominance",
-    price: "42,990",
+    name: "G700 / F700 Flagship",
+    subtitle: "Ultimate Luxury & Heavy-Duty Hauling",
+    price: "48,990",
     period: "Starting MSRP",
     features: [
-      "Torque Vectoring AWD with Rear Diff Lock",
+      "PHEV Hybrid 380 HP / 615 N·m Torque",
+      "3.5-Ton Towing / Dual Locking Diffs",
       "360° Transparent Chassis Trail Camera",
-      "Reinforced Underbody Steel Armor",
-      "64-Color Dynamic Ambient Cabin Lights",
+      "Executive 7-Seat Lounge & Triple Displays",
       "Sony Premium Sound System",
-      "Autonomous Trail Crawl & Descent Control",
+      "Adaptive Terrain Air Suspension",
       "7-Year / 150,000 km Global Warranty",
     ],
     cta: "Configure Yours",
@@ -53,23 +53,23 @@ const plans = [
 
 export default function Pricing() {
   return (
-    <section id="pricing" className="py-16 sm:py-24 bg-white overflow-hidden">
+    <section id="pricing" className="py-16 sm:py-24 bg-white overflow-hidden w-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-10 sm:mb-16">
           <span className="text-xs sm:text-sm font-semibold text-gold tracking-widest uppercase">
             Pricing & Trims
           </span>
-          <h2 className="mt-2.5 text-3xl sm:text-5xl font-bold text-accent tracking-tight">
+          <h2 className="mt-2 text-3xl sm:text-4xl md:text-5xl font-extrabold text-accent tracking-tight">
             Premium, Priced Right
           </h2>
-          <p className="mt-3 sm:mt-4 text-sm sm:text-lg text-muted max-w-2xl mx-auto">
-            Rugged capability and premium luxury features at accessible prices.
-            All models include our industry-leading global warranty.
+          <p className="mt-3 text-sm sm:text-base md:text-lg text-muted max-w-2xl mx-auto leading-relaxed">
+            From agile urban crossovers to heavy-duty flagship off-roaders.
+            All models include our industry-leading 7-year global warranty.
           </p>
         </div>
 
-        {/* Pricing Cards: Stack on mobile, 3-Col on Desktop */}
-        <div className="grid md:grid-cols-3 gap-6 items-stretch max-w-5xl mx-auto">
+        {/* Pricing Cards: 1 Col on Mobile, 3 Col on Desktop */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch max-w-5xl mx-auto w-full">
           {plans.map((plan) => (
             <div
               key={plan.name}

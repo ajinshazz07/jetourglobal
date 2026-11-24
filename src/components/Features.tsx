@@ -18,9 +18,9 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
       </svg>
     ),
-    title: "High-Output Turbo Power",
+    title: "High-Output Hybrid & Turbo",
     description:
-      "2.0T turbocharged powerplants deliver up to 254 HP and 390 Nm of torque, pairing rapid highway acceleration with crawling power.",
+      "State-of-the-art PHEV hybrid and 2.0T turbocharged powerplants delivering up to 380 HP and 615 Nm torque for uncompromising power.",
   },
   {
     icon: (
@@ -28,9 +28,9 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
       </svg>
     ),
-    title: "Smart X-WD 4WD",
+    title: "Smart X-WD All-Terrain",
     description:
-      "Intelligent all-wheel drive with 7 terrain response modes for sand, snow, mud, and rock. Instant power transfer in milliseconds.",
+      "Intelligent all-wheel drive with 7 terrain response modes for sand, snow, mud, and rock with dual-diff locking capabilities.",
   },
   {
     icon: (
@@ -40,7 +40,7 @@ const features = [
     ),
     title: "Digital Cockpit",
     description:
-      'Dual 12.3" screens with voice assistant, wireless Apple CarPlay & Android Auto, OTA updates, and remote vehicle control via app.',
+      'Dual 12.3" high-resolution screens with intelligent voice assistant, wireless Apple CarPlay, Android Auto, and OTA cloud updates.',
   },
   {
     icon: (
@@ -48,9 +48,9 @@ const features = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
       </svg>
     ),
-    title: "Premium Comfort",
+    title: "Executive Comfort",
     description:
-      "Ventilated adventure leather seats, panoramic glass roof, 64-color ambient lighting, and acoustic noise-cancelling cabin.",
+      "Ventilated leather seating, panoramic glass roof, multi-color ambient lighting, and acoustic noise-cancelling cabin architecture.",
   },
   {
     icon: (
@@ -60,7 +60,7 @@ const features = [
     ),
     title: "Global 7-Year Warranty",
     description:
-      "Industry-leading 7-year / 150,000 km warranty coverage backed by authorized service centers across 45+ countries worldwide.",
+      "Industry-leading 7-year / 150,000 km warranty coverage backed by authorized service and dealer networks across 45+ countries worldwide.",
   },
 ];
 
@@ -101,7 +101,7 @@ export default function Features() {
           ))}
         </div>
 
-        {/* Extreme Terrain Testing Spotlight (Fully Responsive Grid) */}
+        {/* Extreme Terrain Testing Spotlight featuring F700 Truck */}
         <div className="mt-12 sm:mt-16 rounded-2xl sm:rounded-3xl overflow-hidden bg-slate-900 border border-slate-800 grid md:grid-cols-2 items-center shadow-xl">
           <div className="p-6 sm:p-10 md:p-12 order-2 md:order-1">
             <span className="text-[11px] sm:text-xs font-semibold tracking-wider text-gold uppercase px-3 py-1 rounded-full bg-gold/10 border border-gold/20 inline-block mb-3 sm:mb-4">
@@ -111,7 +111,7 @@ export default function Features() {
               Tested in the World’s Most Demanding Terrains
             </h3>
             <p className="mt-3 sm:mt-4 text-white/70 text-xs sm:text-sm leading-relaxed">
-              Every Jetour Freedom model undergoes over 2 million kilometers of extreme endurance trials across scorching desert dunes, sub-zero snowfields, and rocky high-altitude passes.
+              Every Jetour model undergoes over 2 million kilometers of extreme endurance trials across scorching desert dunes, sub-zero snowfields, and rocky high-altitude passes.
             </p>
             <div className="mt-5 sm:mt-6 grid grid-cols-2 gap-3 sm:gap-4">
               <div className="p-3.5 sm:p-4 rounded-xl bg-white/5 border border-white/10">
@@ -125,15 +125,15 @@ export default function Features() {
             </div>
           </div>
 
-          <div className="relative aspect-[16/10] md:aspect-auto md:h-full min-h-[260px] sm:min-h-[320px] order-1 md:order-2">
+          <div className="relative aspect-[16/10] md:aspect-auto md:h-full min-h-[260px] sm:min-h-[320px] order-1 md:order-2 bg-slate-950 flex items-center justify-center p-4">
             <Image
-              src={vehicleImages.desertAction}
-              alt="Jetour Freedom tested in extreme desert conditions"
+              src={vehicleImages.f700Pickup}
+              alt="Jetour F700 heavy-duty pickup truck tested in extreme conditions"
               fill
-              className="object-cover object-center"
+              className="object-contain p-2"
               sizes="(max-width: 768px) 100vw, 50vw"
             />
-            <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-slate-900 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-slate-900 via-transparent to-transparent pointer-events-none" />
           </div>
         </div>
       </div>

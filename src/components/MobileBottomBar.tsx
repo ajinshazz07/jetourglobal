@@ -25,10 +25,10 @@ export default function MobileBottomBar() {
       <div className="max-w-md mx-auto bg-slate-950/95 backdrop-blur-xl border border-white/20 p-2 sm:p-2.5 rounded-2xl shadow-2xl flex items-center justify-between gap-2.5">
         <div className="pl-2 min-w-0 flex-1">
           <div className="text-white text-xs font-bold tracking-tight truncate">
-            Jetour T2 Freedom
+            JETOUR G700 & T2 Series
           </div>
           <div className="text-gold text-[10px] font-semibold truncate">
-            From $24,990 · 4WD
+            From $21,990 · 7-Year Warranty
           </div>
         </div>
 

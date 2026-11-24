@@ -3,44 +3,64 @@ import { vehicleImages } from "@/assets/images";
 
 const models = [
   {
-    name: "T2 Freedom Expedition",
+    name: "JETOUR G700 Flagship",
+    tagline: "Luxury All-Terrain Command",
+    description:
+      "Commanding full-size luxury SUV with intelligent PHEV powertrain, triple digital displays, adaptive air suspension, and executive 7-seat versatility.",
+    specs: ["380 HP Hybrid", "Smart AWD", "7 Seats", "235mm Clearance"],
+    image: vehicleImages.g700Studio,
+    badge: "Flagship SUV",
+    gradient: "from-blue-950/70 via-slate-900 to-slate-950",
+  },
+  {
+    name: "JETOUR F700 Adventure Truck",
+    tagline: "Heavy-Duty Dual-Cab Dominance",
+    description:
+      "Engineered for high-tonnage hauling, desert overlanding, and commercial toughness with reinforced steel bed and dual-diff lock AWD.",
+    specs: ["2.0T / PHEV", "3,500 kg Towing", "1,150 kg Payload", "Locking Diffs"],
+    image: vehicleImages.f700Pickup,
+    badge: "Off-Road Truck",
+    gradient: "from-amber-950/70 via-slate-900 to-slate-950",
+  },
+  {
+    name: "JETOUR T2 TOPFIRE Custom",
+    tagline: "The Glamping Overlander",
+    description:
+      "Custom-tuned expedition specialist featuring iconic retro sunset mountain livery, heavy-duty all-terrain tires, and reinforced roof mounting.",
+    specs: ["TOPFIRE Tune", "AT Rugged Tires", "Roof Expedition Rack", "7 Modes"],
+    image: vehicleImages.t2Topfire,
+    badge: "Special Edition",
+    gradient: "from-sky-950/70 via-slate-900 to-slate-950",
+  },
+  {
+    name: "JETOUR T2 Traveller",
     tagline: "Born for the Wild",
     description:
-      "Box-styled rugged SUV with smart 4WD, high ground clearance, and a tech-forward cabin. Ready for desert dunes and unpaved frontiers.",
-    specs: ["2.0T Turbo", "Smart X-WD", "220mm Clearance"],
-    image: vehicleImages.desertAction,
-    badge: "Overlanding",
-    gradient: "from-amber-950/80 via-slate-900 to-slate-950",
+      "Box-styled rugged 4WD SUV with rear spare wheel carrier, intelligent BorgWarner torque distribution, and 220mm ground clearance.",
+    specs: ["2.0T Turbo (254 HP)", "Smart X-WD", "Rear Wheel Carrier", "220mm Clearance"],
+    image: vehicleImages.t2Silver,
+    badge: "Adventure Icon",
+    gradient: "from-slate-900 via-slate-900 to-slate-950",
   },
   {
-    name: "Jetour Freedom 2.0T",
-    tagline: "Rugged Design & Power",
+    name: "JETOUR T1 Cross",
+    tagline: "Next-Gen Urban Freedom",
     description:
-      "Bold geometric exterior with intelligent cockpit, spacious 5-seater versatility, and high-performance powertrain.",
-    specs: ["2.0T Engine", "7-Speed DCT", "Intelligent AWD"],
-    image: vehicleImages.freedom1,
-    badge: "Launch Edition",
-    gradient: "from-emerald-950/80 via-slate-900 to-slate-950",
+      "Compact, boxy urban adventure crossover with flush door handles, class-leading fuel efficiency, and intelligent digital driver assistance.",
+    specs: ["1.5T / 2.0T", "5.8 L/100km", "Dual 12.3\" Cockpit", "Level 2 ADAS"],
+    image: vehicleImages.t1Green,
+    badge: "Urban Explorer",
+    gradient: "from-emerald-950/70 via-slate-900 to-slate-950",
   },
   {
-    name: "Freedom Off-Road",
-    tagline: "Uncharted Frontiers",
+    name: "JETOUR G700 Ocean Edition",
+    tagline: "Deep Ocean All-Terrain",
     description:
-      "Engineered with multi-terrain response modes, heavy-duty suspension, and full 360° trail surveillance cameras.",
-    specs: ["Terrain Select", "AWD Lock", "360° Cam"],
-    image: vehicleImages.freedom2,
-    badge: "Trail Master",
-    gradient: "from-blue-950/80 via-slate-900 to-slate-950",
-  },
-  {
-    name: "Freedom Desert Runner",
-    tagline: "High-Speed Dunes",
-    description:
-      "Equipped with advanced cooling, sand traction algorithms, and reinforced underbody plates for relentless desert adventures.",
-    specs: ["254 HP", "Torque Vectoring", "7 Drive Modes"],
-    image: vehicleImages.desertAction,
-    badge: "Special Edition",
-    gradient: "from-orange-950/80 via-slate-900 to-slate-950",
+      "Deep metallic blue executive edition with intelligent multi-terrain drive selector, acoustic soundproofing, and panoramic glass roof.",
+    specs: ["PHEV AWD", "Acoustic Glass", "Panoramic Roof", "Executive Seats"],
+    image: vehicleImages.g700Blue,
+    badge: "Executive Edition",
+    gradient: "from-indigo-950/70 via-slate-900 to-slate-950",
   },
 ];
 
@@ -50,35 +70,34 @@ export default function Models() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-10 sm:mb-16">
           <span className="text-xs sm:text-sm font-semibold text-gold tracking-widest uppercase">
-            Lineup
+            Official Lineup
           </span>
           <h2 className="mt-2 text-3xl sm:text-4xl md:text-5xl font-extrabold text-accent tracking-tight">
-            Choose Your Journey
+            Choose Your JETOUR
           </h2>
           <p className="mt-3 text-sm sm:text-base md:text-lg text-muted max-w-2xl mx-auto leading-relaxed">
-            From extreme desert conquerors to modern urban explorers — find the JETOUR
-            that matches your lifestyle.
+            From the heavy-duty F700 truck and flagship G700 to the iconic T2 and agile T1 Cross — engineered for every journey.
           </p>
         </div>
 
-        {/* 100% Responsive Grid: 1 Col on Mobile, 2 Col on Desktop */}
+        {/* Responsive Grid: 1 Col Mobile, 2 Col Tablet/Desktop */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 w-full">
           {models.map((model) => (
             <div
               key={model.name}
-              className={`w-full relative group rounded-2xl sm:rounded-3xl bg-gradient-to-br ${model.gradient} p-5 sm:p-7 md:p-8 overflow-hidden flex flex-col justify-between transition-all duration-300 hover:shadow-2xl hover:scale-[1.01] border border-slate-800 shadow-lg`}
+              className={`w-full relative group rounded-2xl sm:rounded-3xl bg-gradient-to-br ${model.gradient} p-5 sm:p-7 md:p-8 overflow-hidden flex flex-col justify-between transition-all duration-300 hover:shadow-2xl hover:scale-[1.01] border border-slate-800 shadow-xl`}
             >
               <div>
-                {/* Vehicle Image Frame with Responsive Aspect Ratio */}
-                <div className="relative w-full aspect-[16/10] sm:aspect-[16/9] rounded-xl sm:rounded-2xl overflow-hidden mb-5 bg-slate-950 border border-white/10 shadow-inner">
+                {/* Vehicle Studio Image Frame */}
+                <div className="relative w-full aspect-[16/9] sm:aspect-[16/8] rounded-xl sm:rounded-2xl overflow-hidden mb-5 bg-slate-950/60 border border-white/10 shadow-inner flex items-center justify-center p-3 sm:p-4">
                   <Image
                     src={model.image}
                     alt={model.name}
                     fill
-                    className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                    className="object-contain p-2 group-hover:scale-105 transition-transform duration-700"
                     sizes="(max-width: 768px) 100vw, 50vw"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-black/20" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none" />
 
                   {/* Floating Badge */}
                   <div className="absolute top-3 left-3">
