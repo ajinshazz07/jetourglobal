@@ -1,9 +1,9 @@
 const footerLinks = {
   Models: [
-    { label: "T2 Traveller", href: "#models" },
-    { label: "Dashing", href: "#models" },
-    { label: "X70 Plus", href: "#models" },
-    { label: "T8 Flagship", href: "#models" },
+    { label: "T2 Freedom Expedition", href: "#models" },
+    { label: "Freedom 2.0T", href: "#models" },
+    { label: "Freedom Off-Road", href: "#models" },
+    { label: "Desert Runner", href: "#models" },
     { label: "Compare Models", href: "#models" },
   ],
   Company: [
@@ -30,29 +30,29 @@ const footerLinks = {
 
 export default function Footer() {
   return (
-    <footer id="footer" className="bg-accent text-white">
+    <footer id="footer" className="bg-accent text-white overflow-hidden pb-16 md:pb-0">
       {/* CTA Banner */}
       <div className="border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-6 py-16 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div>
-            <h3 className="text-2xl sm:text-3xl font-bold">
+            <h3 className="text-2xl sm:text-3xl font-bold tracking-tight">
               Ready to Start Your Journey?
             </h3>
-            <p className="mt-2 text-white/60 max-w-md">
-              Visit your nearest JETOUR dealer for a test drive, or configure
-              your dream SUV online.
+            <p className="mt-2 text-white/60 text-sm max-w-md leading-relaxed">
+              Visit your nearest JETOUR showroom for a test drive, or configure
+              your dream SUV online today.
             </p>
           </div>
-          <div className="flex gap-3">
+          <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
             <a
               href="#pricing"
-              className="bg-gold hover:bg-gold-light text-accent font-semibold px-6 py-3 rounded-xl text-sm transition-colors"
+              className="bg-gold hover:bg-gold-light text-accent font-bold px-6 py-3.5 rounded-xl text-sm transition-all text-center shadow-md active:scale-95"
             >
               Book Test Drive
             </a>
             <a
               href="#models"
-              className="bg-white/10 hover:bg-white/20 text-white font-semibold px-6 py-3 rounded-xl text-sm transition-colors border border-white/10"
+              className="bg-white/10 hover:bg-white/20 text-white font-semibold px-6 py-3.5 rounded-xl text-sm transition-all border border-white/10 text-center active:scale-95"
             >
               Explore Models
             </a>
@@ -61,19 +61,19 @@ export default function Footer() {
       </div>
 
       {/* Links Grid */}
-      <div className="max-w-7xl mx-auto px-6 py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {Object.entries(footerLinks).map(([category, links]) => (
             <div key={category}>
-              <h4 className="font-semibold text-sm text-white/80 mb-4 tracking-wider uppercase">
+              <h4 className="font-bold text-xs sm:text-sm text-white/90 mb-3 sm:mb-4 tracking-wider uppercase">
                 {category}
               </h4>
-              <ul className="space-y-3">
+              <ul className="space-y-2.5 sm:space-y-3">
                 {links.map((link) => (
                   <li key={link.label}>
                     <a
                       href={link.href}
-                      className="text-sm text-white/40 hover:text-white transition-colors"
+                      className="text-xs sm:text-sm text-white/50 hover:text-white transition-colors"
                     >
                       {link.label}
                     </a>
@@ -87,16 +87,15 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <div className="border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">J</span>
+            <div className="w-8 h-8 bg-gold/20 border border-gold/30 rounded-lg flex items-center justify-center">
+              <span className="text-gold font-bold text-sm">J</span>
             </div>
             <span className="text-sm font-bold tracking-widest">JETOUR</span>
           </div>
-          <p className="text-xs text-white/30">
-            © 2026 JETOUR Global. All rights reserved. A Chery Holding
-            brand.
+          <p className="text-xs text-white/40 text-center sm:text-left">
+            © 2026 JETOUR Global. All rights reserved. A Chery Holding brand.
           </p>
           {/* Social icons */}
           <div className="flex gap-4">
@@ -104,7 +103,7 @@ export default function Footer() {
               <a
                 key={social}
                 href="#"
-                className="text-white/30 hover:text-white transition-colors text-xs"
+                className="text-white/40 hover:text-white transition-colors text-xs"
               >
                 {social}
               </a>
