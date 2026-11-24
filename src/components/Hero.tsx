@@ -44,9 +44,9 @@ export default function Hero() {
   const [selectedVehicle, setSelectedVehicle] = useState(heroVehicles[0]);
 
   return (
-    <section className="relative min-h-[92vh] sm:min-h-screen flex flex-col justify-center hero-gradient overflow-hidden pt-24 sm:pt-28 pb-12 sm:pb-16">
+    <section className="relative min-h-[90vh] sm:min-h-screen flex flex-col justify-center hero-gradient overflow-hidden pt-24 sm:pt-28 pb-12 sm:pb-16 w-full">
       {/* Decorative ambient lighting elements */}
-      <div className="absolute inset-0 pointer-events-none">
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute top-16 right-5 w-72 sm:w-96 h-72 sm:h-96 bg-gold/10 rounded-full blur-3xl" />
         <div className="absolute bottom-16 left-5 w-60 sm:w-72 h-60 sm:h-72 bg-blue-500/10 rounded-full blur-3xl" />
         {/* Subtle grid pattern */}
@@ -60,7 +60,7 @@ export default function Hero() {
         />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 text-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 text-center w-full">
         {/* Top Tagline Pill */}
         <div className="animate-fade-in-up">
           <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 text-gold text-xs sm:text-sm font-medium tracking-wide mb-4 sm:mb-6 border border-white/15 backdrop-blur-md shadow-sm">
@@ -111,10 +111,10 @@ export default function Hero() {
         </div>
 
         {/* Hero Vehicle Showcase Card */}
-        <div className="mt-10 sm:mt-12 max-w-5xl mx-auto">
-          <div className="relative group rounded-2xl sm:rounded-3xl overflow-hidden border border-white/15 bg-slate-900/90 shadow-2xl backdrop-blur-md">
+        <div className="mt-10 sm:mt-12 max-w-5xl mx-auto w-full">
+          <div className="relative group rounded-2xl sm:rounded-3xl overflow-hidden border border-white/15 bg-slate-900/90 shadow-2xl backdrop-blur-md w-full">
             {/* Aspect Ratio Driven Height */}
-            <div className="relative w-full aspect-[4/3] sm:aspect-[16/10] md:aspect-[16/9] min-h-[340px] max-h-[580px]">
+            <div className="relative w-full aspect-[4/3] sm:aspect-[16/10] md:aspect-[16/9] min-h-[320px] max-h-[580px]">
               <Image
                 src={selectedVehicle.image}
                 alt={selectedVehicle.alt}
@@ -126,7 +126,7 @@ export default function Hero() {
               {/* Responsive Gradient Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-black/30 pointer-events-none" />
 
-              {/* Top floating badges (responsive wrapping) */}
+              {/* Top floating badges */}
               <div className="absolute top-3 sm:top-5 left-3 sm:left-6 right-3 sm:right-6 flex items-center justify-between gap-2 pointer-events-none">
                 <div className="flex items-center gap-1.5 sm:gap-2">
                   <span className="px-3 py-1 rounded-full bg-black/70 backdrop-blur-md text-[11px] sm:text-xs font-bold text-white border border-white/20 shadow-md">
@@ -175,27 +175,27 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Vehicle Switcher: Mobile Horizontal Snap Track */}
-          <div className="mt-4 sm:mt-6 flex items-center justify-start sm:justify-center gap-2 sm:gap-3 overflow-x-auto snap-x snap-mandatory scrollbar-none pb-2 px-2 -mx-2 sm:mx-0">
+          {/* Vehicle Switcher: Responsive Centered Wrap */}
+          <div className="mt-4 sm:mt-6 flex flex-wrap items-center justify-center gap-2 sm:gap-3 px-2 w-full">
             {heroVehicles.map((vehicle) => {
               const isSelected = selectedVehicle.id === vehicle.id;
               return (
                 <button
                   key={vehicle.id}
                   onClick={() => setSelectedVehicle(vehicle)}
-                  className={`flex-shrink-0 snap-center flex items-center gap-2 sm:gap-2.5 px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all cursor-pointer whitespace-nowrap border ${
+                  className={`flex items-center gap-2 sm:gap-2.5 px-3 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all cursor-pointer whitespace-nowrap border ${
                     isSelected
                       ? "bg-white/20 text-white border-gold shadow-lg shadow-gold/10 scale-[1.02]"
                       : "bg-white/5 text-white/60 hover:text-white hover:bg-white/10 border-white/10"
                   }`}
                 >
-                  <div className="relative w-7 h-7 sm:w-8 sm:h-8 rounded-lg overflow-hidden border border-white/20 flex-shrink-0">
+                  <div className="relative w-6 h-6 sm:w-7 sm:h-7 rounded-md overflow-hidden border border-white/20 flex-shrink-0">
                     <Image
                       src={vehicle.image}
                       alt={vehicle.name}
                       fill
                       className="object-cover"
-                      sizes="32px"
+                      sizes="28px"
                     />
                   </div>
                   <span>{vehicle.name}</span>
@@ -206,7 +206,7 @@ export default function Hero() {
         </div>
 
         {/* Global Statistics Bar */}
-        <div className="mt-12 sm:mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 max-w-4xl mx-auto pt-6 sm:pt-8 border-t border-white/10">
+        <div className="mt-12 sm:mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 max-w-4xl mx-auto pt-6 sm:pt-8 border-t border-white/10 w-full">
           {[
             { value: "45+", label: "Countries & Regions" },
             { value: "1.2M+", label: "Vehicles Delivered" },
@@ -217,7 +217,7 @@ export default function Hero() {
               <div className="text-xl sm:text-3xl md:text-4xl font-extrabold text-white">
                 {stat.value}
               </div>
-              <div className="text-[11px] sm:text-xs text-white/50 mt-0.5">{stat.label}</div>
+              <div className="text-[11px] sm:text-xs text-white/50 mt-0.5 break-words">{stat.label}</div>
             </div>
           ))}
         </div>

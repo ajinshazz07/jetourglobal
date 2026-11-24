@@ -45,11 +45,11 @@ export default function Navbar() {
 
   return (
     <>
-      <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 w-full ${
           scrolled
-            ? "bg-white/90 backdrop-blur-xl border-b border-border shadow-sm py-3"
-            : "bg-white/70 backdrop-blur-md border-b border-white/20 py-4"
+            ? "bg-white/95 backdrop-blur-xl border-b border-border shadow-sm py-2.5 sm:py-3"
+            : "bg-white/80 backdrop-blur-md border-b border-white/20 py-3 sm:py-4"
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between">
@@ -69,7 +69,7 @@ export default function Navbar() {
           </a>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-8">
+          <nav aria-label="Main navigation" className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
               <a
                 key={link.label}
@@ -85,7 +85,7 @@ export default function Navbar() {
             >
               Book a Test Drive
             </a>
-          </div>
+          </nav>
 
           {/* Mobile Menu Hamburger Button */}
           <button
@@ -118,29 +118,31 @@ export default function Navbar() {
             </svg>
           </button>
         </div>
-      </nav>
+      </header>
 
       {/* Mobile Slide-Over Drawer with Glassmorphism */}
       <div
-        className={`fixed inset-0 z-50 md:hidden transition-opacity duration-300 ${
-          menuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        className={`fixed inset-0 z-50 md:hidden overflow-hidden transition-all duration-300 ${
+          menuOpen
+            ? "opacity-100 pointer-events-auto visible"
+            : "opacity-0 pointer-events-none invisible"
         }`}
       >
         {/* Backdrop overlay */}
         <div
-          className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+          className="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity"
           onClick={() => setMenuOpen(false)}
         />
 
         {/* Drawer content */}
         <div
-          className={`absolute top-0 right-0 bottom-0 w-[80%] max-w-sm bg-slate-950/95 backdrop-blur-2xl border-l border-white/10 p-6 flex flex-col justify-between shadow-2xl transition-transform duration-300 ease-out pt-safe pb-safe ${
+          className={`absolute top-0 right-0 bottom-0 w-[85%] max-w-xs bg-slate-950/95 backdrop-blur-2xl border-l border-white/10 p-5 sm:p-6 flex flex-col justify-between shadow-2xl transition-transform duration-300 ease-out pt-safe pb-safe ${
             menuOpen ? "translate-x-0" : "translate-x-full"
           }`}
         >
           <div>
             {/* Header in drawer */}
-            <div className="flex items-center justify-between pb-6 border-b border-white/10">
+            <div className="flex items-center justify-between pb-5 border-b border-white/10">
               <div className="flex items-center gap-2">
                 <div className="w-8 h-8 bg-gold rounded-lg flex items-center justify-center text-accent font-black text-sm">
                   J
@@ -161,12 +163,12 @@ export default function Navbar() {
             </div>
 
             {/* Nav links */}
-            <div className="py-6 space-y-2">
+            <div className="py-5 space-y-1.5">
               {navLinks.map((link) => (
                 <a
                   key={link.label}
                   href={link.href}
-                  className="flex items-center justify-between px-4 py-3.5 rounded-xl text-base font-semibold text-white/80 hover:text-white hover:bg-white/10 transition-colors cursor-pointer"
+                  className="flex items-center justify-between px-3.5 py-3 rounded-xl text-base font-semibold text-white/80 hover:text-white hover:bg-white/10 transition-colors cursor-pointer"
                   onClick={() => setMenuOpen(false)}
                 >
                   <span>{link.label}</span>
@@ -179,7 +181,7 @@ export default function Navbar() {
           </div>
 
           {/* Drawer CTA footer */}
-          <div className="pt-6 border-t border-white/10 space-y-3">
+          <div className="pt-5 border-t border-white/10 space-y-3">
             <a
               href="#pricing"
               className="w-full flex items-center justify-center gap-2 bg-gold hover:bg-gold-light text-accent text-sm font-bold py-3.5 px-4 rounded-xl transition-all shadow-lg active:scale-95"
@@ -190,8 +192,8 @@ export default function Navbar() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
             </a>
-            <p className="text-center text-xs text-white/40 pt-2">
-              Global Helpline: +1 (800) JETOUR-01
+            <p className="text-center text-xs text-white/40 pt-1">
+              Global Support: travel-plus@jetour.com
             </p>
           </div>
         </div>

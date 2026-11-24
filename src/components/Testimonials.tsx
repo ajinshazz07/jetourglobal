@@ -35,31 +35,31 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="py-16 sm:py-24 bg-card-bg overflow-hidden">
+    <section id="testimonials" className="py-16 sm:py-24 bg-card-bg overflow-hidden w-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-10 sm:mb-16">
           <span className="text-xs sm:text-sm font-semibold text-gold tracking-widest uppercase">
             Reviews
           </span>
-          <h2 className="mt-2.5 text-3xl sm:text-5xl font-bold text-accent tracking-tight">
+          <h2 className="mt-2 text-3xl sm:text-4xl md:text-5xl font-extrabold text-accent tracking-tight">
             Owners Love JETOUR
           </h2>
-          <p className="mt-3 sm:mt-4 text-sm sm:text-lg text-muted max-w-2xl mx-auto">
+          <p className="mt-3 text-sm sm:text-base md:text-lg text-muted max-w-2xl mx-auto leading-relaxed">
             Hear from JETOUR drivers around the world who chose adventure,
             comfort, and value.
           </p>
         </div>
 
-        {/* Mobile: Horizontal Snap Track | Tablet/Desktop: 2-Column Grid */}
-        <div className="flex md:grid md:grid-cols-2 gap-4 sm:gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory scrollbar-none pb-4 md:pb-0 -mx-4 px-4 sm:-mx-6 sm:px-6 md:mx-0 md:px-0">
+        {/* 100% Responsive Grid: 1 Col Mobile, 2 Col Desktop */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 w-full">
           {testimonials.map((t) => (
             <div
               key={t.name}
-              className="w-[85vw] sm:w-[70vw] md:w-auto flex-shrink-0 snap-center bg-white rounded-2xl p-6 sm:p-8 border border-border hover:border-gold/30 hover:shadow-lg transition-all flex flex-col justify-between"
+              className="w-full bg-white rounded-2xl p-6 sm:p-8 border border-border hover:border-gold/30 hover:shadow-lg transition-all flex flex-col justify-between shadow-sm"
             >
               <div>
                 {/* Rating Stars */}
-                <div className="flex gap-1 mb-3.5 sm:mb-4">
+                <div className="flex gap-1 mb-3.5">
                   {Array.from({ length: t.rating }).map((_, i) => (
                     <svg
                       key={i}
@@ -72,13 +72,13 @@ export default function Testimonials() {
                   ))}
                 </div>
 
-                <blockquote className="text-foreground leading-relaxed mb-5 sm:mb-6 text-xs sm:text-sm md:text-base">
+                <blockquote className="text-foreground leading-relaxed mb-5 text-xs sm:text-sm md:text-base">
                   &ldquo;{t.quote}&rdquo;
                 </blockquote>
               </div>
 
               <div className="flex items-center gap-3 pt-4 border-t border-slate-100">
-                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-accent/10 flex items-center justify-center text-accent font-bold text-xs sm:text-sm">
+                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-accent/10 flex items-center justify-center text-accent font-bold text-xs sm:text-sm flex-shrink-0">
                   {t.name
                     .split(" ")
                     .map((n) => n[0])
