@@ -8,6 +8,7 @@ const footerLinks = {
   ],
   Company: [
     { label: "About JETOUR", href: "#" },
+    { label: "Adventure Gallery", href: "#gallery" },
     { label: "Newsroom", href: "#" },
     { label: "Careers", href: "#" },
     { label: "Sustainability", href: "#" },
