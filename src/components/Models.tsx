@@ -12,7 +12,7 @@ const models = [
     logo: brandLogos.logoT2,
     badge: "Available Now",
     isComingSoon: false,
-    gradient: "from-emerald-950/70 via-slate-900 to-slate-950",
+    isStudioJpg: false,
   },
   {
     name: "JETOUR T2 TOPFIRE Custom",
@@ -24,7 +24,7 @@ const models = [
     logo: brandLogos.logoT2,
     badge: "Special Edition · Available",
     isComingSoon: false,
-    gradient: "from-sky-950/70 via-slate-900 to-slate-950",
+    isStudioJpg: false,
   },
   {
     name: "JETOUR G700 Flagship",
@@ -36,7 +36,7 @@ const models = [
     logo: brandLogos.logoG700,
     badge: "Coming Soon",
     isComingSoon: true,
-    gradient: "from-amber-950/50 via-slate-900 to-slate-950",
+    isStudioJpg: true,
   },
   {
     name: "JETOUR F700 Adventure Truck",
@@ -47,7 +47,7 @@ const models = [
     image: vehicleImages.f700Pickup,
     badge: "Coming Soon",
     isComingSoon: true,
-    gradient: "from-slate-900 via-slate-900 to-slate-950",
+    isStudioJpg: true,
   },
   {
     name: "JETOUR T1 Cross",
@@ -59,7 +59,7 @@ const models = [
     logo: brandLogos.logoT1,
     badge: "Coming Soon",
     isComingSoon: true,
-    gradient: "from-slate-900 via-slate-900 to-slate-950",
+    isStudioJpg: false,
   },
   {
     name: "JETOUR G700 Ocean Edition",
@@ -71,23 +71,23 @@ const models = [
     logo: brandLogos.logoG700,
     badge: "Coming Soon",
     isComingSoon: true,
-    gradient: "from-slate-900 via-slate-900 to-slate-950",
+    isStudioJpg: false,
   },
 ];
 
 export default function Models() {
   return (
-    <section id="models" className="py-16 sm:py-24 bg-white overflow-hidden w-full">
+    <section id="models" className="py-16 sm:py-24 bg-secondary overflow-hidden w-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-10 sm:mb-16">
-          <span className="text-xs sm:text-sm font-semibold text-gold tracking-widest uppercase">
+          <span className="text-xs sm:text-sm font-bold text-accent-deep tracking-widest uppercase">
             Official Lineup
           </span>
-          <h2 className="mt-2 text-3xl sm:text-4xl md:text-5xl font-extrabold text-accent tracking-tight">
+          <h2 className="mt-2 text-3xl sm:text-4xl md:text-5xl font-extrabold text-ink tracking-tight">
             Explore JETOUR Models
           </h2>
           <p className="mt-3 text-sm sm:text-base md:text-lg text-muted max-w-2xl mx-auto leading-relaxed">
-            The award-winning <span className="font-bold text-accent">JETOUR T2</span> is available now for order and delivery. Preview our upcoming flagship SUVs and adventure truck lineup.
+            The award-winning <span className="font-bold text-ink">JETOUR T2</span> is available now for order and delivery. Preview our upcoming flagship SUVs and adventure truck lineup.
           </p>
         </div>
 
@@ -96,21 +96,25 @@ export default function Models() {
           {models.map((model) => (
             <div
               key={model.name}
-              className={`w-full relative group rounded-2xl sm:rounded-3xl bg-gradient-to-br ${model.gradient} p-5 sm:p-7 md:p-8 overflow-hidden flex flex-col justify-between transition-all duration-300 hover:shadow-2xl hover:scale-[1.01] border ${
-                model.isComingSoon ? "border-slate-800 opacity-90" : "border-gold/40 shadow-xl ring-1 ring-gold/20"
+              className={`w-full relative group rounded-2xl sm:rounded-3xl bg-primary p-5 sm:p-7 md:p-8 overflow-hidden flex flex-col justify-between transition-all duration-300 hover:shadow-xl hover:scale-[1.01] border ${
+                model.isComingSoon
+                  ? "border-border opacity-95"
+                  : "border-accent/60 shadow-lg ring-1 ring-accent/25"
               }`}
             >
               <div>
                 {/* Vehicle Studio Image Frame */}
-                <div className="relative w-full aspect-[16/9] sm:aspect-[16/8] rounded-xl sm:rounded-2xl overflow-hidden mb-5 bg-slate-950/60 border border-white/10 shadow-inner flex items-center justify-center p-3 sm:p-4">
+                <div className="relative w-full aspect-[16/9] sm:aspect-[16/8] rounded-xl sm:rounded-2xl overflow-hidden mb-5 bg-secondary/55 border border-border flex items-center justify-center p-3 sm:p-4">
                   <Image
                     src={model.image}
                     alt={model.name}
                     fill
-                    className="object-contain p-2 group-hover:scale-105 transition-transform duration-700"
+                    className={`object-contain p-2 group-hover:scale-105 transition-transform duration-700 ${
+                      model.isStudioJpg ? "mix-blend-multiply" : ""
+                    }`}
                     sizes="(max-width: 768px) 100vw, 50vw"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-secondary/50 via-transparent to-transparent pointer-events-none" />
 
                   {/* Neon Availability Indicator - No Curved Container */}
                   <div className="absolute top-3.5 left-3.5 flex items-center gap-2 select-none">
@@ -137,7 +141,7 @@ export default function Models() {
                         src={model.logo}
                         alt={model.name}
                         fill
-                        className="object-contain object-right opacity-80 group-hover:opacity-100 transition-opacity"
+                        className="object-contain object-right brightness-50 contrast-125 opacity-75 group-hover:opacity-100 transition-opacity"
                         sizes="64px"
                       />
                     </div>
@@ -145,22 +149,22 @@ export default function Models() {
                 </div>
 
                 <div className="flex items-baseline justify-between gap-2">
-                  <h3 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-white tracking-tight">
+                  <h3 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-ink tracking-tight">
                     {model.name}
                   </h3>
                 </div>
-                <p className="text-gold font-medium text-xs sm:text-sm mt-1">{model.tagline}</p>
-                <p className="mt-2.5 text-white/70 leading-relaxed text-xs sm:text-sm">
+                <p className="text-accent-deep font-semibold text-xs sm:text-sm mt-1">{model.tagline}</p>
+                <p className="mt-2.5 text-muted leading-relaxed text-xs sm:text-sm">
                   {model.description}
                 </p>
               </div>
 
-              <div className="mt-5 pt-4 border-t border-white/10 flex flex-wrap items-center justify-between gap-2">
+              <div className="mt-5 pt-4 border-t border-border flex flex-wrap items-center justify-between gap-2">
                 <div className="flex flex-wrap gap-1.5 sm:gap-2">
                   {model.specs.map((spec) => (
                     <span
                       key={spec}
-                      className="px-2.5 py-1 bg-white/10 rounded-lg text-[11px] sm:text-xs text-white/80 font-medium border border-white/5"
+                      className="px-2.5 py-1 bg-secondary/80 rounded-lg text-[11px] sm:text-xs text-ink/85 font-medium border border-border"
                     >
                       {spec}
                     </span>
@@ -169,8 +173,8 @@ export default function Models() {
 
                 {model.isComingSoon ? (
                   <a
-                    href="#footer"
-                    className="text-amber-400 hover:text-amber-300 transition-colors font-semibold text-xs sm:text-sm flex items-center gap-1 active:scale-95 whitespace-nowrap"
+                    href="#contact"
+                    className="text-accent-deep hover:text-ink transition-colors font-semibold text-xs sm:text-sm flex items-center gap-1 active:scale-95 whitespace-nowrap"
                   >
                     Join Waitlist
                     <svg
@@ -190,11 +194,11 @@ export default function Models() {
                 ) : (
                   <a
                     href="#pricing"
-                    className="text-gold hover:text-gold-light transition-colors font-bold text-xs sm:text-sm flex items-center gap-1 group/btn active:scale-95 whitespace-nowrap"
+                    className="text-ink hover:text-accent-deep transition-colors font-bold text-xs sm:text-sm flex items-center gap-1 group/btn active:scale-95 whitespace-nowrap"
                   >
                     Order T2
                     <svg
-                      className="w-3.5 h-3.5 sm:w-4 sm:h-4 transition-transform group-hover/btn:translate-x-1"
+                      className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-accent-deep transition-transform group-hover/btn:translate-x-1"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"

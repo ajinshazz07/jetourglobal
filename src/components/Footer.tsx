@@ -34,15 +34,15 @@ const footerLinks = {
 
 export default function Footer() {
   return (
-    <footer id="footer" className="bg-accent text-white overflow-hidden pb-16 md:pb-0">
+    <footer id="footer" className="bg-secondary text-ink overflow-hidden pb-16 md:pb-0 border-t border-border">
       {/* CTA Banner */}
-      <div className="border-b border-white/10">
+      <div className="border-b border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div>
-            <h3 className="text-2xl sm:text-3xl font-bold tracking-tight">
+            <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-ink">
               Ready to Start Your Journey?
             </h3>
-            <p className="mt-2 text-white/60 text-sm max-w-md leading-relaxed">
+            <p className="mt-2 text-muted text-sm max-w-md leading-relaxed">
               Visit your nearest JETOUR showroom for a test drive, or configure
               your dream JETOUR T2 online today. Preview upcoming models.
             </p>
@@ -50,13 +50,13 @@ export default function Footer() {
           <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
             <a
               href="#pricing"
-              className="bg-gold hover:bg-gold-light text-accent font-bold px-6 py-3.5 rounded-xl text-sm transition-all text-center shadow-md active:scale-95"
+              className="bg-accent hover:bg-gold-light text-ink font-bold px-6 py-3.5 rounded-xl text-sm transition-all text-center shadow-md active:scale-95"
             >
               Book Test Drive
             </a>
             <a
               href="#models"
-              className="bg-white/10 hover:bg-white/20 text-white font-semibold px-6 py-3.5 rounded-xl text-sm transition-all border border-white/10 text-center active:scale-95"
+              className="bg-primary hover:bg-primary/80 text-ink font-semibold px-6 py-3.5 rounded-xl text-sm transition-all border border-border text-center active:scale-95"
             >
               Explore Models
             </a>
@@ -69,7 +69,7 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {Object.entries(footerLinks).map(([category, links]) => (
             <div key={category}>
-              <h4 className="font-bold text-xs sm:text-sm text-white/90 mb-3 sm:mb-4 tracking-wider uppercase">
+              <h4 className="font-bold text-xs sm:text-sm text-ink mb-3 sm:mb-4 tracking-wider uppercase">
                 {category}
               </h4>
               <ul className="space-y-2.5 sm:space-y-3">
@@ -77,7 +77,7 @@ export default function Footer() {
                   <li key={link.label}>
                     <a
                       href={link.href}
-                      className="text-xs sm:text-sm text-white/50 hover:text-white transition-colors"
+                      className="text-xs sm:text-sm text-muted hover:text-ink transition-colors"
                     >
                       {link.label}
                     </a>
@@ -90,18 +90,18 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-white/10">
+      <div className="border-t border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="relative h-6 w-28 flex items-center">
             <Image
-              src={brandLogos.jetourLogoWhite}
+              src={brandLogos.jetourLogo}
               alt="JETOUR"
               fill
               className="object-contain object-left"
               sizes="112px"
             />
           </div>
-          <p className="text-xs text-white/40 text-center sm:text-left">
+          <p className="text-xs text-muted text-center sm:text-left">
             © 2026 JETOUR Global. All rights reserved. A Chery Holding brand.
           </p>
           {/* Social icons */}
@@ -110,7 +110,7 @@ export default function Footer() {
               <a
                 key={social}
                 href="#"
-                className="text-white/40 hover:text-white transition-colors text-xs"
+                className="text-muted hover:text-ink transition-colors text-xs"
               >
                 {social}
               </a>

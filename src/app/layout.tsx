@@ -12,7 +12,7 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 5,
   viewportFit: "cover",
-  themeColor: "#1a1a2e",
+  themeColor: "#F5F1E9",
 };
 
 export default function RootLayout({
@@ -22,7 +22,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="h-full antialiased scroll-smooth">
-      <body className="min-h-full flex flex-col bg-white text-slate-900 selection:bg-gold/30 selection:text-accent">
+      <body className="min-h-full flex flex-col bg-primary text-ink selection:bg-accent/30 selection:text-ink">
         {children}
       </body>
     </html>

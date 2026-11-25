@@ -51,8 +51,8 @@ export default function Navbar() {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 w-full ${
           scrolled
-            ? "bg-slate-950/90 backdrop-blur-xl border-b border-white/10 shadow-xl py-2.5 sm:py-3"
-            : "bg-gradient-to-b from-black/85 via-black/40 to-transparent py-4 border-b border-transparent"
+            ? "bg-primary/90 backdrop-blur-xl border-b border-border shadow-sm py-2.5 sm:py-3"
+            : "bg-gradient-to-b from-primary/95 via-primary/65 to-transparent py-4 border-b border-transparent"
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between">
@@ -60,7 +60,7 @@ export default function Navbar() {
           <a href="#" className="flex items-center gap-3 group py-1" aria-label="JETOUR Home">
             <div className="relative h-6 sm:h-7 w-32 sm:w-36 flex items-center transition-transform group-hover:scale-105">
               <Image
-                src={brandLogos.jetourLogoWhite}
+                src={brandLogos.jetourLogo}
                 alt="JETOUR"
                 fill
                 priority
@@ -68,8 +68,8 @@ export default function Navbar() {
                 sizes="(max-width: 640px) 128px, 144px"
               />
             </div>
-            <span className="hidden sm:inline-block h-3.5 w-[1px] bg-white/20" />
-            <span className="hidden sm:inline-block text-[10px] font-semibold text-gold tracking-widest uppercase">
+            <span className="hidden sm:inline-block h-3.5 w-[1px] bg-ink/20" />
+            <span className="hidden sm:inline-block text-[10px] font-bold text-accent-deep tracking-widest uppercase">
               Global
             </span>
           </a>
@@ -80,14 +80,14 @@ export default function Navbar() {
               <a
                 key={link.label}
                 href={link.href}
-                className="text-sm font-medium text-white/80 hover:text-white transition-colors relative py-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gold hover:after:w-full after:transition-all"
+                className="text-sm font-medium text-ink/75 hover:text-ink transition-colors relative py-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-accent hover:after:w-full after:transition-all"
               >
                 {link.label}
               </a>
             ))}
             <a
               href="#pricing"
-              className="bg-gold hover:bg-gold-light text-accent px-5 py-2.5 rounded-xl text-sm font-bold transition-all shadow-lg hover:shadow-gold/20 active:scale-95"
+              className="bg-accent hover:bg-gold-light text-ink px-5 py-2.5 rounded-xl text-sm font-bold transition-all shadow-md hover:shadow-accent/25 active:scale-95"
             >
               Book a Test Drive
             </a>
@@ -95,7 +95,7 @@ export default function Navbar() {
 
           {/* Mobile Menu Hamburger Button */}
           <button
-            className="md:hidden w-10 h-10 flex items-center justify-center rounded-xl bg-white/10 text-white border border-white/20 hover:bg-white/20 transition-colors cursor-pointer active:scale-90"
+            className="md:hidden w-10 h-10 flex items-center justify-center rounded-xl bg-secondary/80 text-ink border border-ink/15 hover:bg-secondary transition-colors cursor-pointer active:scale-90"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle navigation menu"
             aria-expanded={menuOpen}
@@ -126,7 +126,7 @@ export default function Navbar() {
         </div>
       </header>
 
-      {/* Mobile Slide-Over Drawer with Glassmorphism */}
+      {/* Mobile Slide-Over Drawer */}
       <div
         className={`fixed inset-0 z-50 md:hidden overflow-hidden transition-all duration-300 ${
           menuOpen
@@ -136,22 +136,22 @@ export default function Navbar() {
       >
         {/* Backdrop overlay */}
         <div
-          className="absolute inset-0 bg-black/70 backdrop-blur-md transition-opacity"
+          className="absolute inset-0 bg-ink/45 backdrop-blur-sm transition-opacity"
           onClick={() => setMenuOpen(false)}
         />
 
         {/* Drawer content */}
         <div
-          className={`absolute top-0 right-0 bottom-0 w-[85%] max-w-xs bg-slate-950/95 backdrop-blur-2xl border-l border-white/10 p-5 sm:p-6 flex flex-col justify-between shadow-2xl transition-transform duration-300 ease-out pt-safe pb-safe ${
+          className={`absolute top-0 right-0 bottom-0 w-[85%] max-w-xs bg-primary/98 backdrop-blur-2xl border-l border-border p-5 sm:p-6 flex flex-col justify-between shadow-2xl transition-transform duration-300 ease-out pt-safe pb-safe ${
             menuOpen ? "translate-x-0" : "translate-x-full"
           }`}
         >
           <div>
             {/* Header in drawer */}
-            <div className="flex items-center justify-between pb-5 border-b border-white/10">
+            <div className="flex items-center justify-between pb-5 border-b border-border">
               <div className="relative h-6 w-28 flex items-center">
                 <Image
-                  src={brandLogos.jetourLogoWhite}
+                  src={brandLogos.jetourLogo}
                   alt="JETOUR"
                   fill
                   className="object-contain object-left"
@@ -160,7 +160,7 @@ export default function Navbar() {
               </div>
               <button
                 onClick={() => setMenuOpen(false)}
-                className="w-9 h-9 rounded-xl bg-white/10 text-white flex items-center justify-center hover:bg-white/20 transition-colors cursor-pointer"
+                className="w-9 h-9 rounded-xl bg-secondary text-ink flex items-center justify-center hover:bg-border transition-colors cursor-pointer"
                 aria-label="Close menu"
               >
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -175,11 +175,11 @@ export default function Navbar() {
                 <a
                   key={link.label}
                   href={link.href}
-                  className="flex items-center justify-between px-3.5 py-3 rounded-xl text-base font-semibold text-white/80 hover:text-white hover:bg-white/10 transition-colors cursor-pointer"
+                  className="flex items-center justify-between px-3.5 py-3 rounded-xl text-base font-semibold text-ink/80 hover:text-ink hover:bg-secondary transition-colors cursor-pointer"
                   onClick={() => setMenuOpen(false)}
                 >
                   <span>{link.label}</span>
-                  <svg className="w-4 h-4 text-white/40" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg className="w-4 h-4 text-muted" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                 </a>
@@ -188,10 +188,10 @@ export default function Navbar() {
           </div>
 
           {/* Drawer CTA footer */}
-          <div className="pt-5 border-t border-white/10 space-y-3">
+          <div className="pt-5 border-t border-border space-y-3">
             <a
               href="#pricing"
-              className="w-full flex items-center justify-center gap-2 bg-gold hover:bg-gold-light text-accent text-sm font-bold py-3.5 px-4 rounded-xl transition-all shadow-lg active:scale-95"
+              className="w-full flex items-center justify-center gap-2 bg-accent hover:bg-gold-light text-ink text-sm font-bold py-3.5 px-4 rounded-xl transition-all shadow-md active:scale-95"
               onClick={() => setMenuOpen(false)}
             >
               Book a Test Drive
@@ -199,8 +199,8 @@ export default function Navbar() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
             </a>
-            <p className="text-center text-xs text-white/40 pt-1">
-              Global Support: travel-plus@jetour.com
+            <p className="text-center text-xs text-muted pt-1">
+              Global Support: concierge@jetourglobal.com
             </p>
           </div>
         </div>

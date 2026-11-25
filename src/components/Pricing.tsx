@@ -56,17 +56,17 @@ const plans = [
 
 export default function Pricing() {
   return (
-    <section id="pricing" className="py-16 sm:py-24 bg-white overflow-hidden w-full">
+    <section id="pricing" className="py-16 sm:py-24 bg-primary overflow-hidden w-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-10 sm:mb-16">
-          <span className="text-xs sm:text-sm font-semibold text-gold tracking-widest uppercase">
+          <span className="text-xs sm:text-sm font-bold text-accent-deep tracking-widest uppercase">
             Pricing & Trims
           </span>
-          <h2 className="mt-2 text-3xl sm:text-4xl md:text-5xl font-extrabold text-accent tracking-tight">
+          <h2 className="mt-2 text-3xl sm:text-4xl md:text-5xl font-extrabold text-ink tracking-tight">
             Order Your JETOUR
           </h2>
           <p className="mt-3 text-sm sm:text-base md:text-lg text-muted max-w-2xl mx-auto leading-relaxed">
-            The <span className="font-bold text-accent">JETOUR T2</span> is available now for custom configuration and immediate test drives.
+            The <span className="font-bold text-ink">JETOUR T2</span> is available now for custom configuration and immediate test drives.
           </p>
         </div>
 
@@ -77,8 +77,8 @@ export default function Pricing() {
               key={plan.name}
               className={`rounded-2xl p-6 sm:p-8 border flex flex-col justify-between transition-all ${
                 plan.featured
-                  ? "border-gold bg-accent text-white shadow-2xl relative md:scale-[1.02] ring-2 ring-gold/40"
-                  : "border-border bg-white hover:border-gold/30 hover:shadow-lg"
+                  ? "border-accent bg-ink text-primary shadow-2xl relative md:scale-[1.02] ring-2 ring-accent/45"
+                  : "border-border bg-secondary/75 hover:border-accent hover:shadow-lg"
               }`}
             >
               <div>
@@ -91,7 +91,11 @@ export default function Pricing() {
                   />
                   <span
                     className={`text-[10px] sm:text-[11px] font-extrabold uppercase ${
-                      plan.comingSoon ? "neon-glow-amber" : "neon-glow-emerald"
+                      plan.comingSoon
+                        ? "neon-glow-amber"
+                        : plan.featured
+                        ? "neon-glow-emerald-bright"
+                        : "neon-glow-emerald"
                     }`}
                   >
                     {plan.comingSoon ? "Coming Soon" : "Available Now"}
@@ -100,12 +104,12 @@ export default function Pricing() {
 
                 <div className="mb-5 sm:mb-6">
                   <h3
-                    className={`text-xl sm:text-2xl font-bold ${plan.featured ? "text-white" : "text-accent"}`}
+                    className={`text-xl sm:text-2xl font-bold ${plan.featured ? "text-primary" : "text-ink"}`}
                   >
                     {plan.name}
                   </h3>
                   <p
-                    className={`text-xs sm:text-sm mt-1 ${plan.featured ? "text-white/60" : "text-muted"}`}
+                    className={`text-xs sm:text-sm mt-1 ${plan.featured ? "text-primary/65" : "text-muted"}`}
                   >
                     {plan.subtitle}
                   </p>
@@ -114,18 +118,18 @@ export default function Pricing() {
                 <div className="mb-6">
                   <div className="flex items-baseline gap-1">
                     <span
-                      className={`text-sm ${plan.featured ? "text-white/60" : "text-muted"}`}
+                      className={`text-sm ${plan.featured ? "text-primary/65" : "text-muted"}`}
                     >
                       $
                     </span>
                     <span
-                      className={`text-3xl sm:text-4xl font-extrabold ${plan.featured ? "text-white" : "text-accent"}`}
+                      className={`text-3xl sm:text-4xl font-extrabold ${plan.featured ? "text-primary" : "text-ink"}`}
                     >
                       {plan.price}
                     </span>
                   </div>
                   <p
-                    className={`text-xs mt-1 ${plan.featured ? "text-white/40" : "text-muted"}`}
+                    className={`text-xs mt-1 ${plan.featured ? "text-primary/50" : "text-muted"}`}
                   >
                     {plan.period}
                   </p>
@@ -135,7 +139,9 @@ export default function Pricing() {
                   {plan.features.map((feature) => (
                     <li key={feature} className="flex items-start gap-2.5 sm:gap-3">
                       <svg
-                        className="w-4 h-4 sm:w-5 sm:h-5 mt-0.5 flex-shrink-0 text-gold"
+                        className={`w-4 h-4 sm:w-5 sm:h-5 mt-0.5 flex-shrink-0 ${
+                          plan.featured ? "text-accent" : "text-accent-deep"
+                        }`}
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -148,7 +154,7 @@ export default function Pricing() {
                         />
                       </svg>
                       <span
-                        className={`text-xs sm:text-sm ${plan.featured ? "text-white/80" : "text-muted"}`}
+                        className={`text-xs sm:text-sm ${plan.featured ? "text-primary/85" : "text-ink/80"}`}
                       >
                         {feature}
                       </span>
@@ -158,11 +164,11 @@ export default function Pricing() {
               </div>
 
               <a
-                href={plan.comingSoon ? "#footer" : "#footer"}
+                href="#contact"
                 className={`block text-center py-3.5 rounded-xl font-bold text-xs sm:text-sm transition-all active:scale-95 ${
                   plan.featured
-                    ? "bg-gold text-accent hover:bg-gold-light shadow-md"
-                    : "bg-slate-100 text-slate-800 hover:bg-slate-200 border border-slate-300"
+                    ? "bg-accent text-ink hover:bg-gold-light shadow-md"
+                    : "bg-primary text-ink hover:bg-accent/25 border border-border"
                 }`}
               >
                 {plan.cta}

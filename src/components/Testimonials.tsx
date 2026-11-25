@@ -35,13 +35,13 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="py-16 sm:py-24 bg-card-bg overflow-hidden w-full">
+    <section id="testimonials" className="py-16 sm:py-24 bg-secondary overflow-hidden w-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-10 sm:mb-16">
-          <span className="text-xs sm:text-sm font-semibold text-gold tracking-widest uppercase">
+          <span className="text-xs sm:text-sm font-bold text-accent-deep tracking-widest uppercase">
             Reviews
           </span>
-          <h2 className="mt-2 text-3xl sm:text-4xl md:text-5xl font-extrabold text-accent tracking-tight">
+          <h2 className="mt-2 text-3xl sm:text-4xl md:text-5xl font-extrabold text-ink tracking-tight">
             Owners Love JETOUR
           </h2>
           <p className="mt-3 text-sm sm:text-base md:text-lg text-muted max-w-2xl mx-auto leading-relaxed">
@@ -55,7 +55,7 @@ export default function Testimonials() {
           {testimonials.map((t) => (
             <div
               key={t.name}
-              className="w-full bg-white rounded-2xl p-6 sm:p-8 border border-border hover:border-gold/30 hover:shadow-lg transition-all flex flex-col justify-between shadow-sm"
+              className="w-full bg-primary rounded-2xl p-6 sm:p-8 border border-border hover:border-accent hover:shadow-lg transition-all flex flex-col justify-between shadow-sm"
             >
               <div>
                 {/* Rating Stars */}
@@ -63,7 +63,7 @@ export default function Testimonials() {
                   {Array.from({ length: t.rating }).map((_, i) => (
                     <svg
                       key={i}
-                      className="w-4 h-4 sm:w-5 sm:h-5 text-gold"
+                      className="w-4 h-4 sm:w-5 sm:h-5 text-accent"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                     >
@@ -72,20 +72,20 @@ export default function Testimonials() {
                   ))}
                 </div>
 
-                <blockquote className="text-foreground leading-relaxed mb-5 text-xs sm:text-sm md:text-base">
+                <blockquote className="text-ink leading-relaxed mb-5 text-xs sm:text-sm md:text-base">
                   &ldquo;{t.quote}&rdquo;
                 </blockquote>
               </div>
 
-              <div className="flex items-center gap-3 pt-4 border-t border-slate-100">
-                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-accent/10 flex items-center justify-center text-accent font-bold text-xs sm:text-sm flex-shrink-0">
+              <div className="flex items-center gap-3 pt-4 border-t border-border">
+                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-accent/25 border border-accent/35 flex items-center justify-center text-ink font-bold text-xs sm:text-sm flex-shrink-0">
                   {t.name
                     .split(" ")
                     .map((n) => n[0])
                     .join("")}
                 </div>
                 <div>
-                  <div className="font-semibold text-xs sm:text-sm text-accent">
+                  <div className="font-semibold text-xs sm:text-sm text-ink">
                     {t.name}
                   </div>
                   <div className="text-[11px] sm:text-xs text-muted">

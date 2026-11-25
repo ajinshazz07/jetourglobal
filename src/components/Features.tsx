@@ -66,13 +66,13 @@ const features = [
 
 export default function Features() {
   return (
-    <section id="features" className="py-16 sm:py-24 bg-card-bg">
+    <section id="features" className="py-16 sm:py-24 bg-primary">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-10 sm:mb-16">
-          <span className="text-xs sm:text-sm font-semibold text-gold tracking-widest uppercase">
+          <span className="text-xs sm:text-sm font-bold text-accent-deep tracking-widest uppercase">
             Why JETOUR
           </span>
-          <h2 className="mt-2.5 text-3xl sm:text-5xl font-bold text-accent tracking-tight">
+          <h2 className="mt-2.5 text-3xl sm:text-5xl font-bold text-ink tracking-tight">
             Engineered for More
           </h2>
           <p className="mt-3 sm:mt-4 text-sm sm:text-lg text-muted max-w-2xl mx-auto">
@@ -86,12 +86,12 @@ export default function Features() {
           {features.map((feature) => (
             <div
               key={feature.title}
-              className="bg-white rounded-2xl p-6 sm:p-8 border border-border hover:border-gold/30 hover:shadow-lg transition-all group"
+              className="bg-secondary/75 rounded-2xl p-6 sm:p-8 border border-border hover:border-accent hover:shadow-lg transition-all group"
             >
-              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-accent/5 flex items-center justify-center text-accent group-hover:bg-gold/10 group-hover:text-gold transition-colors">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-primary border border-border flex items-center justify-center text-ink group-hover:bg-accent group-hover:border-accent group-hover:text-ink transition-colors">
                 {feature.icon}
               </div>
-              <h3 className="mt-4 sm:mt-5 text-base sm:text-lg font-bold text-accent">
+              <h3 className="mt-4 sm:mt-5 text-base sm:text-lg font-bold text-ink">
                 {feature.title}
               </h3>
               <p className="mt-2 text-muted leading-relaxed text-xs sm:text-sm">
@@ -102,30 +102,30 @@ export default function Features() {
         </div>
 
         {/* Extreme Terrain Testing Spotlight featuring JETOUR T2 */}
-        <div className="mt-12 sm:mt-16 rounded-2xl sm:rounded-3xl overflow-hidden bg-slate-900 border border-slate-800 grid md:grid-cols-2 items-center shadow-xl">
+        <div className="mt-12 sm:mt-16 rounded-2xl sm:rounded-3xl overflow-hidden bg-ink border border-accent/30 grid md:grid-cols-2 items-center shadow-xl">
           <div className="p-6 sm:p-10 md:p-12 order-2 md:order-1">
-            <span className="text-[11px] sm:text-xs font-semibold tracking-wider text-gold uppercase px-3 py-1 rounded-full bg-gold/10 border border-gold/20 inline-block mb-3 sm:mb-4">
+            <span className="text-[11px] sm:text-xs font-bold tracking-wider text-accent uppercase px-3 py-1 rounded-full bg-accent/15 border border-accent/30 inline-block mb-3 sm:mb-4">
               Rigorous Validation
             </span>
-            <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+            <h3 className="text-2xl sm:text-3xl font-bold text-primary tracking-tight">
               Tested in the World’s Most Demanding Terrains
             </h3>
-            <p className="mt-3 sm:mt-4 text-white/70 text-xs sm:text-sm leading-relaxed">
+            <p className="mt-3 sm:mt-4 text-primary/75 text-xs sm:text-sm leading-relaxed">
               The JETOUR T2 undergoes over 2 million kilometers of extreme endurance trials across scorching desert dunes, sub-zero snowfields, and rocky high-altitude passes.
             </p>
             <div className="mt-5 sm:mt-6 grid grid-cols-2 gap-3 sm:gap-4">
-              <div className="p-3.5 sm:p-4 rounded-xl bg-white/5 border border-white/10">
-                <div className="text-xl sm:text-2xl font-bold text-white">+53°C</div>
-                <div className="text-[11px] sm:text-xs text-white/50 mt-0.5">Desert Heat Tested</div>
+              <div className="p-3.5 sm:p-4 rounded-xl bg-primary/5 border border-primary/15">
+                <div className="text-xl sm:text-2xl font-bold text-accent">+53°C</div>
+                <div className="text-[11px] sm:text-xs text-primary/65 mt-0.5">Desert Heat Tested</div>
               </div>
-              <div className="p-3.5 sm:p-4 rounded-xl bg-white/5 border border-white/10">
-                <div className="text-xl sm:text-2xl font-bold text-white">-40°C</div>
-                <div className="text-[11px] sm:text-xs text-white/50 mt-0.5">Arctic Cold Start</div>
+              <div className="p-3.5 sm:p-4 rounded-xl bg-primary/5 border border-primary/15">
+                <div className="text-xl sm:text-2xl font-bold text-accent">-40°C</div>
+                <div className="text-[11px] sm:text-xs text-primary/65 mt-0.5">Arctic Cold Start</div>
               </div>
             </div>
           </div>
 
-          <div className="relative aspect-[16/10] md:aspect-auto md:h-full min-h-[260px] sm:min-h-[320px] order-1 md:order-2 bg-slate-950 flex items-center justify-center p-4">
+          <div className="relative aspect-[16/10] md:aspect-auto md:h-full min-h-[260px] sm:min-h-[320px] order-1 md:order-2 bg-secondary/20 flex items-center justify-center p-4">
             <Image
               src={vehicleImages.t2Topfire}
               alt="Jetour T2 rugged 4WD SUV tested in extreme conditions"
@@ -133,7 +133,7 @@ export default function Features() {
               className="object-contain p-2"
               sizes="(max-width: 768px) 100vw, 50vw"
             />
-            <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-slate-900 via-transparent to-transparent pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-ink via-transparent to-transparent pointer-events-none" />
           </div>
         </div>
       </div>

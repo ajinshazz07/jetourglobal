@@ -220,22 +220,22 @@ export default function Gallery() {
   }, [activeLightboxIndex, closeLightbox, nextImage, prevImage]);
 
   return (
-    <section id="gallery" className="py-16 sm:py-24 bg-slate-950 text-white overflow-hidden w-full relative">
+    <section id="gallery" className="py-16 sm:py-24 bg-secondary text-ink overflow-hidden w-full relative">
       {/* Background ambient lighting */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-gold/5 blur-[140px] pointer-events-none rounded-full" />
-      <div className="absolute bottom-10 right-10 w-[450px] h-[300px] bg-blue-500/5 blur-[120px] pointer-events-none rounded-full" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-accent/15 blur-[140px] pointer-events-none rounded-full" />
+      <div className="absolute bottom-10 right-10 w-[450px] h-[300px] bg-primary/60 blur-[120px] pointer-events-none rounded-full" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
-          <span className="text-xs sm:text-sm font-semibold text-gold tracking-widest uppercase inline-flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-gold" />
+          <span className="text-xs sm:text-sm font-bold text-accent-deep tracking-widest uppercase inline-flex items-center gap-2">
+            <span className="w-1.5 h-1.5 rounded-full bg-accent" />
             Travel+ Lifestyle
           </span>
-          <h2 className="mt-2.5 text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white">
+          <h2 className="mt-2.5 text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-ink">
             Built for Every Horizon
           </h2>
-          <p className="mt-3.5 text-white/70 text-sm sm:text-base md:text-lg leading-relaxed">
+          <p className="mt-3.5 text-muted text-sm sm:text-base md:text-lg leading-relaxed">
             From arctic snowdrifts to deep desert dunes and wild coastlines — experience how JETOUR drivers explore the world with zero compromises.
           </p>
 
@@ -266,14 +266,14 @@ export default function Gallery() {
                   onClick={() => setActiveFilter(cat.id as CategoryFilter)}
                   className={`cursor-pointer px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-300 flex items-center gap-1.5 border active:scale-95 ${
                     isActive
-                      ? "bg-gold text-accent border-gold shadow-lg shadow-gold/20 font-bold"
-                      : "bg-white/5 hover:bg-white/10 text-white/80 hover:text-white border-white/10"
+                      ? "bg-accent text-ink border-accent shadow-md shadow-accent/20 font-bold"
+                      : "bg-primary/80 hover:bg-primary text-ink/80 hover:text-ink border-border"
                   }`}
                 >
                   <span>{cat.label}</span>
                   <span
                     className={`text-[10px] px-1.5 py-0.5 rounded-full font-bold ${
-                      isActive ? "bg-accent/20 text-accent" : "bg-white/10 text-white/60"
+                      isActive ? "bg-ink/15 text-ink" : "bg-secondary text-muted"
                     }`}
                   >
                     {cat.count}
@@ -290,7 +290,7 @@ export default function Gallery() {
             <div
               key={item.id}
               onClick={() => openLightbox(index)}
-              className="group relative overflow-hidden rounded-2xl sm:rounded-3xl cursor-pointer border border-white/10 hover:border-gold/60 transition-all duration-500 hover:shadow-2xl hover:shadow-gold/15 bg-slate-900"
+              className="group relative overflow-hidden rounded-2xl sm:rounded-3xl cursor-pointer border border-border hover:border-accent transition-all duration-500 hover:shadow-2xl hover:shadow-ink/10 bg-ink"
             >
               {/* Perfectly Balanced Image Container with Hover Scale */}
               <div className="relative w-full aspect-[16/11] overflow-hidden">
@@ -303,16 +303,16 @@ export default function Gallery() {
                 />
 
                 {/* Dark Vignette Overlay with Deepening on Hover */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent transition-opacity duration-500 group-hover:from-black/95 group-hover:via-black/50" />
+                <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/30 to-transparent transition-opacity duration-500 group-hover:from-ink/95 group-hover:via-ink/45" />
 
                 {/* Top Corner Badge & Hover Expand Button */}
                 <div className="absolute top-3.5 inset-x-3.5 flex items-center justify-between z-10 pointer-events-none">
-                  <span className="px-2.5 py-1 rounded-full text-[11px] font-bold tracking-wider uppercase bg-black/60 backdrop-blur-md text-gold border border-gold/30 shadow-md">
+                  <span className="px-2.5 py-1 rounded-full text-[11px] font-bold tracking-wider uppercase bg-ink/75 backdrop-blur-md text-accent border border-accent/40 shadow-md">
                     {item.tag}
                   </span>
 
                   {/* Expand icon appearing on hover */}
-                  <div className="w-8 h-8 rounded-full bg-gold text-accent flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 scale-75 group-hover:scale-100 shadow-lg">
+                  <div className="w-8 h-8 rounded-full bg-accent text-ink flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 scale-75 group-hover:scale-100 shadow-lg">
                     <svg
                       className="w-4 h-4"
                       fill="none"
@@ -331,7 +331,7 @@ export default function Gallery() {
 
                 {/* Bottom Caption Information */}
                 <div className="absolute bottom-0 inset-x-0 p-4 sm:p-5 z-10 transform transition-transform duration-300 group-hover:-translate-y-1">
-                  <div className="text-[11px] font-semibold text-gold tracking-wide uppercase flex items-center gap-1.5 opacity-90 mb-1">
+                  <div className="text-[11px] font-semibold text-accent tracking-wide uppercase flex items-center gap-1.5 opacity-95 mb-1">
                     <svg
                       className="w-3.5 h-3.5"
                       fill="none"
@@ -353,13 +353,13 @@ export default function Gallery() {
                     </svg>
                     <span className="truncate">{item.location}</span>
                   </div>
-                  <h3 className="text-base sm:text-lg font-bold text-white tracking-tight leading-snug drop-shadow-md">
+                  <h3 className="text-base sm:text-lg font-bold text-primary tracking-tight leading-snug drop-shadow-md">
                     {item.title}
                   </h3>
                 </div>
 
                 {/* Subtle Inner Ring Glow on Hover */}
-                <div className="absolute inset-0 ring-1 ring-inset ring-white/10 group-hover:ring-gold/40 rounded-2xl sm:rounded-3xl transition-colors duration-500 pointer-events-none" />
+                <div className="absolute inset-0 ring-1 ring-inset ring-primary/15 group-hover:ring-accent/60 rounded-2xl sm:rounded-3xl transition-colors duration-500 pointer-events-none" />
               </div>
             </div>
           ))}
@@ -372,7 +372,7 @@ export default function Gallery() {
           role="dialog"
           aria-modal="true"
           aria-label="Image preview"
-          className="fixed inset-0 z-50 bg-black/95 backdrop-blur-2xl flex flex-col justify-between p-4 sm:p-8 animate-fade-in"
+          className="fixed inset-0 z-50 bg-ink/95 backdrop-blur-2xl flex flex-col justify-between p-4 sm:p-8 animate-fade-in"
           onClick={closeLightbox}
         >
           {/* Top Control Bar */}
@@ -381,17 +381,17 @@ export default function Gallery() {
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex items-center gap-3">
-              <span className="text-gold text-xs sm:text-sm font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-gold/10 border border-gold/30">
+              <span className="text-accent text-xs sm:text-sm font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-accent/15 border border-accent/40">
                 {filteredItems[activeLightboxIndex].tag}
               </span>
-              <span className="text-white/60 text-xs sm:text-sm font-medium">
+              <span className="text-primary/65 text-xs sm:text-sm font-medium">
                 {activeLightboxIndex + 1} / {filteredItems.length}
               </span>
             </div>
 
             <button
               onClick={closeLightbox}
-              className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-white/10 hover:bg-white/20 text-white border border-white/20 flex items-center justify-center transition-all cursor-pointer active:scale-95"
+              className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-primary/10 hover:bg-primary/20 text-primary border border-primary/20 flex items-center justify-center transition-all cursor-pointer active:scale-95"
               aria-label="Close image preview"
             >
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -408,7 +408,7 @@ export default function Gallery() {
             {/* Prev Button */}
             <button
               onClick={prevImage}
-              className="absolute left-2 sm:-left-4 z-20 w-11 h-11 sm:w-13 sm:h-13 rounded-full bg-black/70 hover:bg-gold hover:text-accent text-white border border-white/20 flex items-center justify-center transition-all cursor-pointer active:scale-90 shadow-2xl"
+              className="absolute left-2 sm:-left-4 z-20 w-11 h-11 sm:w-13 sm:h-13 rounded-full bg-ink/80 hover:bg-accent hover:text-ink text-primary border border-primary/20 flex items-center justify-center transition-all cursor-pointer active:scale-90 shadow-2xl"
               aria-label="Previous image"
             >
               <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -431,7 +431,7 @@ export default function Gallery() {
             {/* Next Button */}
             <button
               onClick={nextImage}
-              className="absolute right-2 sm:-right-4 z-20 w-11 h-11 sm:w-13 sm:h-13 rounded-full bg-black/70 hover:bg-gold hover:text-accent text-white border border-white/20 flex items-center justify-center transition-all cursor-pointer active:scale-90 shadow-2xl"
+              className="absolute right-2 sm:-right-4 z-20 w-11 h-11 sm:w-13 sm:h-13 rounded-full bg-ink/80 hover:bg-accent hover:text-ink text-primary border border-primary/20 flex items-center justify-center transition-all cursor-pointer active:scale-90 shadow-2xl"
               aria-label="Next image"
             >
               <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -445,10 +445,10 @@ export default function Gallery() {
             className="text-center z-20 max-w-3xl mx-auto w-full pb-2"
             onClick={(e) => e.stopPropagation()}
           >
-            <h3 className="text-lg sm:text-2xl font-bold text-white tracking-tight">
+            <h3 className="text-lg sm:text-2xl font-bold text-primary tracking-tight">
               {filteredItems[activeLightboxIndex].title}
             </h3>
-            <p className="text-gold text-xs sm:text-sm mt-1 flex items-center justify-center gap-1.5 font-medium">
+            <p className="text-accent text-xs sm:text-sm mt-1 flex items-center justify-center gap-1.5 font-medium">
               <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
