@@ -22,7 +22,7 @@ const footerLinks = {
     { label: "Book a Test Drive", href: "#pricing" },
     { label: "Owner's Manual", href: "#" },
     { label: "Service Centers", href: "#" },
-    { label: "Contact Us", href: "#" },
+    { label: "Contact Us", href: "#contact" },
   ],
   Legal: [
     { label: "Privacy Policy", href: "#" },
