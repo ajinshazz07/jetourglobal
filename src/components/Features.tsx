@@ -52,37 +52,13 @@ const features = [
     description:
       "Ventilated leather seating, panoramic glass roof, multi-color ambient lighting, and acoustic noise-cancelling cabin architecture.",
   },
-  {
-    icon: (
-      <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>
-    ),
-    title: "Global 7-Year Warranty",
-    description:
-      "Industry-leading 7-year / 150,000 km warranty coverage backed by authorized service and dealer networks across 45+ countries worldwide.",
-  },
 ];
 
-const proofPoints = [
-  {
-    stat: "+53°C",
-    label: "Desert Heat",
-    desc: "Scorching Sahara & Arabian dune trials at peak summer temperatures",
-    icon: "🌵",
-  },
-  {
-    stat: "−40°C",
-    label: "Arctic Cold Start",
-    desc: "Sub-zero Siberian snowfield cold-start and traction tests",
-    icon: "❄️",
-  },
-  {
-    stat: "2M km",
-    label: "Total Distance",
-    desc: "Over 2 million kilometers of extreme endurance trials completed",
-    icon: "🏔️",
-  },
+const milestones = [
+  { label: "Desert +53°C", sub: "Sahara & Arabian dunes" },
+  { label: "Arctic −40°C", sub: "Siberian snowfields" },
+  { label: "Mountain passes", sub: "2,000m+ altitude" },
+  { label: "2 Million km", sub: "Total endurance distance" },
 ];
 
 export default function Features() {
@@ -139,48 +115,31 @@ export default function Features() {
             </p>
           </div>
 
-          {/* Three proof-point cards + image */}
+          {/* Two-column: milestones + image */}
           <div className="grid md:grid-cols-2 gap-6 items-start">
-            {/* Left — stat cards */}
-            <div className="space-y-4">
-              {proofPoints.map((point) => (
+            {/* Left — milestone list + progress bar */}
+            <div className="space-y-3">
+              {milestones.map((m) => (
                 <div
-                  key={point.stat}
-                  className="flex items-start gap-4 bg-secondary/75 border border-border p-5 sm:p-6 rounded-sm hover:border-accent transition-all"
+                  key={m.label}
+                  className="flex items-center gap-4 bg-secondary/75 border border-border p-4 rounded-sm"
                 >
-                  <div className="text-2xl sm:text-3xl flex-shrink-0 leading-none mt-0.5">
-                    {point.icon}
-                  </div>
+                  <div className="w-1.5 self-stretch bg-accent rounded-full flex-shrink-0" />
                   <div>
-                    <div className="flex items-baseline gap-2">
-                      <span className="text-2xl sm:text-3xl font-black text-ink tracking-tight">
-                        {point.stat}
-                      </span>
-                      <span className="text-xs font-bold text-accent uppercase tracking-widest">
-                        {point.label}
-                      </span>
-                    </div>
-                    <p className="mt-1 text-xs sm:text-sm text-muted leading-relaxed">
-                      {point.desc}
-                    </p>
+                    <p className="text-sm font-bold text-ink">{m.label}</p>
+                    <p className="text-xs text-muted mt-0.5">{m.sub}</p>
                   </div>
                 </div>
               ))}
 
-              {/* Journey milestone bar */}
-              <div className="bg-secondary/75 border border-border p-5 sm:p-6 rounded-sm">
-                <div className="flex justify-between items-center mb-3">
-                  <span className="text-xs font-bold text-ink uppercase tracking-widest">Validation Journey</span>
-                  <span className="text-xs text-accent font-bold">100% Complete</span>
+              {/* Journey bar */}
+              <div className="bg-secondary/75 border border-border p-5 rounded-sm">
+                <div className="flex justify-between items-center mb-2">
+                  <span className="text-xs font-bold text-ink uppercase tracking-widest">Validation Complete</span>
+                  <span className="text-xs text-accent font-bold">100%</span>
                 </div>
                 <div className="w-full h-1.5 bg-border rounded-full overflow-hidden">
                   <div className="h-full bg-accent rounded-full w-full" />
-                </div>
-                <div className="mt-3 flex justify-between text-[10px] text-muted uppercase tracking-wider">
-                  <span>Desert</span>
-                  <span>Snow</span>
-                  <span>Mountain</span>
-                  <span>Road</span>
                 </div>
               </div>
             </div>
