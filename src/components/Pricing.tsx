@@ -1,7 +1,7 @@
 const plans = [
   {
     name: "T1 Cross Urban",
-    subtitle: "Coming Soon · Expected Late 2026",
+    subtitle: "Expected Late 2026",
     price: "21,990",
     period: "Estimated Starting MSRP",
     features: [
@@ -36,7 +36,7 @@ const plans = [
   },
   {
     name: "G700 / F700 Flagship",
-    subtitle: "Coming Soon · Expected 2027",
+    subtitle: "Expected 2027",
     price: "48,990",
     period: "Estimated Starting MSRP",
     features: [
@@ -59,10 +59,10 @@ export default function Pricing() {
     <section id="pricing" className="py-16 sm:py-24 bg-primary overflow-hidden w-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-10 sm:mb-16">
-          <span className="text-xs sm:text-sm font-bold text-accent-deep tracking-widest uppercase">
+          <span className="text-xs sm:text-sm font-bold text-accent tracking-widest uppercase">
             Pricing & Trims
           </span>
-          <h2 className="mt-2 text-3xl sm:text-4xl md:text-5xl font-extrabold text-ink tracking-tight">
+          <h2 className="mt-2 text-3xl sm:text-4xl md:text-5xl font-black text-ink tracking-tight">
             Order Your JETOUR
           </h2>
           <p className="mt-3 text-sm sm:text-base md:text-lg text-muted max-w-2xl mx-auto leading-relaxed">
@@ -70,20 +70,20 @@ export default function Pricing() {
           </p>
         </div>
 
-        {/* Pricing Cards: 1 Col on Mobile, 3 Col on Desktop */}
+        {/* Pricing Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch max-w-5xl mx-auto w-full">
           {plans.map((plan) => (
             <div
               key={plan.name}
-              className={`rounded-2xl p-6 sm:p-8 border flex flex-col justify-between transition-all ${
+              className={`rounded-sm p-6 sm:p-8 border flex flex-col justify-between transition-all ${
                 plan.featured
                   ? "border-accent bg-ink text-primary shadow-2xl relative md:scale-[1.02] ring-2 ring-accent/45"
                   : "border-border bg-secondary/75 hover:border-accent hover:shadow-lg"
               }`}
             >
               <div>
-                {/* Neon Status Indicator - No Curved Container */}
-                <div className="flex items-center gap-2 mb-3 select-none">
+                {/* Status indicator */}
+                <div className="flex items-center gap-2 mb-4 select-none">
                   <span
                     className={`w-1.5 h-1.5 rounded-full ${
                       plan.comingSoon ? "neon-dot-amber" : "neon-dot-emerald animate-pulse"
@@ -102,45 +102,37 @@ export default function Pricing() {
                   </span>
                 </div>
 
-                <div className="mb-5 sm:mb-6">
-                  <h3
-                    className={`text-xl sm:text-2xl font-bold ${plan.featured ? "text-primary" : "text-ink"}`}
-                  >
-                    {plan.name}
-                  </h3>
-                  <p
-                    className={`text-xs sm:text-sm mt-1 ${plan.featured ? "text-primary/65" : "text-muted"}`}
-                  >
-                    {plan.subtitle}
-                  </p>
-                </div>
+                {/* Model name */}
+                <h3 className={`text-lg sm:text-xl font-bold mb-1 ${plan.featured ? "text-primary" : "text-ink"}`}>
+                  {plan.name}
+                </h3>
+                <p className={`text-xs mb-5 ${plan.featured ? "text-primary/60" : "text-muted"}`}>
+                  {plan.subtitle}
+                </p>
 
-                <div className="mb-6">
-                  <div className="flex items-baseline gap-1">
-                    <span
-                      className={`text-sm ${plan.featured ? "text-primary/65" : "text-muted"}`}
-                    >
-                      $
-                    </span>
-                    <span
-                      className={`text-3xl sm:text-4xl font-extrabold ${plan.featured ? "text-primary" : "text-ink"}`}
-                    >
+                {/* Price — large, prominent */}
+                <div className={`pb-5 mb-5 border-b ${plan.featured ? "border-primary/15" : "border-border"}`}>
+                  <p className={`text-[10px] font-bold uppercase tracking-widest mb-1.5 ${plan.featured ? "text-primary/50" : "text-muted"}`}>
+                    {plan.comingSoon ? "Est. starting from" : "Starting from"}
+                  </p>
+                  <div className="flex items-baseline gap-0.5">
+                    <span className={`text-xl font-black ${plan.featured ? "text-primary/60" : "text-muted"}`}>$</span>
+                    <span className={`text-4xl sm:text-5xl font-black tracking-tight leading-none ${plan.featured ? "text-primary" : "text-ink"}`}>
                       {plan.price}
                     </span>
                   </div>
-                  <p
-                    className={`text-xs mt-1 ${plan.featured ? "text-primary/50" : "text-muted"}`}
-                  >
+                  <p className={`text-xs mt-1.5 ${plan.featured ? "text-primary/50" : "text-muted"}`}>
                     {plan.period}
                   </p>
                 </div>
 
+                {/* Features list */}
                 <ul className="space-y-2.5 sm:space-y-3 mb-6 sm:mb-8">
                   {plan.features.map((feature) => (
                     <li key={feature} className="flex items-start gap-2.5 sm:gap-3">
                       <svg
                         className={`w-4 h-4 sm:w-5 sm:h-5 mt-0.5 flex-shrink-0 ${
-                          plan.featured ? "text-accent" : "text-accent-deep"
+                          plan.featured ? "text-accent" : "text-accent"
                         }`}
                         fill="none"
                         viewBox="0 0 24 24"
@@ -153,9 +145,7 @@ export default function Pricing() {
                           d="M5 13l4 4L19 7"
                         />
                       </svg>
-                      <span
-                        className={`text-xs sm:text-sm ${plan.featured ? "text-primary/85" : "text-ink/80"}`}
-                      >
+                      <span className={`text-xs sm:text-sm ${plan.featured ? "text-primary/85" : "text-ink/80"}`}>
                         {feature}
                       </span>
                     </li>
@@ -165,10 +155,10 @@ export default function Pricing() {
 
               <a
                 href="#contact"
-                className={`block text-center py-3.5 rounded-xl font-bold text-xs sm:text-sm transition-all active:scale-95 ${
+                className={`block text-center py-3.5 font-bold text-xs sm:text-sm transition-all rounded-sm ${
                   plan.featured
-                    ? "bg-accent text-ink hover:bg-gold-light shadow-md"
-                    : "bg-primary text-ink hover:bg-accent/25 border border-border"
+                    ? "bg-accent text-ink hover:bg-gold-light shadow-[3px_3px_0_rgba(37,37,37,0.25)] border border-accent active:translate-y-px active:shadow-none"
+                    : "bg-primary text-ink hover:bg-accent/25 border border-border shadow-[2px_2px_0_rgba(37,37,37,0.12)] active:translate-y-px active:shadow-none"
                 }`}
               >
                 {plan.cta}

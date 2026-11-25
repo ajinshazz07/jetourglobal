@@ -50,13 +50,13 @@ export default function Footer() {
           <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
             <a
               href="#pricing"
-              className="bg-accent hover:bg-gold-light text-ink font-bold px-6 py-3.5 rounded-xl text-sm transition-all text-center shadow-md active:scale-95"
+              className="bg-accent hover:bg-gold-light text-ink font-bold px-6 py-3.5 rounded-sm text-sm transition-all text-center shadow-[3px_3px_0_rgba(37,37,37,0.18)] border border-accent active:translate-y-px active:shadow-none"
             >
               Book Test Drive
             </a>
             <a
               href="#models"
-              className="bg-primary hover:bg-primary/80 text-ink font-semibold px-6 py-3.5 rounded-xl text-sm transition-all border border-border text-center active:scale-95"
+              className="bg-primary hover:bg-primary/80 text-ink font-semibold px-6 py-3.5 rounded-sm text-sm transition-all border border-border text-center active:translate-y-px"
             >
               Explore Models
             </a>

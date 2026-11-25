@@ -87,7 +87,7 @@ export default function Navbar() {
             ))}
             <a
               href="#pricing"
-              className="bg-accent hover:bg-gold-light text-ink px-5 py-2.5 rounded-xl text-sm font-bold transition-all shadow-md hover:shadow-accent/25 active:scale-95"
+              className="bg-accent hover:bg-gold-light text-ink px-5 py-2.5 rounded-sm text-sm font-bold transition-all shadow-[3px_3px_0_rgba(37,37,37,0.18)] hover:shadow-[2px_2px_0_rgba(37,37,37,0.18)] border border-accent active:translate-y-px active:shadow-none"
             >
               Book a Test Drive
             </a>
@@ -191,7 +191,7 @@ export default function Navbar() {
           <div className="pt-5 border-t border-border space-y-3">
             <a
               href="#pricing"
-              className="w-full flex items-center justify-center gap-2 bg-accent hover:bg-gold-light text-ink text-sm font-bold py-3.5 px-4 rounded-xl transition-all shadow-md active:scale-95"
+              className="w-full flex items-center justify-center gap-2 bg-accent hover:bg-gold-light text-ink text-sm font-bold py-3.5 px-4 rounded-sm transition-all shadow-[3px_3px_0_rgba(37,37,37,0.18)] border border-accent active:translate-y-px active:shadow-none"
               onClick={() => setMenuOpen(false)}
             >
               Book a Test Drive

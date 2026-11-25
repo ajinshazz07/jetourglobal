@@ -64,15 +64,36 @@ const features = [
   },
 ];
 
+const proofPoints = [
+  {
+    stat: "+53°C",
+    label: "Desert Heat",
+    desc: "Scorching Sahara & Arabian dune trials at peak summer temperatures",
+    icon: "🌵",
+  },
+  {
+    stat: "−40°C",
+    label: "Arctic Cold Start",
+    desc: "Sub-zero Siberian snowfield cold-start and traction tests",
+    icon: "❄️",
+  },
+  {
+    stat: "2M km",
+    label: "Total Distance",
+    desc: "Over 2 million kilometers of extreme endurance trials completed",
+    icon: "🏔️",
+  },
+];
+
 export default function Features() {
   return (
     <section id="features" className="py-16 sm:py-24 bg-primary">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-10 sm:mb-16">
-          <span className="text-xs sm:text-sm font-bold text-accent-deep tracking-widest uppercase">
+          <span className="text-xs sm:text-sm font-bold text-accent tracking-widest uppercase">
             Why JETOUR
           </span>
-          <h2 className="mt-2.5 text-3xl sm:text-5xl font-bold text-ink tracking-tight">
+          <h2 className="mt-2.5 text-3xl sm:text-5xl font-black text-ink tracking-tight">
             Engineered for More
           </h2>
           <p className="mt-3 sm:mt-4 text-sm sm:text-lg text-muted max-w-2xl mx-auto">
@@ -81,14 +102,14 @@ export default function Features() {
           </p>
         </div>
 
-        {/* Feature Grid: Adaptive on Mobile, Tablet, Desktop */}
+        {/* Feature Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {features.map((feature) => (
             <div
               key={feature.title}
-              className="bg-secondary/75 rounded-2xl p-6 sm:p-8 border border-border hover:border-accent hover:shadow-lg transition-all group"
+              className="bg-secondary/75 rounded-sm p-6 sm:p-8 border border-border hover:border-accent hover:shadow-lg transition-all group"
             >
-              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-primary border border-border flex items-center justify-center text-ink group-hover:bg-accent group-hover:border-accent group-hover:text-ink transition-colors">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-sm bg-primary border border-border flex items-center justify-center text-ink group-hover:bg-accent group-hover:border-accent group-hover:text-ink transition-colors">
                 {feature.icon}
               </div>
               <h3 className="mt-4 sm:mt-5 text-base sm:text-lg font-bold text-ink">
@@ -101,39 +122,87 @@ export default function Features() {
           ))}
         </div>
 
-        {/* Extreme Terrain Testing Spotlight featuring JETOUR T2 */}
-        <div className="mt-12 sm:mt-16 rounded-2xl sm:rounded-3xl overflow-hidden bg-ink border border-accent/30 grid md:grid-cols-2 items-center shadow-xl">
-          <div className="p-6 sm:p-10 md:p-12 order-2 md:order-1">
-            <span className="text-[11px] sm:text-xs font-bold tracking-wider text-accent uppercase px-3 py-1 rounded-full bg-accent/15 border border-accent/30 inline-block mb-3 sm:mb-4">
+        {/* ── RIGOROUS VALIDATION — Redesigned ── */}
+        <div className="mt-16 sm:mt-20">
+          {/* Section header */}
+          <div className="text-center mb-8 sm:mb-12">
+            <span className="inline-block text-[11px] sm:text-xs font-bold tracking-widest uppercase px-4 py-1.5 bg-accent/15 border border-accent/30 text-accent mb-3">
               Rigorous Validation
             </span>
-            <h3 className="text-2xl sm:text-3xl font-bold text-primary tracking-tight">
-              Tested in the World’s Most Demanding Terrains
+            <h3 className="text-2xl sm:text-4xl font-black text-ink tracking-tight">
+              Every T2 Is Proven Before It Reaches You
             </h3>
-            <p className="mt-3 sm:mt-4 text-primary/75 text-xs sm:text-sm leading-relaxed">
-              The JETOUR T2 undergoes over 2 million kilometers of extreme endurance trials across scorching desert dunes, sub-zero snowfields, and rocky high-altitude passes.
+            <p className="mt-3 text-sm sm:text-base text-muted max-w-2xl mx-auto leading-relaxed">
+              Before a single JETOUR T2 reaches a customer, it has already conquered
+              the world&apos;s most punishing environments — deserts, glaciers, and
+              high-altitude mountain passes.
             </p>
-            <div className="mt-5 sm:mt-6 grid grid-cols-2 gap-3 sm:gap-4">
-              <div className="p-3.5 sm:p-4 rounded-xl bg-primary/5 border border-primary/15">
-                <div className="text-xl sm:text-2xl font-bold text-accent">+53°C</div>
-                <div className="text-[11px] sm:text-xs text-primary/65 mt-0.5">Desert Heat Tested</div>
-              </div>
-              <div className="p-3.5 sm:p-4 rounded-xl bg-primary/5 border border-primary/15">
-                <div className="text-xl sm:text-2xl font-bold text-accent">-40°C</div>
-                <div className="text-[11px] sm:text-xs text-primary/65 mt-0.5">Arctic Cold Start</div>
-              </div>
-            </div>
           </div>
 
-          <div className="relative aspect-[16/10] md:aspect-auto md:h-full min-h-[260px] sm:min-h-[320px] order-1 md:order-2 bg-secondary/20 flex items-center justify-center p-4">
-            <Image
-              src={vehicleImages.t2Topfire}
-              alt="Jetour T2 rugged 4WD SUV tested in extreme conditions"
-              fill
-              className="object-contain p-2"
-              sizes="(max-width: 768px) 100vw, 50vw"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-ink via-transparent to-transparent pointer-events-none" />
+          {/* Three proof-point cards + image */}
+          <div className="grid md:grid-cols-2 gap-6 items-start">
+            {/* Left — stat cards */}
+            <div className="space-y-4">
+              {proofPoints.map((point) => (
+                <div
+                  key={point.stat}
+                  className="flex items-start gap-4 bg-secondary/75 border border-border p-5 sm:p-6 rounded-sm hover:border-accent transition-all"
+                >
+                  <div className="text-2xl sm:text-3xl flex-shrink-0 leading-none mt-0.5">
+                    {point.icon}
+                  </div>
+                  <div>
+                    <div className="flex items-baseline gap-2">
+                      <span className="text-2xl sm:text-3xl font-black text-ink tracking-tight">
+                        {point.stat}
+                      </span>
+                      <span className="text-xs font-bold text-accent uppercase tracking-widest">
+                        {point.label}
+                      </span>
+                    </div>
+                    <p className="mt-1 text-xs sm:text-sm text-muted leading-relaxed">
+                      {point.desc}
+                    </p>
+                  </div>
+                </div>
+              ))}
+
+              {/* Journey milestone bar */}
+              <div className="bg-secondary/75 border border-border p-5 sm:p-6 rounded-sm">
+                <div className="flex justify-between items-center mb-3">
+                  <span className="text-xs font-bold text-ink uppercase tracking-widest">Validation Journey</span>
+                  <span className="text-xs text-accent font-bold">100% Complete</span>
+                </div>
+                <div className="w-full h-1.5 bg-border rounded-full overflow-hidden">
+                  <div className="h-full bg-accent rounded-full w-full" />
+                </div>
+                <div className="mt-3 flex justify-between text-[10px] text-muted uppercase tracking-wider">
+                  <span>Desert</span>
+                  <span>Snow</span>
+                  <span>Mountain</span>
+                  <span>Road</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Right — TOPFIRE image */}
+            <div className="relative rounded-sm overflow-hidden border border-border bg-secondary/40">
+              <div className="relative aspect-[4/3] w-full">
+                <Image
+                  src={vehicleImages.t2Topfire}
+                  alt="JETOUR T2 TOPFIRE extreme terrain validation"
+                  fill
+                  className="object-contain p-4 sm:p-6"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+              </div>
+              {/* Overlay badge */}
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-ink/80 via-ink/40 to-transparent p-5 sm:p-6">
+                <p className="text-primary/90 text-xs sm:text-sm font-semibold leading-snug">
+                  JETOUR T2 TOPFIRE — purpose-built for the world&apos;s most demanding terrain validation program
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>

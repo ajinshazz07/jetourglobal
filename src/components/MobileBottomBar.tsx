@@ -38,13 +38,13 @@ export default function MobileBottomBar() {
         <div className="flex items-center gap-1.5 flex-shrink-0">
           <a
             href="#models"
-            className="bg-secondary hover:bg-border text-ink text-xs font-semibold px-2.5 py-2 rounded-xl transition-all border border-ink/10 active:scale-95"
+            className="bg-secondary hover:bg-border text-ink text-xs font-semibold px-2.5 py-2 rounded-sm transition-all border border-ink/10 active:translate-y-px"
           >
             Models
           </a>
           <a
             href="#pricing"
-            className="bg-accent hover:bg-gold-light text-ink text-xs font-bold px-3 py-2 rounded-xl transition-all shadow-sm active:scale-95 whitespace-nowrap"
+            className="bg-accent hover:bg-gold-light text-ink text-xs font-bold px-3 py-2 rounded-sm transition-all shadow-[2px_2px_0_rgba(37,37,37,0.18)] border border-accent active:translate-y-px active:shadow-none whitespace-nowrap"
           >
             Book Drive
           </a>
