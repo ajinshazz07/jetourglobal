@@ -1,5 +1,0 @@
-:HL["/jetourglobal/_next/static/css/b07a52dab0755919.css","style"]
-:HL["https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap","style"]
-2:[["children",{"s":"__PAGE__","h":160}]]
-1:[["children",{"s":"_not-found","h":96,"c":"$Q2"}]]
-0:{"b":"uEeRqg9kMOijv65k0Zw-2","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
