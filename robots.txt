@@ -1,0 +1,4 @@
+User-Agent: *
+Allow: /
+
+Sitemap: https://ajinshazz07.github.io/jetourglobal/sitemap.xml

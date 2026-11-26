@@ -1,0 +1,4 @@
+:HL["/jetourglobal/_next/static/chunks/1_3qylwnof4tl.css","style"]
+:HL["/jetourglobal/_next/static/media/82450a180bcad83c-s.p.0p-wng2nn8o-p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+1:[["children",{"s":"__PAGE__","h":160}]]
+0:{"b":"_AzqvOifQsESSYfska6pu","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
