@@ -1,45 +1,43 @@
-# JETOUR Global Landing Page
+# JETOUR — Premium Single-Page Website
 
-Modern, minimal landing page for **JETOUR Global** built with **Next.js 16**, **TypeScript**, and **Tailwind CSS**.
+Next.js 15 (App Router) · React 19 · TypeScript · no CMS, no accounts, no database.
 
----
-
-## 📍 Local Project Path
-
-```text
-/Users/ajinsha/.gemini/antigravity/scratch/jetour-landing
+## Run
+```
+npm install
+npm run dev            # http://localhost:3000
+npm run build && npm start
 ```
 
-### Quick Commands
+## Administrators: where to edit
+**Everything editable is in [`config/site.ts`](config/site.ts)**:
 
-- **Open in VS Code:**
-  ```bash
-  code /Users/ajinsha/.gemini/antigravity/scratch/jetour-landing
-  ```
-- **Navigate to folder:**
-  ```bash
-  cd /Users/ajinsha/.gemini/antigravity/scratch/jetour-landing
-  ```
-- **Start Dev Server:**
-  ```bash
-  npm run dev
-  ```
-  Then visit [http://localhost:3000](http://localhost:3000).
+| Object | Controls |
+|---|---|
+| `theme` | colours, the single metallic gradient stroke, font |
+| `site` | domain, SEO title/description |
+| `navigation` | header links (Gallery deliberately excluded) |
+| `hero` | headline, supporting text, image, CTAs |
+| `vehicles` | models, captions, 3 verified specs, cutouts, gallery photos, tech features, `enabled` flag |
+| `world`, `technology`, `media` | editorial content (media shows max 3 items) |
+| `contact` | enquiry types, consent text |
+| `gallery` | hover delay / interval, extra brand images |
+| `footer` | company info, social links, legal links, copyright |
 
----
+Optional models (DASHING, X70, X70 PLUS, X90 PLUS, G700 TOPFIRE) are in `vehicles` with `enabled: false`.
+They appear only once they have 3 verified specs, a cutout and `enabled: true`.
 
-## 🔗 Repository
+Access control: the public site has no editing surface. Content changes go through this private
+repository and a deployment, so only people with repository/hosting access can change the site.
 
-- **GitHub:** [https://github.com/ajinshazz07/jetourglobal](https://github.com/ajinshazz07/jetourglobal)
+## Enquiry form backend (required before launch)
+Copy `.env.example` to `.env.local` (or set in your host) and set `ENQUIRY_WEBHOOK_URL` to the client's approved
+CRM / email / secure-database HTTPS endpoint (optional `ENQUIRY_WEBHOOK_TOKEN`, `ALLOWED_ORIGIN`).
+Without it the API returns 503 and the form shows an error — it never fakes success.
+Spam protection: honeypot, minimum fill time, same-origin check, per-IP rate limit (server-side validation repeated).
+For high-traffic production, add Cloudflare Turnstile or reCAPTCHA and a shared rate-limit store.
 
----
-
-## 📁 Project Structure
-
-- `src/components/Navbar.tsx` - Glassmorphic fixed navigation bar with mobile support
-- `src/components/Hero.tsx` - Hero section with dynamic animations & stats counter
-- `src/components/Models.tsx` - Model lineup (T2, Dashing, X70 Plus, G700)
-- `src/components/Features.tsx` - Key features & specifications
-- `src/components/Pricing.tsx` - Pricing tiers & package comparisons
-- `src/components/Testimonials.tsx` - Global customer reviews
-- `src/components/Footer.tsx` - Links, CTA banner, and social media channels
+## Images
+Images are referenced from the official JETOUR asset host and served through `next/image`
+(AVIF/WebP, responsive sizes, lazy loading). For production, place authorized assets in `/public`
+or the client's CDN and update the URLs in `config/site.ts` (and `remotePatterns` in `next.config.mjs`).
