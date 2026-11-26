@@ -54,6 +54,11 @@ export default function ContactSection() {
       formRef.current?.querySelector<HTMLElement>(`[name="${first}"]`)?.focus();
       return;
     }
+    if (!contact.endpoint) {
+      setStatus({ kind: "error", message: "Online enquiries are temporarily unavailable. Please contact us by phone or email." });
+      requestAnimationFrame(() => statusRef.current?.focus());
+      return;
+    }
     setStatus({ kind: "loading" });
     try {
       const res = await fetch(contact.endpoint, {

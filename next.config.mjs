@@ -1,27 +1,18 @@
-/** @type {import('next').NextConfig} */
-const securityHeaders = [
-  { key: "X-Content-Type-Options", value: "nosniff" },
-  { key: "X-Frame-Options", value: "DENY" },
-  { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
-  { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=()" },
-  { key: "Strict-Transport-Security", value: "max-age=63072000; includeSubDomains; preload" },
-];
+/**
+ * Static export for GitHub Pages: `npm run build:pages` writes plain
+ * HTML/CSS/JS to out/, served under /jetourglobal. There is no server, so
+ * API routes, image optimization and custom headers are not available.
+ */
+const basePath = process.env.PAGES_BASE_PATH || "";
 
 const nextConfig = {
+  output: "export",
+  basePath,
+  trailingSlash: true,
   poweredByHeader: false,
   images: {
-    // Next.js converts every image to AVIF/WebP at the requested responsive size.
-    formats: ["image/avif", "image/webp"],
-    deviceSizes: [360, 480, 640, 768, 1024, 1280, 1600, 1920, 2560],
-    // Official JETOUR asset host. Replace with the client's own CDN once assets are self-hosted.
-    remotePatterns: [
-      { protocol: "https", hostname: "jetourglobal.com", pathname: "/new-static/**" },
-      { protocol: "https", hostname: "jetourglobal.com", pathname: "/data/cms/**" },
-    ],
-    minimumCacheTTL: 60 * 60 * 24 * 30,
-  },
-  async headers() {
-    return [{ source: "/:path*", headers: securityHeaders }];
+    // No server to resize images; remote images load at their original size.
+    unoptimized: true,
   },
 };
 

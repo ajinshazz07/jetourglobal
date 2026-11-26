@@ -358,8 +358,12 @@ export const contact = {
   intro: "Tell us about your journey. A JETOUR specialist will respond to your enquiry.",
   enquiryTypes: ["Test Drive", "Vehicle Information", "Service & Maintenance", "Fleet & Business", "Other"],
   privacyText: "I agree to the processing of my personal data in accordance with the Privacy Policy, for the purpose of responding to this enquiry.",
-  /** POST endpoint handled by app/api/enquiry/route.ts, which forwards to the client's CRM/email. */
-  endpoint: "/api/enquiry",
+  /**
+   * Public HTTPS endpoint that accepts a JSON POST (e.g. Formspree, Web3Forms, a CRM webhook).
+   * The site is static, so this must be a third-party service. Set NEXT_PUBLIC_ENQUIRY_ENDPOINT
+   * at build time; when empty, the form says online enquiries are unavailable.
+   */
+  endpoint: process.env.NEXT_PUBLIC_ENQUIRY_ENDPOINT || "",
 };
 
 /* ── Gallery ───────────────────────────────────────────────────────────── */
