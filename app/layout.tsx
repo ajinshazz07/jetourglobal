@@ -33,7 +33,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang={site.locale} className={manrope.variable} style={tokens}>
       <head>
-        <link rel="preconnect" href="https://jetourglobal.com" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       </head>
       <body>

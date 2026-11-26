@@ -11,9 +11,9 @@
  *
  *  Rules for administrators
  *   • Only add specifications published by JETOUR (source noted per vehicle).
- *   • Only use authorized JETOUR imagery. Paths below point to the official
- *     asset host (jetourglobal.com). To self-host, place files in /public and
- *     replace the URL with e.g. "/images/g700/hero.jpg".
+ *   • Only use authorized JETOUR imagery. Use the official asset URLs below:
+ *     scripts/images.mjs downloads each one into images-src/ and serves resized
+ *     WebP copies from the site itself (runs automatically on dev/build).
  *   • Never add prices, mileage, warranty or range unless officially verified.
  * ─────────────────────────────────────────────────────────────────────────────
  */
@@ -34,7 +34,7 @@ export const theme = {
 /* ── Site / SEO ────────────────────────────────────────────────────────── */
 export const site = {
   name: "JETOUR",
-  url: "https://www.example-jetour-dealer.com", // ← replace with the production domain
+  url: "https://ajinshazz07.github.io/jetourglobal", // ← replace with the production domain (no trailing slash)
   title: "JETOUR | Premium Off-Road & Hybrid SUVs",
   description:
     "Discover JETOUR G700, T1, T1 i-DM, T2 and T2 i-DM — premium off-road and plug-in hybrid SUVs built around the Travel+ philosophy.",
